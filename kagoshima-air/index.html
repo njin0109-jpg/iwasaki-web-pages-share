@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="鹿児島国際航空株式会社は、航空機整備・ヘリコプター関連業務・運航支援を通じて、地域航空の安全と安定運航を支えています。">
+  <title>鹿児島国際航空株式会社 | 鹿児島の空を、確かな整備技術で支える。</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SVG SPRITE
+============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+
+  <!-- Helicopter -->
+  <symbol id="i-helicopter" viewBox="0 0 48 48" fill="none">
+    <path d="M6 22h36M14 22l4-8h12l4 8" stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="24" cy="22" rx="6" ry="4"/>
+    <path d="M24 26v8M20 34h8" stroke-linecap="round"/>
+    <path d="M10 18V14M38 18V14" stroke-linecap="round"/>
+    <path d="M8 14h8M32 14h8" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- Shield -->
+  <symbol id="i-shield" viewBox="0 0 48 48" fill="none">
+    <path d="M24 6L10 12v12c0 8 6 14 14 16 8-2 14-8 14-16V12L24 6z" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="18,24 22,28 30,20" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- Check list -->
+  <symbol id="i-check-list" viewBox="0 0 48 48" fill="none">
+    <rect x="10" y="8" width="28" height="32" rx="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="17,20 20,23 27,16" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="17,28 20,31 27,24" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="31" y1="20" x2="34" y2="20" stroke-linecap="round"/>
+    <line x1="31" y1="28" x2="34" y2="28" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- Headset -->
+  <symbol id="i-headset" viewBox="0 0 48 48" fill="none">
+    <path d="M12 26v-4a12 12 0 0124 0v4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="10" y="26" width="6" height="8" rx="3"/>
+    <rect x="32" y="26" width="6" height="8" rx="3"/>
+    <path d="M38 34v2a4 4 0 01-4 4h-6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="24" cy="40" r="2"/>
+  </symbol>
+
+  <!-- Map pin -->
+  <symbol id="i-map-pin" viewBox="0 0 48 48" fill="none">
+    <path d="M24 6C17.4 6 12 11.4 12 18c0 10 12 24 12 24s12-14 12-24c0-6.6-5.4-12-12-12z" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="24" cy="18" r="4"/>
+  </symbol>
+
+  <!-- Mail -->
+  <symbol id="i-mail" viewBox="0 0 48 48" fill="none">
+    <rect x="6" y="12" width="36" height="24" rx="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="6,12 24,27 42,12" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- Phone -->
+  <symbol id="i-phone" viewBox="0 0 48 48" fill="none">
+    <path d="M16 8h6l3 7-4 2a22 22 0 009 9l2-4 7 3v6c0 2-2 4-4 4C17 35 13 17 16 8z" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- Users -->
+  <symbol id="i-users" viewBox="0 0 48 48" fill="none">
+    <circle cx="18" cy="16" r="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6 40c0-7 5-12 12-12s12 5 12 12" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="34" cy="16" r="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M32 40h10c0-6-4-10-9-10" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- Wrench (maintenance) -->
+  <symbol id="i-wrench" viewBox="0 0 48 48" fill="none">
+    <path d="M32 10a8 8 0 00-10 10L10 32a4 4 0 005 5l12-12a8 8 0 0010-10l-4 4-4-1-1-4 4-4z" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- Building (local) -->
+  <symbol id="i-building" viewBox="0 0 48 48" fill="none">
+    <rect x="10" y="14" width="28" height="26" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M18 40V28h12v12M10 14l14-8 14 8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="20" y="20" width="4" height="4" rx="1"/>
+    <rect x="26" y="20" width="4" height="4" rx="1"/>
+  </symbol>
+
+  <!-- Safety / checkmark circle -->
+  <symbol id="i-safety" viewBox="0 0 48 48" fill="none">
+    <circle cx="24" cy="24" r="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="17,24 22,29 31,19" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- People (team) -->
+  <symbol id="i-team" viewBox="0 0 48 48" fill="none">
+    <circle cx="24" cy="14" r="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10 40c0-8 6-14 14-14s14 6 14 14" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="10" cy="18" r="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M2 38c0-5 3-8 8-8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="38" cy="18" r="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M46 38c0-5-3-8-8-8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- Chart / achievement -->
+  <symbol id="i-chart" viewBox="0 0 48 48" fill="none">
+    <polyline points="8,36 16,24 24,28 32,16 40,20" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="8" y1="40" x2="40" y2="40" stroke-linecap="round"/>
+    <line x1="8" y1="8" x2="8" y2="40" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- Gear -->
+  <symbol id="i-gear" viewBox="0 0 48 48" fill="none">
+    <circle cx="24" cy="24" r="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M24 8v4M24 36v4M8 24h4M36 24h4M12.7 12.7l2.8 2.8M32.5 32.5l2.8 2.8M12.7 35.3l2.8-2.8M32.5 15.5l2.8-2.8" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- Arrow right -->
+  <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none">
+    <polyline points="9,6 15,12 9,18" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- Menu -->
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none">
+    <line x1="3" y1="6" x2="21" y2="6" stroke-linecap="round"/>
+    <line x1="3" y1="12" x2="21" y2="12" stroke-linecap="round"/>
+    <line x1="3" y1="18" x2="21" y2="18" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- Close -->
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none">
+    <line x1="5" y1="5" x2="19" y2="19" stroke-linecap="round"/>
+    <line x1="19" y1="5" x2="5" y2="19" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- Facebook -->
+  <symbol id="i-facebook" viewBox="0 0 24 24" fill="none">
+    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+</svg>
+<!-- /SVG SPRITE -->
+
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="site-header">
+  <div class="header-inner">
+
+    <a href="/" class="header-logo" aria-label="鹿児島国際航空 トップへ">
+      <div class="header-logo-mark">
+        <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <use href="#i-helicopter"/>
+        </svg>
+      </div>
+      <div class="header-logo-text">
+        <span class="name-en">Kagoshima International Air Service</span>
+        <span class="name-jp">鹿児島国際航空株式会社</span>
+      </div>
+    </a>
+
+    <nav class="global-nav" aria-label="グローバルナビゲーション">
+      <a href="#services">事業内容</a>
+      <a href="#safety">安全への取り組み</a>
+      <a href="#reasons">選ばれる理由</a>
+      <a href="#recruit">採用情報</a>
+      <a href="#company">会社案内</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+
+    <a href="#contact" class="btn btn-primary header-cta">
+      <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <use href="#i-mail"/>
+      </svg>
+      業務について相談する
+    </a>
+
+    <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" aria-hidden="true">
+  <nav>
+    <a href="#services">事業内容</a>
+    <a href="#safety">安全への取り組み</a>
+    <a href="#reasons">選ばれる理由</a>
+    <a href="#recruit">採用情報</a>
+    <a href="#company">会社案内</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+  <div class="drawer-cta">
+    <a href="#contact" class="btn btn-primary">
+      <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <use href="#i-mail"/>
+      </svg>
+      業務について相談する
+    </a>
+    <a href="#recruit" class="btn btn-secondary">
+      <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <use href="#i-users"/>
+      </svg>
+      採用情報を見る
+    </a>
+  </div>
+</div>
+
+
+<main>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" aria-labelledby="hero-heading">
+
+    <!-- Background SVG decoration -->
+    <div class="hero-bg" aria-hidden="true">
+      <svg style="top:-60px;right:-60px;width:560px;height:560px;" viewBox="0 0 560 560"
+           fill="none" stroke="#003B7A" stroke-width="1">
+        <circle cx="280" cy="280" r="80"/>
+        <circle cx="280" cy="280" r="140"/>
+        <circle cx="280" cy="280" r="200"/>
+        <circle cx="280" cy="280" r="260"/>
+        <!-- crosshairs -->
+        <line x1="280" y1="80" x2="280" y2="480"/>
+        <line x1="80" y1="280" x2="480" y2="280"/>
+        <!-- diagonal route lines -->
+        <line x1="100" y1="460" x2="460" y2="100" stroke-dasharray="6 8"/>
+        <line x1="100" y1="100" x2="460" y2="460" stroke-dasharray="6 8" opacity="0.5"/>
+        <!-- small markers -->
+        <circle cx="280" cy="280" r="4" fill="#003B7A" opacity="0.3"/>
+        <circle cx="380" cy="180" r="3" fill="#003B7A" opacity="0.25"/>
+        <circle cx="180" cy="380" r="3" fill="#003B7A" opacity="0.25"/>
+      </svg>
+      <!-- Grid dots -->
+      <svg style="bottom:0;left:0;width:320px;height:200px;" viewBox="0 0 320 200"
+           fill="#003B7A" stroke="none">
+        <defs>
+          <pattern id="grid-dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" opacity="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="320" height="200" fill="url(#grid-dots)"/>
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+
+      <!-- Left: Content -->
+      <div class="hero-content">
+        <h1 id="hero-heading">
+          鹿児島の空を、<br>
+          確かな整備技術で支える。
+        </h1>
+
+        <p class="hero-lead">
+          航空機整備・ヘリコプター関連業務・運航支援を通じて、<br>
+          地域航空の安全と安定運航を支えています。
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">
+            <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-mail"/>
+            </svg>
+            業務について相談する
+          </a>
+          <a href="#recruit" class="btn btn-secondary">
+            <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-users"/>
+            </svg>
+            採用情報を見る
+          </a>
+        </div>
+
+        <div class="hero-labels">
+          <span class="hero-label">鹿児島拠点</span>
+          <span class="hero-label">航空機整備対応</span>
+          <span class="hero-label">安全運航を支援</span>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card fade-up">
+            <strong>Safety First</strong>
+            <span>安全最優先の体制</span>
+          </div>
+          <div class="stat-card fade-up">
+            <strong>3 Areas</strong>
+            <span>整備・運航支援・安全管理</span>
+          </div>
+          <div class="stat-card fade-up">
+            <strong>1 Mission</strong>
+            <span>地域の空を守る</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Visual -->
+      <div class="hero-visual">
+        <picture>
+          <img src="https://placehold.co/700x520/003B7A/EAF6FF?text=Helicopter+Maintenance"
+               alt="ヘリコプター整備の様子"
+               width="700" height="520"
+               loading="eager">
+        </picture>
+
+        <!-- Checklist card -->
+        <div class="floating-card checklist-card" aria-hidden="true">
+          <h3>CHECK LIST</h3>
+          <ul>
+            <li>Pre Flight Check</li>
+            <li>Engine / System</li>
+            <li>Avionics Check</li>
+            <li>Structure Check</li>
+            <li>Safety Confirm</li>
+          </ul>
+        </div>
+
+        <!-- Map card -->
+        <div class="floating-card map-card" aria-hidden="true">
+          <h3>BASE : KAGOSHIMA</h3>
+          <svg viewBox="0 0 160 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+               style="width:140px;height:auto;">
+            <!-- Abstract Kagoshima map silhouette -->
+            <path d="M40 20 C35 22 30 28 32 38 C34 46 28 52 30 62 C32 70 40 72 48 68
+                     C56 64 60 58 70 60 C80 62 86 56 90 48 C94 40 88 30 80 26
+                     C72 22 66 16 58 18 C50 20 45 18 40 20Z"
+                  fill="#EAF6FF" stroke="#003B7A" stroke-width="1.5"/>
+            <!-- Sakurajima -->
+            <ellipse cx="62" cy="56" rx="8" ry="6" fill="#D7E8F8" stroke="#003B7A" stroke-width="1"/>
+            <!-- Location pin -->
+            <circle cx="62" cy="48" r="4" fill="#F58A00"/>
+            <circle cx="62" cy="48" r="2" fill="white"/>
+            <!-- Ping animation -->
+            <circle cx="62" cy="48" r="8" stroke="#F58A00" stroke-width="1" opacity="0.4"/>
+            <!-- Route lines -->
+            <line x1="62" y1="48" x2="110" y2="30" stroke="#003B7A" stroke-width="1"
+                  stroke-dasharray="4 4" opacity="0.5"/>
+            <line x1="62" y1="48" x2="30" y2="20" stroke="#003B7A" stroke-width="1"
+                  stroke-dasharray="4 4" opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PROBLEMS
+  ============================================================ -->
+  <section class="problems section" id="problems">
+    <div class="section-header fade-up" style="padding: 0 var(--container-pad);">
+      <h2 class="section-title">
+        航空に関わる業務には、確かな安全体制が欠かせません。
+      </h2>
+      <p class="section-lead">
+        整備、運航支援、地域航空に関するご相談には、専門性と信頼できる現場体制が求められます。
+      </p>
+    </div>
+
+    <div class="problem-grid">
+
+      <article class="problem-card card fade-up">
+        <div class="icon">
+          <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <use href="#i-shield"/>
+          </svg>
+        </div>
+        <h3>安全に任せられる<br>航空関連会社を探している</h3>
+      </article>
+
+      <article class="problem-card card fade-up">
+        <div class="icon">
+          <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <use href="#i-wrench"/>
+          </svg>
+        </div>
+        <h3>航空機整備や運航支援の<br>相談先が分からない</h3>
+      </article>
+
+      <article class="problem-card card fade-up">
+        <div class="icon">
+          <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <use href="#i-safety"/>
+          </svg>
+        </div>
+        <h3>実績と安全体制が<br>見える会社に依頼したい</h3>
+      </article>
+
+      <article class="problem-card card fade-up">
+        <div class="icon">
+          <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <use href="#i-team"/>
+          </svg>
+        </div>
+        <h3>採用前に仕事内容や<br>職場の雰囲気を知りたい</h3>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICES
+  ============================================================ -->
+  <section class="services section" id="services" aria-labelledby="services-heading">
+    <div class="services-layout">
+
+      <div class="section-header left fade-up">
+        <span class="eyebrow">SERVICE</span>
+        <h2 class="section-title" id="services-heading">
+          航空の安全を<br>支える事業
+        </h2>
+        <p class="section-lead" style="margin-top:12px;">—</p>
+      </div>
+
+      <div class="service-grid">
+
+        <article class="service-card card fade-up">
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-wrench"/>
+            </svg>
+          </div>
+          <h3>航空機整備</h3>
+          <p>機体の安全性を守るため、点検・整備・確認作業を丁寧に行います。</p>
+          <a href="#" class="link-arrow">
+            詳細を見る
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-arrow-right"/>
+            </svg>
+          </a>
+        </article>
+
+        <article class="service-card card fade-up">
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-helicopter"/>
+            </svg>
+          </div>
+          <h3>ヘリコプター<br>関連業務</h3>
+          <p>ヘリコプターの運航・整備・支援まで、安全な空飛ぶ業務に対応します。</p>
+          <a href="#" class="link-arrow">
+            詳細を見る
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-arrow-right"/>
+            </svg>
+          </a>
+        </article>
+
+        <article class="service-card card fade-up">
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-headset"/>
+            </svg>
+          </div>
+          <h3>運航支援</h3>
+          <p>安全で円滑な運航を実現するため、現場に合った支援を安定的に行います。</p>
+          <a href="#" class="link-arrow">
+            詳細を見る
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-arrow-right"/>
+            </svg>
+          </a>
+        </article>
+
+        <article class="service-card card fade-up">
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-check-list"/>
+            </svg>
+          </div>
+          <h3>安全管理</h3>
+          <p>日々の確認体制・教育・点検を通じて、安全な業務を支えます。</p>
+          <a href="#" class="link-arrow">
+            詳細を見る
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-arrow-right"/>
+            </svg>
+          </a>
+        </article>
+
+        <article class="service-card card fade-up">
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-map-pin"/>
+            </svg>
+          </div>
+          <h3>地域航空支援</h3>
+          <p>鹿児島を拠点に、地域の移動・防災・観光・観光などを支える航空インフラに貢献します。</p>
+          <a href="#" class="link-arrow">
+            詳細を見る
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-arrow-right"/>
+            </svg>
+          </a>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="services-cta fade-up" style="max-width: var(--container-max); margin: 36px auto 0; text-align: center; padding: 0 var(--container-pad);">
+      <a href="#contact" class="btn btn-outline-orange">
+        <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <use href="#i-mail"/>
+        </svg>
+        対応可能な業務を問い合わせる
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FLOW
+  ============================================================ -->
+  <section class="flow section" id="flow" aria-labelledby="flow-heading">
+
+    <div class="flow-bg" aria-hidden="true">
+      <svg style="top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:400px;"
+           viewBox="0 0 800 400" fill="none" stroke="#003B7A" stroke-width="1">
+        <path d="M 50 200 Q 200 80 400 200 Q 600 320 750 200" stroke-dasharray="8 10"/>
+        <path d="M 50 250 Q 250 120 400 240 Q 550 360 750 250" stroke-dasharray="6 12" opacity="0.5"/>
+      </svg>
+    </div>
+
+    <div class="flow-layout">
+
+      <div class="section-header left fade-up">
+        <span class="eyebrow">FLOW</span>
+        <h2 class="section-title" id="flow-heading">
+          ご相談から<br>対応までの流れ
+        </h2>
+        <p class="section-lead" style="margin-top:12px;">
+          ご相談から業務開始まで、安心してお任せいただける流れを整えています。
+        </p>
+      </div>
+
+      <div class="flow-steps">
+
+        <article class="flow-step fade-up">
+          <div class="step-number">01</div>
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-mail"/>
+            </svg>
+          </div>
+          <h3>お問い合わせ</h3>
+          <p>まずはフォームまたはお電話でご相談ください。</p>
+        </article>
+
+        <article class="flow-step fade-up">
+          <div class="step-number">02</div>
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-check-list"/>
+            </svg>
+          </div>
+          <h3>内容確認</h3>
+          <p>ご相談内容、対応範囲、必要な条件を確認します。</p>
+        </article>
+
+        <article class="flow-step fade-up">
+          <div class="step-number">03</div>
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-team"/>
+            </svg>
+          </div>
+          <h3>ヒアリング・調整</h3>
+          <p>業務内容やスケジュール、必要な支援の確認事項を整理します。</p>
+        </article>
+
+        <article class="flow-step fade-up">
+          <div class="step-number">04</div>
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-map-pin"/>
+            </svg>
+          </div>
+          <h3>対応可否・進め方のご案内</h3>
+          <p>対応範囲内容や進め方をご案内します。</p>
+        </article>
+
+        <article class="flow-step fade-up">
+          <div class="step-number">05</div>
+          <div class="icon-circle">
+            <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-helicopter"/>
+            </svg>
+          </div>
+          <h3>業務開始</h3>
+          <p>安全管理体制のもと、必要な業務を開始します。</p>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="flow-cta fade-up">
+      <a href="#contact" class="btn btn-navy">
+        <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <use href="#i-mail"/>
+        </svg>
+        まずは相談してみる
+      </a>
+      <p>対応可否の確認だけでもお気軽にお問い合わせください。</p>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       REASONS
+  ============================================================ -->
+  <section class="reasons section" id="reasons" aria-labelledby="reasons-heading">
+    <div class="reasons-layout">
+
+      <div class="reason-media fade-up">
+        <div class="reason-heading">
+          <span class="eyebrow">REASON</span>
+          <h2 class="section-title" id="reasons-heading">
+            鹿児島国際航空が<br>選ばれる理由
+          </h2>
+        </div>
+        <picture>
+          <img src="https://placehold.co/540x440/002B5C/EAF6FF?text=Aviation+Maintenance+Site"
+               alt="整備現場の様子"
+               width="540" height="440"
+               loading="lazy">
+        </picture>
+      </div>
+
+      <div class="fade-up">
+        <ol class="reason-list">
+
+          <li>
+            <div class="icon-circle">
+              <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <use href="#i-map-pin"/>
+              </svg>
+            </div>
+            <span class="reason-num">01</span>
+            <div>
+              <h3>地域密着</h3>
+              <p>鹿児島を拠点に、地域の航空インフラを支える事業を展開しています。</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="icon-circle">
+              <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <use href="#i-shield"/>
+              </svg>
+            </div>
+            <span class="reason-num">02</span>
+            <div>
+              <h3>安全最優先の体制</h3>
+              <p>航空業務に欠かせない安全を重視し、日々の確認・訓練・教育を徹底しています。</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="icon-circle">
+              <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <use href="#i-team"/>
+              </svg>
+            </div>
+            <span class="reason-num">03</span>
+            <div>
+              <h3>専門人材</h3>
+              <p>航空や運航に関する専門知識を持ったスタッフが、細やかな品質を支えています。</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="icon-circle">
+              <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <use href="#i-wrench"/>
+              </svg>
+            </div>
+            <span class="reason-num">04</span>
+            <div>
+              <h3>実績・設備のある現場力</h3>
+              <p>相談案件や整備現場を活用し、現場に根差した対応が行えます。</p>
+            </div>
+          </li>
+
+          <li>
+            <div class="icon-circle">
+              <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <use href="#i-helicopter"/>
+              </svg>
+            </div>
+            <span class="reason-num">05</span>
+            <div>
+              <h3>地域航空への貢献</h3>
+              <p>地域の移動、防災、観光、暮らしを支える空のインフラに貢献しています。</p>
+            </div>
+          </li>
+
+        </ol>
+
+        <div class="reasons-cta">
+          <a href="#safety" class="btn btn-secondary btn-wide">
+            安全への取り組みを見る
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <use href="#i-arrow-right"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       WORKS / CASES
+  ============================================================ -->
+  <section class="works section" id="works" aria-labelledby="works-heading">
+    <div class="works-layout">
+
+      <div>
+        <div class="works-heading section-header left fade-up">
+          <span class="eyebrow">WORKS / CASE</span>
+          <h2 class="section-title" id="works-heading">
+            地域の空を支えてきた実績
+          </h2>
+          <p class="section-lead">多様な業務を通じて、地域航空の発展に貢献しています。</p>
+        </div>
+
+        <div class="case-grid">
+
+          <article class="case-card card fade-up">
+            <picture>
+              <img src="https://placehold.co/280x210/003B7A/EAF6FF?text=Case+01"
+                   alt="航空機整備の事例"
+                   width="280" height="210"
+                   loading="lazy">
+            </picture>
+            <div class="case-body">
+              <span class="case-label">Case 01</span>
+              <h3>航空機整備</h3>
+              <p>定期点検・確認作業・整備点検を通じて、機体の安全を維持しています。</p>
+            </div>
+          </article>
+
+          <article class="case-card card fade-up">
+            <picture>
+              <img src="https://placehold.co/280x210/002B5C/EAF6FF?text=Case+02"
+                   alt="ヘリコプター関連業務の事例"
+                   width="280" height="210"
+                   loading="lazy">
+            </picture>
+            <div class="case-body">
+              <span class="case-label">Case 02</span>
+              <h3>ヘリコプター関連業務</h3>
+              <p>ヘリコプターの整備・管理・支援を通じて、安定運航を安全にサポートします。</p>
+            </div>
+          </article>
+
+          <article class="case-card card fade-up">
+            <picture>
+              <img src="https://placehold.co/280x210/003B7A/F3FAFF?text=Case+03"
+                   alt="運航支援の事例"
+                   width="280" height="210"
+                   loading="lazy">
+            </picture>
+            <div class="case-body">
+              <span class="case-label">Case 03</span>
+              <h3>運航支援</h3>
+              <p>運航計画の確認や地域航空の補完業務を安全にサポートします。</p>
+            </div>
+          </article>
+
+          <article class="case-card card fade-up">
+            <picture>
+              <img src="https://placehold.co/280x210/001F45/EAF6FF?text=Case+04"
+                   alt="地域航空支援の事例"
+                   width="280" height="210"
+                   loading="lazy">
+            </picture>
+            <div class="case-body">
+              <span class="case-label">Case 04</span>
+              <h3>地域航空支援</h3>
+              <p>防災・観光・観光など、地域の空を支えるさまざまな分野で活動しています。</p>
+            </div>
+          </article>
+
+          <article class="case-card card fade-up">
+            <picture>
+              <img src="https://placehold.co/280x210/002B5C/F3FAFF?text=Case+05"
+                   alt="安全管理体制の事例"
+                   width="280" height="210"
+                   loading="lazy">
+            </picture>
+            <div class="case-body">
+              <span class="case-label">Case 05</span>
+              <h3>安全管理体制</h3>
+              <p>確認・点検・教育を重ねた安全管理体制の仕組みを整えています。</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Right stats -->
+      <aside class="works-stats">
+        <div class="stat-card fade-up">
+          <strong>3 Areas</strong>
+          <span>整備・運航支援・安全管理</span>
+        </div>
+        <div class="stat-card fade-up">
+          <strong>1 Mission</strong>
+          <span>地域の空を守る</span>
+        </div>
+        <div class="stat-card fade-up">
+          <strong>Safety First</strong>
+          <span>安全最優先の体制</span>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FINAL CTA
+  ============================================================ -->
+  <section class="final-cta" id="contact" aria-labelledby="cta-heading">
+
+    <div class="final-cta-bg" aria-hidden="true">
+      <!-- Radar circles -->
+      <svg style="right:-80px;top:50%;transform:translateY(-50%);width:500px;height:500px;"
+           viewBox="0 0 500 500" fill="none" stroke="white" stroke-width="1">
+        <circle cx="250" cy="250" r="60"/>
+        <circle cx="250" cy="250" r="120"/>
+        <circle cx="250" cy="250" r="180"/>
+        <circle cx="250" cy="250" r="240"/>
+        <line x1="250" y1="10" x2="250" y2="490"/>
+        <line x1="10" y1="250" x2="490" y2="250"/>
+      </svg>
+      <!-- Helicopter silhouette -->
+      <svg style="left:32px;bottom:16px;width:180px;height:100px;"
+           viewBox="0 0 48 48" fill="white" stroke="none">
+        <use href="#i-helicopter"/>
+      </svg>
+    </div>
+
+    <div class="final-cta-inner">
+
+      <div class="fade-up">
+        <h2 id="cta-heading">
+          航空に関するご相談・採用に関するご質問は<br>お気軽にお問い合わせください。
+        </h2>
+        <p>
+          業務内容の確認、対応可否のご相談、採用に関するご質問など、<br>
+          目的に合わせて担当者がご案内します。
+        </p>
+      </div>
+
+      <div class="final-cta-actions fade-up">
+        <a href="#" class="btn btn-primary">
+          <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <use href="#i-mail"/>
+          </svg>
+          業務について相談する
+        </a>
+        <a href="#recruit" class="btn btn-white-outline">
+          <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <use href="#i-users"/>
+          </svg>
+          採用情報を見る
+        </a>
+        <a href="tel:0995585811" class="btn btn-white-outline">
+          <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <use href="#i-phone"/>
+          </svg>
+          電話で問い合わせる
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <!-- Company info -->
+    <div>
+      <div class="footer-logo">
+        <div class="footer-logo-mark">
+          <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <use href="#i-helicopter"/>
+          </svg>
+        </div>
+        <div class="footer-logo-text">
+          <span class="name-jp">鹿児島国際航空株式会社</span>
+        </div>
+      </div>
+
+      <address class="footer-company-info" style="font-style:normal;">
+        〒899-6044<br>
+        鹿児島県鹿児島市西開聞町2977-1<br>
+        鹿児島空港内 鹿児島エリア
+        <span class="tel">TEL. 0995-58-5811</span>
+        <span class="hours">受付時間：平日 8:30 〜 17:30</span>
+      </address>
+
+      <div class="footer-social">
+        <a href="#" aria-label="Facebookページ">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <use href="#i-facebook"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Nav columns -->
+    <nav class="footer-nav-columns" aria-label="フッターナビゲーション">
+
+      <div class="footer-nav-col">
+        <h4>事業内容</h4>
+        <ul>
+          <li><a href="#">航空機整備</a></li>
+          <li><a href="#">ヘリコプター関連業務</a></li>
+          <li><a href="#">運航支援</a></li>
+          <li><a href="#">安全管理</a></li>
+          <li><a href="#">地域航空支援</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4>安全への取り組み</h4>
+        <ul>
+          <li><a href="#">安全方針</a></li>
+          <li><a href="#">安全管理体制</a></li>
+          <li><a href="#">教育・訓練</a></li>
+          <li><a href="#">品質管理</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4>選ばれる理由</h4>
+        <ul>
+          <li><a href="#">地域密着</a></li>
+          <li><a href="#">安全体制</a></li>
+          <li><a href="#">専門人材</a></li>
+          <li><a href="#">実績</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4>採用情報</h4>
+        <ul>
+          <li><a href="#">採用メッセージ</a></li>
+          <li><a href="#">募集要項</a></li>
+          <li><a href="#">社員インタビュー</a></li>
+          <li><a href="#">教育・キャリア</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4>会社案内</h4>
+        <ul>
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#">アクセス</a></li>
+          <li><a href="#">沿革</a></li>
+          <li><a href="#">認定・許認可</a></li>
+        </ul>
+      </div>
+
+    </nav>
+
+    <!-- Action buttons -->
+    <div class="footer-buttons">
+      <a href="#contact" class="btn btn-white-outline">
+        <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <use href="#i-mail"/>
+        </svg>
+        お問い合わせ
+      </a>
+      <a href="#privacy" class="btn btn-white-outline">
+        プライバシーポリシー
+      </a>
+      <a href="#sitemap" class="btn btn-white-outline">
+        サイトマップ
+      </a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom" style="padding-left: var(--container-pad); padding-right: var(--container-pad);">
+    <small>&copy; Kagoshima International Air Service Co., Ltd. All Rights Reserved.</small>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     MOBILE FIXED CTA
+============================================================ -->
+<div class="mobile-fixed-cta" aria-label="クイックアクセス">
+  <a href="tel:0995585811">
+    <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <use href="#i-phone"/>
+    </svg>
+    電話
+  </a>
+  <a href="#contact" class="accent">
+    <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <use href="#i-mail"/>
+    </svg>
+    問い合わせ
+  </a>
+  <a href="#recruit">
+    <svg viewBox="0 0 48 48" stroke="currentColor" stroke-width="1.8" fill="none"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <use href="#i-users"/>
+    </svg>
+    採用情報
+  </a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

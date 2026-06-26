@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>かごしまアイランドフェリー | 鹿児島・種子島・屋久島を結ぶ定期フェリー</title>
+  <meta name="description" content="鹿児島・種子島・屋久島を結ぶ定期フェリー。旅客・車両・貨物に対応。運航状況、時刻表、運賃、乗り場案内をすぐに確認できます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SVG Sprite
+============================================================ -->
+<svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-anchor" viewBox="0 0 24 24">
+    <circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="22"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/>
+  </symbol>
+  <symbol id="i-ferry" viewBox="0 0 24 24">
+    <path d="M2 18 L6 10 L18 10 L22 18 Z"/><rect x="8" y="6" width="8" height="4"/><line x1="12" y1="3" x2="12" y2="6"/>
+    <path d="M2 18 Q6 21 12 21 Q18 21 22 18"/>
+  </symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24">
+    <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+  </symbol>
+  <symbol id="i-yen" viewBox="0 0 24 24">
+    <path d="M12 2 L5 12 L19 12"/><path d="M12 22 L12 12"/><line x1="9" y1="16" x2="15" y2="16"/><line x1="9" y1="19" x2="15" y2="19"/>
+  </symbol>
+  <symbol id="i-map-pin" viewBox="0 0 24 24">
+    <path d="M21 10 C21 17 12 23 12 23 S3 17 3 10 A9 9 0 0 1 21 10 Z"/><circle cx="12" cy="10" r="3"/>
+  </symbol>
+  <symbol id="i-cloud-rain" viewBox="0 0 24 24">
+    <path d="M20 17.5 A5 5 0 0 0 15 7 A7 7 0 1 0 5 17.5"/><line x1="8" y1="19" x2="8" y2="21"/><line x1="12" y1="19" x2="12" y2="21"/><line x1="16" y1="19" x2="16" y2="21"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+  </symbol>
+  <symbol id="i-car" viewBox="0 0 24 24">
+    <path d="M5 17H3V12L6 5H18L21 12V17H19"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/><path d="M5 12H19"/>
+  </symbol>
+  <symbol id="i-box" viewBox="0 0 24 24">
+    <path d="M21 16V8A2 2 0 0 0 19.73 6.27L13 2.27A2 2 0 0 0 11 2.27L4.27 6.27A2 2 0 0 0 3 8V16A2 2 0 0 0 4.27 17.73L11 21.73A2 2 0 0 0 13 21.73L19.73 17.73A2 2 0 0 0 21 16Z"/>
+    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+  </symbol>
+  <symbol id="i-headset" viewBox="0 0 24 24">
+    <path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+  </symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24">
+    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+  </symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24">
+    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+  </symbol>
+  <symbol id="i-chevron-up" viewBox="0 0 24 24">
+    <polyline points="18 15 12 9 6 15"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24">
+    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+  </symbol>
+  <symbol id="i-users" viewBox="0 0 24 24">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+  </symbol>
+  <symbol id="i-ship" viewBox="0 0 24 24">
+    <path d="M2 20.5L5.5 16H18.5L22 20.5"/><path d="M6 16L7.5 9H16.5L18 16"/><rect x="9" y="5" width="6" height="4"/><line x1="12" y1="2" x2="12" y2="5"/>
+    <path d="M2 20.5Q6 23 12 23Q18 23 22 20.5"/>
+  </symbol>
+  <symbol id="i-waves" viewBox="0 0 24 24">
+    <path d="M2 12 Q4.5 8 7 12 Q9.5 16 12 12 Q14.5 8 17 12 Q19.5 16 22 12"/>
+    <path d="M2 17 Q4.5 13 7 17 Q9.5 21 12 17 Q14.5 13 17 17 Q19.5 21 22 17"/>
+  </symbol>
+</svg>
+
+<!-- ============================================================
+     Header
+============================================================ -->
+<header class="site-header" id="page-top">
+  <div class="header-inner">
+    <a class="header-logo" href="/" aria-label="かごしまアイランドフェリー トップへ">
+      <div class="header-logo-mark">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-anchor"/></svg>
+      </div>
+      <div class="header-logo-text">
+        <span class="name-en">Kagoshima Island Ferry</span>
+        <span class="name-jp">かごしまアイランドフェリー</span>
+      </div>
+    </a>
+
+    <nav class="global-nav" aria-label="グローバルナビゲーション">
+      <a href="#status">運航状況</a>
+      <a href="#timetable">時刻表</a>
+      <a href="#fare">運賃</a>
+      <a href="#boarding">乗り場案内</a>
+      <a href="#vehicle">車両・貨物</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+
+    <a class="btn btn-primary header-cta" href="#contact">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>
+      お問い合わせ
+    </a>
+
+    <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-drawer">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="モバイルメニュー">
+  <nav>
+    <a href="#status">運航状況</a>
+    <a href="#timetable">時刻表</a>
+    <a href="#fare">運賃</a>
+    <a href="#boarding">乗り場案内</a>
+    <a href="#vehicle">車両・貨物</a>
+    <a href="#faq">よくある質問</a>
+  </nav>
+  <div class="drawer-cta">
+    <a class="btn btn-primary" href="#status">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ship"/></svg>
+      本日の運航状況を見る
+    </a>
+    <a class="btn btn-secondary" href="#contact">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>
+      お問い合わせ
+    </a>
+  </div>
+</div>
+
+<main>
+
+<!-- ============================================================
+     Hero
+============================================================ -->
+<section class="hero" id="hero">
+
+  <!-- Background decoration -->
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 680" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;right:0;width:60%;height:100%;opacity:0.07;">
+      <circle cx="900" cy="340" r="80" fill="none" stroke="#0066CC" stroke-width="1"/>
+      <circle cx="900" cy="340" r="150" fill="none" stroke="#0066CC" stroke-width="1"/>
+      <circle cx="900" cy="340" r="220" fill="none" stroke="#0066CC" stroke-width="1"/>
+      <circle cx="900" cy="340" r="300" fill="none" stroke="#0066CC" stroke-width="0.5"/>
+    </svg>
+    <!-- Dots pattern -->
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" style="position:absolute;left:-40px;bottom:80px;width:320px;opacity:0.05;">
+      <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1.5" fill="#0066CC"/>
+      </pattern>
+      <rect width="400" height="400" fill="url(#dots)"/>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+    <!-- Copy -->
+    <div class="hero-content">
+      <h1 class="fade-up">
+        鹿児島・種子島・屋久島を結ぶ、<br>安心の定期フェリー
+      </h1>
+      <p class="hero-lead fade-up">
+        旅客・車両・貨物に対応。運航状況、時刻表、運賃、乗り場案内を分かりやすく確認できます。
+      </p>
+      <div class="hero-actions fade-up">
+        <a class="btn btn-primary btn-wide" href="#status">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ship"/></svg>
+          本日の運航状況を見る
+        </a>
+        <a class="btn btn-secondary btn-wide" href="#timetable">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-calendar"/></svg>
+          時刻表・運賃を確認する
+        </a>
+      </div>
+      <div class="hero-labels fade-up">
+        <span class="hero-label">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-users"/></svg>
+          旅客・車両・貨物対応
+        </span>
+        <span class="hero-label">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-map-pin"/></svg>
+          地域密着の定期航路
+        </span>
+        <span class="hero-label">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check-circle"/></svg>
+          毎日更新
+        </span>
+      </div>
+    </div>
+
+    <!-- Visual: Route Map SVG -->
+    <div class="hero-visual fade-up" aria-hidden="true">
+      <svg class="hero-visual-svg" viewBox="0 0 540 520" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#C5E8FF"/>
+            <stop offset="100%" stop-color="#EAF6FF"/>
+          </linearGradient>
+          <linearGradient id="islandGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4CAF82"/>
+            <stop offset="100%" stop-color="#2E8B57"/>
+          </linearGradient>
+          <linearGradient id="ferryGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#E8F4FF"/>
+            <stop offset="100%" stop-color="#FFFFFF"/>
+          </linearGradient>
+          <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="rgba(0,51,102,0.18)"/>
+          </filter>
+        </defs>
+
+        <!-- Sea background -->
+        <ellipse cx="270" cy="300" rx="230" ry="200" fill="url(#seaGrad)" opacity="0.5"/>
+
+        <!-- Route dashed line -->
+        <path d="M 160 140 Q 220 200 270 260 Q 310 310 340 390" stroke="#0066CC" stroke-width="2.5" fill="none" stroke-dasharray="8 6" opacity="0.5"/>
+
+        <!-- Island: 鹿児島 (top) -->
+        <g transform="translate(100 80)">
+          <ellipse cx="60" cy="38" rx="58" ry="36" fill="url(#islandGrad)" opacity="0.85"/>
+          <ellipse cx="60" cy="32" rx="42" ry="24" fill="#5BBF8E" opacity="0.5"/>
+          <!-- Pin -->
+          <circle cx="60" cy="0" r="8" fill="#0066CC"/>
+          <line x1="60" y1="8" x2="60" y2="20" stroke="#0066CC" stroke-width="2"/>
+          <!-- Label -->
+          <rect x="20" y="52" width="80" height="24" rx="12" fill="white" opacity="0.9"/>
+          <text x="60" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#003366" font-family="'Noto Sans JP', sans-serif">鹿 児 島</text>
+        </g>
+
+        <!-- Island: 種子島 (middle) -->
+        <g transform="translate(290 200)">
+          <ellipse cx="45" cy="35" rx="40" ry="32" fill="url(#islandGrad)" opacity="0.85"/>
+          <ellipse cx="40" cy="28" rx="28" ry="18" fill="#5BBF8E" opacity="0.5"/>
+          <circle cx="45" cy="-4" r="8" fill="#0066CC"/>
+          <line x1="45" y1="4" x2="45" y2="16" stroke="#0066CC" stroke-width="2"/>
+          <rect x="8" y="50" width="74" height="24" rx="12" fill="white" opacity="0.9"/>
+          <text x="45" y="66" text-anchor="middle" font-size="12" font-weight="700" fill="#003366" font-family="'Noto Sans JP', sans-serif">種 子 島</text>
+        </g>
+
+        <!-- Island: 屋久島 (bottom) -->
+        <g transform="translate(220 360)">
+          <ellipse cx="55" cy="40" rx="52" ry="38" fill="url(#islandGrad)" opacity="0.85"/>
+          <ellipse cx="50" cy="32" rx="38" ry="26" fill="#5BBF8E" opacity="0.5"/>
+          <circle cx="55" cy="-4" r="8" fill="#0066CC"/>
+          <line x1="55" y1="4" x2="55" y2="16" stroke="#0066CC" stroke-width="2"/>
+          <rect x="12" y="52" width="78" height="24" rx="12" fill="white" opacity="0.9"/>
+          <text x="55" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#003366" font-family="'Noto Sans JP', sans-serif">屋 久 島</text>
+        </g>
+
+        <!-- Ferry vessel (animated) -->
+        <g class="ferry-float" transform="translate(180 230)" filter="url(#shadow)">
+          <!-- Hull -->
+          <path d="M10 28 L6 18 L80 18 L76 28 Z" fill="url(#ferryGrad)" stroke="#C5DCF5" stroke-width="1.5"/>
+          <!-- Cabin -->
+          <rect x="22" y="8" width="40" height="12" rx="3" fill="white" stroke="#C5DCF5" stroke-width="1.5"/>
+          <!-- Windows -->
+          <rect x="27" y="11" width="7" height="5" rx="1" fill="#C5E4FF"/>
+          <rect x="37" y="11" width="7" height="5" rx="1" fill="#C5E4FF"/>
+          <rect x="47" y="11" width="7" height="5" rx="1" fill="#C5E4FF"/>
+          <!-- Smokestack -->
+          <rect x="54" y="2" width="6" height="8" rx="2" fill="#0066CC"/>
+          <!-- Wave under hull -->
+          <path d="M0 30 Q22 27 43 30 Q65 33 86 30" stroke="#A8D4F0" stroke-width="1.5" fill="none"/>
+        </g>
+
+        <!-- Wave decorations -->
+        <path d="M 60 440 Q 90 430 120 440 Q 150 450 180 440 Q 210 430 240 440 Q 270 450 300 440 Q 330 430 360 440 Q 390 450 420 440" stroke="#A8D4F0" stroke-width="2" fill="none" opacity="0.6"/>
+        <path d="M 80 460 Q 110 450 140 460 Q 170 470 200 460 Q 230 450 260 460 Q 290 470 320 460 Q 350 450 380 460" stroke="#C5E4F8" stroke-width="1.5" fill="none" opacity="0.5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Hero Stats
+============================================================ -->
+<div class="hero-stats-bar" id="status">
+  <div class="hero-stats-grid">
+    <div class="stat-item fade-up">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-map-pin"/></svg>
+      </div>
+      <div class="stat-item-body">
+        <strong>3エリア</strong>
+        <span>鹿児島・種子島・屋久島</span>
+      </div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-users"/></svg>
+      </div>
+      <div class="stat-item-body">
+        <strong>3用途対応</strong>
+        <span>旅客・車両・貨物</span>
+      </div>
+    </div>
+    <div class="stat-item fade-up">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ship"/></svg>
+      </div>
+      <div class="stat-item-body">
+        <strong>定期航路</strong>
+        <span>安心の毎日運航</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     Quick Menu
+============================================================ -->
+<section class="quick-menu section-sm" id="timetable">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Quick Access</span>
+      <h2 class="section-title">ご利用案内</h2>
+    </div>
+    <div class="quick-grid">
+      <a class="quick-card fade-up" href="#status">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ship"/></svg>
+        </div>
+        <div class="quick-card-body">
+          <h3>本日の運航状況</h3>
+          <p>最新の運航情報を確認</p>
+        </div>
+        <span class="quick-arrow" aria-hidden="true">›</span>
+      </a>
+
+      <a class="quick-card fade-up" href="#timetable">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-calendar"/></svg>
+        </div>
+        <div class="quick-card-body">
+          <h3>時刻表</h3>
+          <p>出発・到着時刻を確認</p>
+        </div>
+        <span class="quick-arrow" aria-hidden="true">›</span>
+      </a>
+
+      <a class="quick-card fade-up" href="#fare">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-yen"/></svg>
+        </div>
+        <div class="quick-card-body">
+          <h3>運賃</h3>
+          <p>料金・割引情報を確認</p>
+        </div>
+        <span class="quick-arrow" aria-hidden="true">›</span>
+      </a>
+
+      <a class="quick-card fade-up" href="#boarding">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-map-pin"/></svg>
+        </div>
+        <div class="quick-card-body">
+          <h3>乗り場案内</h3>
+          <p>港・アクセス情報を確認</p>
+        </div>
+        <span class="quick-arrow" aria-hidden="true">›</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Pain Points
+============================================================ -->
+<section class="pain-points section" id="pain">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Your Concerns</span>
+      <h2 class="section-title">フェリー利用で、こんな不安はありませんか？</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card fade-up">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cloud-rain"/></svg>
+        </div>
+        <h3>今日運航しているのか<br>分からない</h3>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"/></svg>
+        </div>
+        <h3>時刻や料金を<br>すぐ知りたい</h3>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-car"/></svg>
+        </div>
+        <h3>車や貨物の流れが<br>分からない</h3>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-map-pin"/></svg>
+        </div>
+        <h3>乗り場や問い合わせ先が<br>見つけにくい</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Services
+============================================================ -->
+<section class="services section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Our Services</span>
+      <h2 class="section-title">目的に合わせて使えるフェリーサービス</h2>
+    </div>
+    <div class="service-grid">
+
+      <!-- 旅客輸送 -->
+      <article class="service-card fade-up">
+        <div class="service-image service-image-passenger">
+          <span class="service-image-label service-label service-label-blue">旅客輸送</span>
+          <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" width="120" height="80">
+            <!-- People silhouettes -->
+            <circle cx="45" cy="20" r="8" fill="#0066CC" opacity="0.4"/>
+            <path d="M32 50 Q45 38 58 50" fill="#0066CC" opacity="0.3"/>
+            <circle cx="75" cy="22" r="8" fill="#0066CC" opacity="0.3"/>
+            <path d="M62 50 Q75 40 88 50" fill="#0066CC" opacity="0.2"/>
+            <!-- Luggage -->
+            <rect x="35" y="52" width="12" height="10" rx="2" fill="#0066CC" opacity="0.3"/>
+            <rect x="65" y="54" width="10" height="8" rx="2" fill="#0066CC" opacity="0.2"/>
+          </svg>
+        </div>
+        <div class="service-body">
+          <p>快適な船旅で、観光・帰省・ビジネスなどさまざまな移動をサポートします。</p>
+          <a class="btn-mini" href="#services">
+            詳しく見る
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 車両輸送 -->
+      <article class="service-card fade-up" id="vehicle">
+        <div class="service-image service-image-vehicle">
+          <span class="service-image-label service-label service-label-green">車両輸送</span>
+          <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" width="120" height="80">
+            <path d="M20 52 L26 36 L94 36 L100 52 Z" fill="#21A67A" opacity="0.35"/>
+            <rect x="36" y="28" width="48" height="10" rx="3" fill="#21A67A" opacity="0.25"/>
+            <circle cx="35" cy="54" r="8" fill="#21A67A" opacity="0.4"/>
+            <circle cx="85" cy="54" r="8" fill="#21A67A" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="service-body">
+          <p>マイカー・バイク・キャンピングカーなど車両の輸送も安心してご利用できます。</p>
+          <a class="btn-mini" href="#vehicle" style="color: var(--color-green); border-color: var(--color-green);">
+            運賃を見る
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 貨物輸送 -->
+      <article class="service-card fade-up">
+        <div class="service-image service-image-cargo">
+          <span class="service-image-label service-label service-label-orange">貨物輸送</span>
+          <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" width="120" height="80">
+            <rect x="20" y="32" width="24" height="24" rx="3" fill="#F47A2A" opacity="0.4"/>
+            <rect x="48" y="38" width="20" height="18" rx="3" fill="#F47A2A" opacity="0.3"/>
+            <rect x="72" y="30" width="28" height="26" rx="3" fill="#F47A2A" opacity="0.35"/>
+            <line x1="32" y1="32" x2="32" y2="18" stroke="#F47A2A" stroke-width="2" opacity="0.3"/>
+            <path d="M28 18 L36 18 L32 12 Z" fill="#F47A2A" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="service-body">
+          <p>企業・個人の荷物輸送に対応。迅速・確実に大切な荷物をお届けします。</p>
+          <a class="btn-mini" href="#contact" style="color: var(--color-orange); border-color: var(--color-orange);">
+            相談する
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Flow
+============================================================ -->
+<section class="flow section" id="flow">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">How to Use</span>
+      <h2 class="section-title">ご利用までの流れ</h2>
+    </div>
+    <div class="flow-grid">
+      <div class="flow-step fade-up">
+        <div class="flow-step-number">1</div>
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ship"/></svg>
+        </div>
+        <h3>運航状況を確認</h3>
+        <p>本日の運航状況をチェック</p>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-step-number">2</div>
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-calendar"/></svg>
+        </div>
+        <h3>時刻表・運賃を確認</h3>
+        <p>時刻・料金・割引を確認</p>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-step-number">3</div>
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-map-pin"/></svg>
+        </div>
+        <h3>乗り場・利用方法を確認</h3>
+        <p>港のアクセス・乗船方法を確認</p>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-step-number">4</div>
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-headset"/></svg>
+        </div>
+        <h3>必要に応じて問い合わせ</h3>
+        <p>不明点は電話・フォームで相談</p>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-step-number">5</div>
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ship"/></svg>
+        </div>
+        <h3>当日受付・乗船</h3>
+        <p>余裕を持って港へ。受付後に乗船</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Reasons
+============================================================ -->
+<section class="reasons section" id="reasons">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2 class="section-title">選ばれる理由</h2>
+    </div>
+    <div class="reason-grid">
+      <article class="reason-card fade-up">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-anchor"/></svg>
+        </div>
+        <h3>地域密着の定期航路</h3>
+        <p>鹿児島・種子島・屋久島を結ぶ安心の定期航路。地域の暮らしと産業を支えます。</p>
+      </article>
+      <article class="reason-card fade-up">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-users"/></svg>
+        </div>
+        <h3>旅客・車両・貨物に対応</h3>
+        <p>多様なニーズに対応する総合フェリーサービス。ひとつの窓口で何でも相談できます。</p>
+      </article>
+      <article class="reason-card fade-up">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check-circle"/></svg>
+        </div>
+        <h3>初めてでも分かりやすい<br>情報設計</h3>
+        <p>必要な情報にすぐたどり着けるシンプルな設計。初めての方でも迷いません。</p>
+      </article>
+      <article class="reason-card fade-up">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-headset"/></svg>
+        </div>
+        <h3>問い合わせしやすい導線</h3>
+        <p>電話・フォームで気軽に相談。安心のサポート体制で初めての方も安心です。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Use Cases
+============================================================ -->
+<section class="use-cases section" id="use-cases">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Use Cases</span>
+      <h2 class="section-title">さまざまな移動・輸送シーンに対応</h2>
+    </div>
+    <div class="case-grid">
+
+      <article class="case-card fade-up">
+        <div class="case-image case-image-tourism">
+          <span class="case-label-strip case-label-strip-blue">観光での利用</span>
+          <svg viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg" style="position:absolute;bottom:0;right:0;width:120px;opacity:0.3;" aria-hidden="true">
+            <circle cx="90" cy="50" r="40" fill="#0066CC"/>
+            <path d="M50 70 Q70 40 90 70 Q110 40 130 70" stroke="white" stroke-width="3" fill="none"/>
+          </svg>
+        </div>
+        <div class="case-body">
+          <h3>種子島・屋久島の観光やレジャーに快適な旅を。</h3>
+          <p>世界自然遺産の屋久島、宇宙センターで有名な種子島へのアクセスに。</p>
+          <div class="case-tags">
+            <span class="tag tag-blue">観光</span>
+            <span class="tag tag-blue">レジャー</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card fade-up">
+        <div class="case-image case-image-homecoming">
+          <span class="case-label-strip case-label-strip-green">帰省・生活移動</span>
+        </div>
+        <div class="case-body">
+          <h3>帰省や島での暮らしを支える身近な移動手段。</h3>
+          <p>定期的な往来、島の生活に欠かせない移動手段として毎日運航しています。</p>
+          <div class="case-tags">
+            <span class="tag tag-green">帰省</span>
+            <span class="tag tag-green">生活</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card fade-up">
+        <div class="case-image case-image-vehicle">
+          <span class="case-label-strip case-label-strip-orange">車両輸送</span>
+        </div>
+        <div class="case-body">
+          <h3>マイカーやバイクの移動も安心。ドライブや移動にも。</h3>
+          <p>マイカー・バイク・キャンピングカーなど各種車両に対応。事前予約推奨。</p>
+          <div class="case-tags">
+            <span class="tag tag-orange">マイカー</span>
+            <span class="tag tag-orange">バイク</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card fade-up">
+        <div class="case-image case-image-cargo">
+          <span class="case-label-strip case-label-strip-purple">貨物輸送</span>
+        </div>
+        <div class="case-body">
+          <h3>企業・個人の荷物を迅速・確実に目的地へお届け。</h3>
+          <p>ビジネス利用から個人の荷物まで、様々な規模の輸送に対応しています。</p>
+          <div class="case-tags">
+            <span class="tag tag-purple">ビジネス</span>
+            <span class="tag tag-purple">個人</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Consult CTA
+============================================================ -->
+<section class="consult-cta section-sm" id="contact">
+  <div class="container">
+    <div class="consult-box fade-up">
+      <div class="consult-copy">
+        <div class="icon-circle" style="width:72px;height:72px;">
+          <svg viewBox="0 0 24 24" aria-hidden="true" style="width:36px;height:36px;"><use href="#i-headset"/></svg>
+        </div>
+        <div class="consult-text">
+          <h2>乗船前の不安は、事前にご相談ください</h2>
+          <p>運航・料金・乗り場・輸送など、どんなことでもお気軽にご相談ください。</p>
+        </div>
+      </div>
+      <div class="consult-actions">
+        <a class="btn btn-primary" href="tel:0991234567">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+          電話で問い合わせる
+        </a>
+        <a class="btn btn-secondary" href="#contact">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>
+          フォームで相談する
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     Final CTA
+============================================================ -->
+<section class="final-cta" id="final-cta">
+  <div class="final-cta-bg" aria-hidden="true">
+    <!-- Background orbs -->
+    <div style="position:absolute;top:-60px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,rgba(255,255,255,0.12),transparent 65%);border-radius:50%;pointer-events:none;"></div>
+    <div style="position:absolute;bottom:40px;left:-40px;width:240px;height:240px;background:radial-gradient(circle,rgba(255,255,255,0.08),transparent 65%);border-radius:50%;pointer-events:none;"></div>
+    <!-- Ferry decoration -->
+    <svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg" style="position:absolute;right:80px;top:50%;transform:translateY(-50%);width:200px;opacity:0.12;" aria-hidden="true">
+      <path d="M10 80 L18 52 L200 52 L210 80 Z" fill="white"/>
+      <rect x="60" y="28" width="90" height="26" rx="5" fill="white"/>
+      <rect x="130" y="10" width="14" height="20" rx="3" fill="white"/>
+      <circle cx="40" cy="82" r="12" fill="white"/>
+      <circle cx="170" cy="82" r="12" fill="white"/>
+    </svg>
+  </div>
+
+  <div class="final-cta-inner fade-up">
+    <div class="final-cta-copy">
+      <h2>鹿児島・種子島・屋久島への<br>移動・輸送を、もっと分かりやすく。</h2>
+      <p>運航状況・時刻表・運賃・乗り場案内まで、必要な情報をすぐ確認できます。</p>
+    </div>
+    <div class="final-cta-actions">
+      <a class="btn btn-primary" href="#status">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ship"/></svg>
+        本日の運航状況を見る
+      </a>
+      <a class="btn btn-white" href="#contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>
+        お問い合わせする
+      </a>
+    </div>
+  </div>
+
+  <!-- Wave at bottom -->
+  <svg class="final-cta-wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="none">
+    <path d="M0 30 Q180 0 360 30 Q540 60 720 30 Q900 0 1080 30 Q1260 60 1440 30 L1440 60 L0 60 Z" fill="white"/>
+  </svg>
+</section>
+
+</main>
+
+<!-- ============================================================
+     Footer
+============================================================ -->
+<footer class="site-footer" id="fare">
+  <div class="footer-upper">
+    <div class="footer-inner">
+
+      <!-- Company info -->
+      <div class="footer-company">
+        <div class="footer-logo">
+          <div class="footer-logo-mark">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-anchor"/></svg>
+          </div>
+          <div class="footer-logo-text">
+            <span class="name-jp">かごしまアイランドフェリー</span>
+          </div>
+        </div>
+        <div class="footer-company-info">
+          <p>〒892-0834 鹿児島県鹿児島市南港町1-1</p>
+          <a class="tel" href="tel:0991234567">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+            099-123-4567
+          </a>
+          <p class="hours">受付時間 8:30〜17:30（年中無休）<br>窓口時間 6:30〜18:30</p>
+        </div>
+      </div>
+
+      <!-- Nav columns -->
+      <nav class="footer-nav-columns" aria-label="フッターナビゲーション">
+        <div class="footer-nav-col">
+          <h4>ご利用案内</h4>
+          <ul>
+            <li><a href="#status">運航状況</a></li>
+            <li><a href="#timetable">時刻表</a></li>
+            <li><a href="#fare">運賃</a></li>
+            <li><a href="#boarding">乗り場案内</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>サービス</h4>
+          <ul>
+            <li><a href="#vehicle">車両・貨物</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+            <li><a href="#">採用情報</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>会社情報</h4>
+          <ul>
+            <li><a href="#">会社案内</a></li>
+            <li><a href="#">ニュース</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+            <li><a href="#">サイトマップ</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>お問い合わせ</h4>
+          <ul>
+            <li><a href="tel:0991234567">電話で問い合わせ</a></li>
+            <li><a href="#contact">フォームで相談</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- QR -->
+      <div class="footer-qr" id="boarding">
+        <p>運航情報をスマホでチェック<br>最新情報をいつでも確認できます。</p>
+        <div class="footer-qr-placeholder" role="img" aria-label="QRコード（準備中）">QR</div>
+        <p class="footer-qr-sub">スマホカメラで<br>読み取り</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <small>© KAGOSHIMA ISLAND FERRY Co., Ltd. All Rights Reserved.</small>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     Mobile Fixed Nav
+============================================================ -->
+<nav class="mobile-fixed-nav" aria-label="クイックアクセス" id="faq">
+  <a href="#status">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ship"/></svg>
+    運航
+  </a>
+  <a href="#timetable">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-calendar"/></svg>
+    時刻
+  </a>
+  <a class="accent" href="tel:0991234567">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+    電話
+  </a>
+  <a href="#contact">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>
+    相談
+  </a>
+</nav>
+
+<!-- ============================================================
+     Back to Top
+============================================================ -->
+<button class="back-to-top" aria-label="トップへ戻る">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron-up"/></svg>
+</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>

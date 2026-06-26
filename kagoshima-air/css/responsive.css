@@ -1,0 +1,305 @@
+/* ============================================================
+   responsive.css — Breakpoints
+   鹿児島国際航空株式会社
+============================================================ */
+
+/* ============================================================
+   TABLET  ≤ 1024px
+============================================================ */
+@media (max-width: 1024px) {
+
+  :root {
+    --container-pad: 24px;
+  }
+
+  /* Header */
+  .global-nav,
+  .header-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-drawer {
+    display: block;
+  }
+
+  /* Hero */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 56px var(--container-pad) 40px;
+  }
+
+  .hero-visual {
+    order: -1;
+    min-height: 380px;
+  }
+
+  .hero-visual img {
+    height: 380px;
+    border-radius: 0 0 0 48px;
+    clip-path: none;
+  }
+
+  /* Services */
+  .services-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Flow */
+  .flow-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .flow-steps::before {
+    display: none;
+  }
+
+  /* Reasons */
+  .reasons-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  /* Works */
+  .works-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .case-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .works-stats {
+    padding-top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .works-stats .stat-card {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  /* Final CTA */
+  .final-cta-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .final-cta-actions {
+    grid-template-columns: 1fr 1fr;
+    max-width: 520px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .footer-nav-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-buttons {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .footer-buttons .btn {
+    flex: 1;
+    min-width: 160px;
+  }
+
+  /* Problem grid */
+  .problem-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   MOBILE  ≤ 768px
+============================================================ */
+@media (max-width: 768px) {
+
+  :root {
+    --section-pad:    56px;
+    --section-pad-sm: 40px;
+    --section-pad-lg: 64px;
+    --container-pad:  20px;
+  }
+
+  /* Hero */
+  .hero-inner {
+    padding: 40px var(--container-pad) 36px;
+    gap: 28px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-lead {
+    font-size: var(--font-base);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-labels {
+    flex-wrap: wrap;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .hero-visual img {
+    height: 260px;
+    border-radius: 0;
+  }
+
+  .checklist-card,
+  .map-card {
+    display: none;
+  }
+
+  /* Problems */
+  .problem-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Services */
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Flow */
+  .flow-steps {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .flow-step {
+    display: grid;
+    grid-template-columns: 32px 48px 1fr;
+    text-align: left;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 16px;
+  }
+
+  .flow-step .step-number {
+    margin: 0;
+  }
+
+  .flow-step .icon-circle {
+    margin: 0;
+  }
+
+  .flow-step h3 {
+    margin-bottom: 4px;
+    font-size: var(--font-base);
+  }
+
+  /* Reasons */
+  .reason-list li {
+    grid-template-columns: 40px 36px 1fr;
+    gap: 12px;
+  }
+
+  .reason-num {
+    font-size: var(--font-lg);
+  }
+
+  /* Works */
+  .case-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Final CTA */
+  .final-cta-actions {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .final-cta-actions .btn-primary {
+    grid-column: auto;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-nav-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .footer-buttons {
+    flex-direction: column;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  /* Body padding for fixed CTA */
+  body {
+    padding-bottom: 64px;
+  }
+}
+
+/* ============================================================
+   SMALL  ≤ 480px
+============================================================ */
+@media (max-width: 480px) {
+
+  :root {
+    --container-pad: 16px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-nav-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .works-stats {
+    flex-direction: column;
+  }
+}

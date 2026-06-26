@@ -1,0 +1,199 @@
+/* ============================
+   ~1200px
+   ============================ */
+@media (max-width: 1200px) {
+  :root { --container-pad: 32px; }
+  .global-nav { gap: 22px; }
+  .header-phone .hours { display: none; }
+  .hero { min-height: 700px; padding: 80px 0 120px; }
+  .hero-visual { height: 480px; }
+  .visual-bus { width: 210px; height: 160px; }
+  .visual-hotel { width: 240px; height: 175px; }
+  .visual-ferry { width: 200px; height: 150px; }
+  .visual-onsen { width: 210px; height: 160px; }
+  .visual-yakushima { width: 190px; height: 140px; }
+}
+
+/* ============================
+   ~960px (tablet)
+   ============================ */
+@media (max-width: 960px) {
+  :root {
+    --section-pad: 72px;
+    --section-pad-lg: 96px;
+  }
+  .header-phone { display: none; }
+  .global-nav { gap: 16px; }
+  .global-nav a { font-size: 13px; }
+
+  .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+  .hero-visual { height: 380px; max-width: 540px; margin: 0 auto; }
+  .visual-bus { left: 4%; width: 200px; height: 150px; }
+  .visual-hotel { right: 4%; width: 220px; height: 160px; }
+  .visual-ferry { left: 18%; top: 180px; width: 190px; height: 140px; }
+  .visual-onsen { right: 12%; top: 200px; width: 200px; height: 150px; }
+  .visual-yakushima { right: 32%; bottom: 0; width: 180px; height: 130px; }
+
+  .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 22px 12px; }
+  .stat-item + .stat-item::before { display: none; }
+
+  .problem-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .destination-grid { grid-template-columns: repeat(3, 1fr); }
+  .service-grid { grid-template-columns: repeat(3, 1fr); }
+  .reason-grid { grid-template-columns: repeat(2, 1fr); }
+  .case-grid { grid-template-columns: repeat(2, 1fr); }
+  .cases-prev, .cases-next { display: none; }
+
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-contact { grid-column: 1 / -1; }
+}
+
+/* ============================
+   ~768px (mobile)
+   ============================ */
+@media (max-width: 768px) {
+  :root {
+    --container-pad: 20px;
+    --section-pad: 64px;
+    --section-pad-sm: 48px;
+    --section-pad-lg: 80px;
+  }
+
+  /* Header */
+  .global-nav { display: none; }
+  .btn-header-cta {
+    display: none;
+  }
+  .hamburger { display: inline-flex; }
+  .header-actions { gap: 8px; }
+  .logo-jp { font-size: 14px; }
+  .logo-en { font-size: 9px; }
+
+  /* Hero */
+  .hero { padding: 56px 0 80px; min-height: auto; }
+  .hero-copy h1 { font-size: 34px; line-height: 1.3; }
+  .hero-lead { font-size: 14px; line-height: 1.85; margin-bottom: 28px; }
+  .hero-actions { width: 100%; }
+  .btn-primary { width: 100%; height: 60px; font-size: 15px; }
+  .hero-sub-actions { width: 100%; }
+  .btn-secondary { flex: 1; justify-content: center; }
+  .hero-visual { height: 340px; max-width: 100%; }
+  .visual-bus     { width: 150px; height: 120px; left: 0; top: 0; }
+  .visual-hotel   { width: 170px; height: 130px; right: 2%; top: 10px; }
+  .visual-ferry   { width: 140px; height: 110px; left: 10%; top: 140px; }
+  .visual-onsen   { width: 160px; height: 120px; right: 6%; top: 160px; }
+  .visual-yakushima { width: 130px; height: 100px; right: 30%; bottom: 0; }
+  .visual-icon { width: 32px; height: 32px; }
+  .visual-label { font-size: 11px; }
+
+  /* Stats */
+  .stats-bar-wrap { margin-top: -40px; }
+  .stat-num { font-size: 28px; }
+
+  /* Section header */
+  .section-title { font-size: 26px; line-height: 1.4; }
+  .section-header { margin-bottom: 32px; }
+  .section-header-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+  .section-header-flex .section-title { text-align: center; }
+
+  /* Problems */
+  .problem-grid { grid-template-columns: 1fr; gap: 12px; }
+  .problem-card { flex-direction: row; text-align: left; padding: 18px 18px; gap: 16px; }
+  .problem-icon { width: 52px; height: 52px; flex-shrink: 0; }
+  .problem-icon svg { width: 26px; height: 26px; }
+  .problem-card p { font-size: 14px; }
+  .problem-card p br { display: none; }
+  .problem-resolve p { font-size: 14px; }
+
+  /* Destinations: horizontal scroll */
+  .destination-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    padding-bottom: 12px;
+    margin: 0 calc(var(--container-pad) * -1);
+    padding-left: var(--container-pad);
+    padding-right: var(--container-pad);
+    scrollbar-width: none;
+  }
+  .destination-grid::-webkit-scrollbar { display: none; }
+  .destination-card {
+    min-width: 260px;
+    width: 260px;
+    scroll-snap-align: start;
+    min-height: 220px;
+  }
+
+  /* Services: 2 columns */
+  .service-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .service-card { padding: 24px 14px 22px; }
+  .service-icon { width: 56px; height: 56px; }
+  .service-icon svg { width: 26px; height: 26px; }
+  .service-name { font-size: 16px; }
+  .service-desc { font-size: 12px; }
+
+  /* Reasons: 1 column */
+  .reason-grid { grid-template-columns: 1fr; gap: 12px; }
+  .reason-card { padding: 22px 18px; }
+
+  /* Cases: 1 card slider */
+  .case-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    margin: 0 calc(var(--container-pad) * -1);
+    padding: 0 var(--container-pad) 8px;
+    scrollbar-width: none;
+  }
+  .case-grid::-webkit-scrollbar { display: none; }
+  .case-card { min-width: 280px; width: 280px; scroll-snap-align: start; }
+  .case-img { height: 140px; }
+
+  /* Mid CTA */
+  .mid-cta-box {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px 22px;
+    text-align: left;
+    gap: 20px;
+  }
+  .mid-cta-title { font-size: 18px; }
+  .mid-cta-box .btn-primary { width: 100%; }
+
+  /* Final CTA */
+  .final-cta { padding: 64px 0 72px; }
+  .final-cta-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+  .final-cta-title { font-size: 28px; }
+  .final-cta-actions { grid-template-columns: 1fr; }
+  .contact-card { justify-content: center; }
+  .btn-form { height: 64px; }
+
+  /* Footer */
+  .footer { padding: 40px 0 20px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  .footer-brand,
+  .footer-contact { grid-column: 1; }
+  .footer-tagline { margin-top: 12px; }
+}
+
+/* ============================
+   ~480px
+   ============================ */
+@media (max-width: 480px) {
+  .hero-copy h1 { font-size: 30px; }
+  .section-title { font-size: 23px; }
+  .stats-bar { padding: 18px 8px; }
+  .stat-num { font-size: 26px; }
+  .stat-unit, .stat-label { font-size: 11px; }
+  .destination-card { min-width: 240px; width: 240px; }
+  .case-card { min-width: 260px; width: 260px; }
+}

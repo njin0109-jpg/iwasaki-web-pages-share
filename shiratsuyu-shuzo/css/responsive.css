@@ -1,0 +1,150 @@
+/* ============================================================
+   responsive.css — Breakpoints
+   本格芋焼酎 白露
+============================================================ */
+
+/* ============================================================
+   TABLET  ≤ 1024px
+============================================================ */
+@media (max-width: 1024px) {
+
+  :root {
+    --container-pad: 28px;
+    --section-pad: 64px;
+    --section-pad-lg: 80px;
+  }
+
+  /* Header → hamburger */
+  .global-nav,
+  .header-cta { display: none; }
+  .hamburger { display: flex; }
+  .mobile-drawer { display: block; }
+
+  /* Hero → single column. Keep DOM order: キャッチ→補足→CTA→ビジュアル */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 48px var(--container-pad) 56px;
+    gap: 36px;
+  }
+  .hero-slot { max-width: 380px; }
+
+  /* Grids reduce */
+  .problem-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .service-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .flow-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 18px; }
+  .flow-grid::before { display: none; }
+  .reason-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .case-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+
+  /* Mid CTA stacks */
+  .cta-banner-inner { flex-direction: column; align-items: flex-start; gap: 28px; }
+  .cta-banner-actions { width: 100%; }
+
+  /* Final CTA stacks */
+  .final-cta-inner { grid-template-columns: 1fr; gap: 32px; }
+  .final-cta-actions { max-width: 480px; }
+
+  /* Footer */
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .footer-group { grid-column: 1 / -1; }
+}
+
+/* ============================================================
+   MOBILE  ≤ 768px
+============================================================ */
+@media (max-width: 768px) {
+
+  :root {
+    --section-pad: 52px;
+    --section-pad-sm: 40px;
+    --section-pad-lg: 60px;
+    --container-pad: 20px;
+  }
+
+  body { padding-bottom: 64px; }   /* room for fixed bottom nav */
+
+  /* Hero */
+  .hero-inner { padding: 36px var(--container-pad) 44px; gap: 28px; }
+  .hero h1 { font-size: 28px; line-height: 1.5; }
+  .hero-lead { font-size: var(--font-base); }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; }
+  .hero-slot { max-width: 320px; }
+  .hero-badges { gap: 8px; }
+  .hero-badges .badge { font-size: 12px; padding: 7px 11px; }
+
+  /* Grids → 1 column (cards stack naturally) */
+  .problem-grid { grid-template-columns: 1fr; gap: 12px; }
+  .service-grid { grid-template-columns: 1fr; gap: 16px; }
+  .reason-grid { grid-template-columns: 1fr; gap: 12px; }
+  .case-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  /* Flow → stacked cards */
+  .flow-grid { grid-template-columns: 1fr; gap: 14px; }
+  .flow-step {
+    padding: 24px 18px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Mid CTA */
+  .cta-banner-actions { flex-direction: column; }
+  .cta-banner-actions .btn { width: 100%; }
+
+  /* Final CTA */
+  .final-cta h2 { font-size: 24px; }
+  .final-cta-actions .btn { width: 100%; }
+
+  /* Footer */
+  .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  .footer-nav-columns { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 10px; }
+
+  /* Mobile fixed bottom nav */
+  .mobile-fixed-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 200;
+    background: var(--color-white);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 -4px 16px rgba(43, 33, 20, 0.12);
+  }
+  .mobile-fixed-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 9px 4px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-ink);
+    border-right: 1px solid var(--color-border);
+  }
+  .mobile-fixed-nav a:last-child { border-right: none; }
+  .mobile-fixed-nav a.accent { background: var(--color-red); color: var(--color-white); }
+  .mobile-fixed-nav svg {
+    width: 20px; height: 20px;
+    stroke: currentColor; fill: none;
+    stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  /* keep back-to-top above bottom nav */
+  .back-to-top { bottom: 76px; }
+}
+
+/* ============================================================
+   SMALL  ≤ 480px
+============================================================ */
+@media (max-width: 480px) {
+  :root { --container-pad: 16px; }
+  .hero h1 { font-size: 25px; }
+  .section-title { font-size: 22px; }
+  .case-grid { grid-template-columns: 1fr; }
+  .footer-nav-columns { grid-template-columns: 1fr; }
+}

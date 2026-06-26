@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="description" content="鹿児島の旅を、宿泊・交通までまとめて。指宿・屋久島・種子島・霧島へ。ホテル、バス、フェリー、観光をつなぐいわさきグループが、南九州の旅をサポートします。" />
+<title>いわさきグループ｜鹿児島の旅を、宿泊・交通までまとめて。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ============ SVG SPRITE ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+    </symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.34 1.9.64 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.3 1.85.52 2.81.64A2 2 0 0 1 22 16.92z"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/>
+    </symbol>
+    <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 17V8h11a5 5 0 0 1 5 5v4"/><path d="M22 17H2"/><path d="M2 20v-3"/><path d="M22 20v-3"/><circle cx="7" cy="12" r="2"/>
+    </symbol>
+    <symbol id="i-bus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 16V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/><path d="M4 16h16v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H8v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3z"/><circle cx="8" cy="16" r="1.4"/><circle cx="16" cy="16" r="1.4"/><line x1="4" y1="11" x2="20" y2="11"/>
+    </symbol>
+    <symbol id="i-ferry" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 17c1.5 1 3 1.5 4.5 1.5S10.5 18 12 17s3-1.5 4.5-1.5 3 0.5 4.5 1.5"/><path d="M3 21c1.5 1 3 1.5 4.5 1.5S10.5 22 12 21s3-1.5 4.5-1.5 3 0.5 4.5 1.5"/><path d="M5 14l1-6h12l1 6"/><path d="M12 3v5"/><path d="M9 5h6"/>
+    </symbol>
+    <symbol id="i-onsen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 17c1.5 1 3 1.5 4.5 1.5S10.5 17.5 12 17s3-0.5 4.5 0 3 1 4.5 1.5"/><path d="M3 21c1.5 1 3 1.5 4.5 1.5S10.5 21.5 12 21s3-0.5 4.5 0 3 1 4.5 1.5"/><path d="M7 13V8a2 2 0 0 1 4 0"/><path d="M13 13V6a2 2 0 0 1 4 0"/>
+    </symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>
+    </symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>
+    </symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+    </symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3z"/><path d="M3 19a2 2 0 0 0 2 2h1v-6H3z"/>
+    </symbol>
+    <symbol id="i-question" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+    </symbol>
+    <symbol id="i-network" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><line x1="12" y1="7.5" x2="6.5" y2="17"/><line x1="12" y1="7.5" x2="17.5" y2="17"/><line x1="7.5" y1="19" x2="16.5" y2="19"/>
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+    </symbol>
+    <symbol id="i-island" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 18c2 1.5 4 2 6 2s4-0.5 6-2 4-2 6-2"/><path d="M12 18V8"/><path d="M9 11l3-3 3 3"/><path d="M7 13c1.5-1 3-1.5 5-1.5s3.5 0.5 5 1.5"/>
+    </symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+    </symbol>
+    <symbol id="i-school" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+    </symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+    </symbol>
+    <symbol id="i-family" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="7" cy="6" r="3"/><circle cx="17" cy="6" r="3"/><circle cx="12" cy="9" r="1.5"/><path d="M2 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2"/><path d="M14 21v-2a4 4 0 0 1 4-4h0a4 4 0 0 1 4 4v2"/>
+    </symbol>
+    <!-- Social -->
+    <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22 12a10 10 0 1 0-11.56 9.88V14.9h-2.5V12h2.5V9.83c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.21.2 2.21.2V8.6h-1.25c-1.23 0-1.61.76-1.61 1.54V12h2.74l-.44 2.9h-2.3v6.98A10 10 0 0 0 22 12z"/>
+    </symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    </symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M23 12s0-3.5-.45-5.18a2.95 2.95 0 0 0-2.08-2.09C18.78 4.28 12 4.28 12 4.28s-6.78 0-8.47.45A2.95 2.95 0 0 0 1.45 6.82C1 8.5 1 12 1 12s0 3.5.45 5.18a2.95 2.95 0 0 0 2.08 2.09C5.22 19.72 12 19.72 12 19.72s6.78 0 8.47-.45a2.95 2.95 0 0 0 2.08-2.09C23 15.5 23 12 23 12zM9.75 15.27V8.73L15.5 12z"/>
+    </symbol>
+    <!-- Decorative: wave -->
+    <symbol id="wave-decoration" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,40 C240,80 480,120 720,80 C960,40 1200,0 1440,40 L1440,120 L0,120 Z" fill="currentColor" opacity="0.5"/>
+      <path d="M0,60 C240,100 480,40 720,60 C960,80 1200,120 1440,80 L1440,120 L0,120 Z" fill="currentColor" opacity="0.8"/>
+    </symbol>
+    <!-- Decorative: sakurajima silhouette -->
+    <symbol id="sakurajima" viewBox="0 0 600 200" preserveAspectRatio="none">
+      <path d="M0,200 L0,140 L80,120 L140,100 L200,70 L240,40 L280,55 L320,80 L360,60 L400,30 L440,55 L500,90 L560,110 L600,130 L600,200 Z" fill="currentColor"/>
+      <path d="M260,55 L280,30 L300,50" stroke="currentColor" stroke-width="2" fill="none" opacity="0.6"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="site-header">
+  <div class="container header-inner">
+    <a href="#hero" class="logo" aria-label="いわさきグループ ホーム">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="40" height="40">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0077D1"/>
+              <stop offset="100%" stop-color="#004A98"/>
+            </linearGradient>
+          </defs>
+          <circle cx="20" cy="20" r="18" fill="url(#logoGrad)"/>
+          <path d="M8,28 Q14,18 20,22 T32,18" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <circle cx="28" cy="14" r="2.4" fill="#fff"/>
+        </svg>
+      </span>
+      <span class="logo-text">
+        <span class="logo-jp">いわさきグループ</span>
+        <span class="logo-en">Iwasaki Group</span>
+      </span>
+    </a>
+
+    <nav class="global-nav" id="global-nav" aria-label="グローバルナビゲーション">
+      <a href="#destinations">目的地から探す</a>
+      <a href="#services">サービスから探す</a>
+      <a href="#corporate">団体・法人の方へ</a>
+      <a href="#company">会社情報</a>
+      <a href="#recruit">採用情報</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-phone" href="tel:099-XXX-XXXX">
+        <svg class="ico"><use href="#i-phone"/></svg>
+        <span class="num">099-XXX-XXXX</span>
+        <span class="hours">受付時間 9:00-17:00</span>
+      </a>
+      <a class="btn-header-cta" href="#final-cta">
+        <svg class="ico"><use href="#i-mail"/></svg>
+        旅の相談・お問い合わせ
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-controls="global-nav" aria-expanded="false">
+        <svg class="ico ico-menu"><use href="#i-menu"/></svg>
+        <svg class="ico ico-close"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <img class="hero-photo" src="https://picsum.photos/seed/kagoshima-hero-coast/1800/1100" alt="" loading="eager" decoding="async">
+    <div class="hero-photo-tint"></div>
+    <div class="bg-orb bg-orb-1"></div>
+    <svg class="hero-wave" preserveAspectRatio="none" viewBox="0 0 1440 200" aria-hidden="true">
+      <path d="M0,80 C320,160 720,40 1080,100 C1280,130 1360,110 1440,90 L1440,200 L0,200 Z" fill="rgba(255,255,255,0.55)"/>
+      <path d="M0,120 C320,180 640,80 1000,140 C1240,180 1360,160 1440,150 L1440,200 L0,200 Z" fill="rgba(214,232,250,0.9)"/>
+    </svg>
+  </div>
+
+  <div class="container hero-inner">
+    <div class="hero-copy fade-up">
+      <span class="eyebrow">Iwasaki Group Travel Support</span>
+      <h1>
+        鹿児島の旅を、<br>
+        宿泊・交通まで <span class="text-accent">まとめて。</span>
+      </h1>
+      <p class="hero-lead">
+        指宿・屋久島・種子島・霧島へ。<br>
+        ホテル、バス、フェリー、観光をつなぐ<br>
+        いわさきグループが、南九州の旅をサポートします。
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#destinations">
+          <svg class="ico"><use href="#i-map-pin"/></svg>
+          目的地から旅を探す
+          <svg class="ico arrow"><use href="#i-arrow-right"/></svg>
+        </a>
+        <div class="hero-sub-actions">
+          <a class="btn-secondary" href="#services">
+            <svg class="ico"><use href="#i-bed"/></svg>
+            ホテルを探す
+          </a>
+          <a class="btn-secondary" href="#services">
+            <svg class="ico"><use href="#i-bus"/></svg>
+            交通手段を調べる
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual fade-up" aria-hidden="true">
+      <div class="visual-card visual-bus">
+        <svg class="visual-icon"><use href="#i-bus"/></svg>
+        <span class="visual-label">バス・高速船</span>
+      </div>
+      <div class="visual-card visual-hotel">
+        <svg class="visual-icon"><use href="#i-bed"/></svg>
+        <span class="visual-label">指宿リゾート</span>
+      </div>
+      <div class="visual-card visual-ferry">
+        <svg class="visual-icon"><use href="#i-ferry"/></svg>
+        <span class="visual-label">フェリー・離島</span>
+      </div>
+      <div class="visual-card visual-onsen">
+        <svg class="visual-icon"><use href="#i-onsen"/></svg>
+        <span class="visual-label">温泉・桜島</span>
+      </div>
+      <div class="visual-card visual-yakushima">
+        <svg class="visual-icon"><use href="#i-island"/></svg>
+        <span class="visual-label">屋久島の自然</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS BAR ============ -->
+<section class="stats-bar-section" aria-label="主な実績">
+  <div class="container">
+    <div class="stats-bar fade-up">
+      <div class="stat-item">
+        <svg class="stat-icon"><use href="#i-briefcase"/></svg>
+        <div class="stat-row"><span class="stat-num">30</span><span class="stat-unit">社以上</span></div>
+        <span class="stat-label">グループ会社数</span>
+      </div>
+      <div class="stat-item">
+        <svg class="stat-icon"><use href="#i-bus"/></svg>
+        <div class="stat-row"><span class="stat-num">100</span><span class="stat-unit">以上</span></div>
+        <span class="stat-label">運行路線・航路</span>
+      </div>
+      <div class="stat-item">
+        <svg class="stat-icon"><use href="#i-users"/></svg>
+        <div class="stat-row"><span class="stat-num">約2,000</span><span class="stat-unit">万人</span></div>
+        <span class="stat-label">年間ご利用者数</span>
+      </div>
+      <div class="stat-item">
+        <svg class="stat-icon"><use href="#i-bed"/></svg>
+        <div class="stat-row"><span class="stat-num">7</span><span class="stat-unit">施設</span></div>
+        <span class="stat-label">運営ホテル数</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEMS ============ -->
+<section id="problems" class="section problems">
+  <div class="container">
+    <div class="section-header fade-up">
+      <h2 class="section-title">
+        鹿児島旅行、こんな<span class="text-accent">お悩み</span>はありませんか？
+      </h2>
+    </div>
+
+    <ul class="problem-grid">
+      <li class="problem-card fade-up">
+        <span class="problem-icon"><svg><use href="#i-ferry"/></svg></span>
+        <p>屋久島・種子島への<br>行き方がわからない</p>
+      </li>
+      <li class="problem-card fade-up">
+        <span class="problem-icon"><svg><use href="#i-bed"/></svg></span>
+        <p>ホテルと交通を<br>別々に探すのが面倒</p>
+      </li>
+      <li class="problem-card fade-up">
+        <span class="problem-icon"><svg><use href="#i-question"/></svg></span>
+        <p>どこに泊まると<br>良いか迷ってしまう</p>
+      </li>
+      <li class="problem-card fade-up">
+        <span class="problem-icon"><svg><use href="#i-users"/></svg></span>
+        <p>団体旅行の手配が<br>複雑で大変</p>
+      </li>
+      <li class="problem-card fade-up">
+        <span class="problem-icon"><svg><use href="#i-headset"/></svg></span>
+        <p>地元に詳しい会社に<br>相談したい</p>
+      </li>
+    </ul>
+
+    <div class="problem-resolve fade-up">
+      <svg class="caret-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p>
+        <span class="resolve-brand">いわさきグループ</span>なら、宿泊・交通・観光をつないで、目的に合った旅をご提案します。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESTINATIONS ============ -->
+<section id="destinations" class="section destinations">
+  <div class="container">
+    <div class="section-header section-header-flex fade-up">
+      <h2 class="section-title">
+        行きたい場所から<span class="text-accent">旅を探す</span>
+      </h2>
+      <div class="slider-nav" id="dest-slider-nav">
+        <button class="slider-btn" data-dest-prev aria-label="前へ"><svg><use href="#i-arrow-left"/></svg></button>
+        <button class="slider-btn" data-dest-next aria-label="次へ"><svg><use href="#i-arrow-right"/></svg></button>
+      </div>
+    </div>
+
+    <div class="destination-grid" id="destination-grid">
+      <a class="destination-card dest-ibusuki fade-up" href="#">
+        <img class="dest-photo" src="https://picsum.photos/seed/ibusuki-onsen-beach/800/600" alt="" loading="lazy" decoding="async">
+        <div class="dest-overlay"></div>
+        <div class="dest-pattern" aria-hidden="true"></div>
+        <div class="dest-body">
+          <span class="dest-tag">IBUSUKI</span>
+          <h3 class="dest-name">指宿</h3>
+          <p class="dest-desc">温泉と海、リゾートを<br>満喫する旅へ</p>
+          <span class="card-link">詳しく見る <svg><use href="#i-arrow-right"/></svg></span>
+        </div>
+      </a>
+      <a class="destination-card dest-yakushima fade-up" href="#">
+        <img class="dest-photo" src="https://picsum.photos/seed/yakushima-ancient-forest/800/600" alt="" loading="lazy" decoding="async">
+        <div class="dest-overlay"></div>
+        <div class="dest-pattern" aria-hidden="true"></div>
+        <div class="dest-body">
+          <span class="dest-tag">YAKUSHIMA</span>
+          <h3 class="dest-name">屋久島</h3>
+          <p class="dest-desc">世界自然遺産の森へ<br>自然体験の旅</p>
+          <span class="card-link">詳しく見る <svg><use href="#i-arrow-right"/></svg></span>
+        </div>
+      </a>
+      <a class="destination-card dest-tanegashima fade-up" href="#">
+        <img class="dest-photo" src="https://picsum.photos/seed/tanegashima-sea-rocket/800/600" alt="" loading="lazy" decoding="async">
+        <div class="dest-overlay"></div>
+        <div class="dest-pattern" aria-hidden="true"></div>
+        <div class="dest-body">
+          <span class="dest-tag">TANEGASHIMA</span>
+          <h3 class="dest-name">種子島</h3>
+          <p class="dest-desc">宇宙と自然をつなぐ<br>島への旅</p>
+          <span class="card-link">詳しく見る <svg><use href="#i-arrow-right"/></svg></span>
+        </div>
+      </a>
+      <a class="destination-card dest-kirishima fade-up" href="#">
+        <img class="dest-photo" src="https://picsum.photos/seed/kirishima-mountain-onsen/800/600" alt="" loading="lazy" decoding="async">
+        <div class="dest-overlay"></div>
+        <div class="dest-pattern" aria-hidden="true"></div>
+        <div class="dest-body">
+          <span class="dest-tag">KIRISHIMA</span>
+          <h3 class="dest-name">霧島</h3>
+          <p class="dest-desc">温泉と自然に癒される<br>旅へ</p>
+          <span class="card-link">詳しく見る <svg><use href="#i-arrow-right"/></svg></span>
+        </div>
+      </a>
+      <a class="destination-card dest-kagoshima fade-up" href="#">
+        <img class="dest-photo" src="https://picsum.photos/seed/kagoshima-sakurajima-city/800/600" alt="" loading="lazy" decoding="async">
+        <div class="dest-overlay"></div>
+        <div class="dest-pattern" aria-hidden="true"></div>
+        <div class="dest-body">
+          <span class="dest-tag">KAGOSHIMA CITY</span>
+          <h3 class="dest-name">鹿児島市内</h3>
+          <p class="dest-desc">桜島と街の魅力を<br>楽しむ旅</p>
+          <span class="card-link">詳しく見る <svg><use href="#i-arrow-right"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="section services">
+  <div class="bg-orb bg-orb-2" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">Services</span>
+      <h2 class="section-title">
+        いわさきグループで<span class="text-accent">できること</span>
+      </h2>
+    </div>
+
+    <ul class="service-grid">
+      <li class="service-card card fade-up">
+        <span class="service-icon"><svg><use href="#i-bed"/></svg></span>
+        <h3 class="service-name">宿泊</h3>
+        <p class="service-desc">指宿・屋久島・種子島など<br>多彩なホテル・宿をご用意</p>
+        <a class="card-link" href="#">ホテル一覧へ <svg><use href="#i-arrow-right"/></svg></a>
+      </li>
+      <li class="service-card card fade-up">
+        <span class="service-icon"><svg><use href="#i-bus"/></svg></span>
+        <h3 class="service-name">交通</h3>
+        <p class="service-desc">バス・フェリー・高速船など<br>快適な移動をサポート</p>
+        <a class="card-link" href="#">交通情報へ <svg><use href="#i-arrow-right"/></svg></a>
+      </li>
+      <li class="service-card card fade-up">
+        <span class="service-icon"><svg><use href="#i-camera"/></svg></span>
+        <h3 class="service-name">観光・旅行</h3>
+        <p class="service-desc">観光スポットや体験プラン<br>旅行商品をご提案</p>
+        <a class="card-link" href="#">観光プランへ <svg><use href="#i-arrow-right"/></svg></a>
+      </li>
+      <li class="service-card card fade-up" id="corporate">
+        <span class="service-icon"><svg><use href="#i-users"/></svg></span>
+        <h3 class="service-name">団体・法人</h3>
+        <p class="service-desc">研修・会議・団体旅行まで<br>まとめてご相談可能</p>
+        <a class="card-link" href="#">相談する <svg><use href="#i-arrow-right"/></svg></a>
+      </li>
+      <li class="service-card card fade-up">
+        <span class="service-icon"><svg><use href="#i-flag"/></svg></span>
+        <h3 class="service-name">ゴルフ・レジャー</h3>
+        <p class="service-desc">ゴルフ場やレジャー施設で<br>充実の時間を</p>
+        <a class="card-link" href="#">施設一覧へ <svg><use href="#i-arrow-right"/></svg></a>
+      </li>
+      <li class="service-card card fade-up">
+        <span class="service-icon"><svg><use href="#i-bag"/></svg></span>
+        <h3 class="service-name">通販・お土産</h3>
+        <p class="service-desc">鹿児島の特産品やお土産を<br>オンラインでお届け</p>
+        <a class="card-link" href="#">通販サイトへ <svg><use href="#i-arrow-right"/></svg></a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ REASONS ============ -->
+<section id="reasons" class="section reasons">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">Why Iwasaki Group</span>
+      <h2 class="section-title">
+        いわさきグループが<span class="text-accent">選ばれる理由</span>
+      </h2>
+    </div>
+
+    <ul class="reason-grid">
+      <li class="reason-card fade-up">
+        <span class="reason-icon"><svg><use href="#i-network"/></svg></span>
+        <div>
+          <h3 class="reason-name">ワンストップの総合力</h3>
+          <p class="reason-desc">宿泊・交通・観光をまとめて手配できるから、手間がかかりません。</p>
+        </div>
+      </li>
+      <li class="reason-card fade-up">
+        <span class="reason-icon"><svg><use href="#i-map-pin"/></svg></span>
+        <div>
+          <h3 class="reason-name">地域に根ざした安心感</h3>
+          <p class="reason-desc">鹿児島を拠点に長年培った、地域の情報とサポート力。</p>
+        </div>
+      </li>
+      <li class="reason-card fade-up">
+        <span class="reason-icon"><svg><use href="#i-ferry"/></svg></span>
+        <div>
+          <h3 class="reason-name">離島・観光地に強い</h3>
+          <p class="reason-desc">屋久島・種子島など離島へのアクセスもスムーズに。</p>
+        </div>
+      </li>
+      <li class="reason-card fade-up">
+        <span class="reason-icon"><svg><use href="#i-users"/></svg></span>
+        <div>
+          <h3 class="reason-name">個人から団体まで対応</h3>
+          <p class="reason-desc">家族旅行から大人数の団体旅行まで柔軟にサポートします。</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CASES ============ -->
+<section id="cases" class="section cases">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">Use Cases</span>
+      <h2 class="section-title">ご利用実績</h2>
+    </div>
+
+    <div class="cases-slider" id="cases-slider">
+      <button class="slider-btn cases-prev" data-cases-prev aria-label="前へ"><svg><use href="#i-arrow-left"/></svg></button>
+      <ul class="case-grid" id="case-grid">
+        <li class="case-card card fade-up">
+          <div class="case-img case-img-school" aria-hidden="true">
+            <img class="case-photo" src="https://picsum.photos/seed/case-school-trip/600/400" alt="" loading="lazy" decoding="async">
+            <span class="case-photo-tint"></span>
+            <span class="case-img-tag">修学旅行</span>
+          </div>
+          <div class="case-body">
+            <h3 class="case-title">修学旅行（高校）</h3>
+            <p class="case-desc">移動・宿泊・体験までまとめてサポートしてもらい、生徒も先生も安心して利用できました。</p>
+          </div>
+        </li>
+        <li class="case-card card fade-up">
+          <div class="case-img case-img-corp" aria-hidden="true">
+            <img class="case-photo" src="https://picsum.photos/seed/case-corp-meeting/600/400" alt="" loading="lazy" decoding="async">
+            <span class="case-photo-tint"></span>
+            <span class="case-img-tag">企業研修</span>
+          </div>
+          <div class="case-body">
+            <h3 class="case-title">企業研修（50名）</h3>
+            <p class="case-desc">研修施設の手配から観光までスムーズで、社員満足度が非常に高かったです。</p>
+          </div>
+        </li>
+        <li class="case-card card fade-up">
+          <div class="case-img case-img-family" aria-hidden="true">
+            <img class="case-photo" src="https://picsum.photos/seed/case-family-beach/600/400" alt="" loading="lazy" decoding="async">
+            <span class="case-photo-tint"></span>
+            <span class="case-img-tag">家族旅行</span>
+          </div>
+          <div class="case-body">
+            <h3 class="case-title">家族旅行（4名）</h3>
+            <p class="case-desc">屋久島へのアクセスやホテル選びを丁寧にご提案いただき、最高の旅になりました。</p>
+          </div>
+        </li>
+        <li class="case-card card fade-up">
+          <div class="case-img case-img-agency" aria-hidden="true">
+            <img class="case-photo" src="https://picsum.photos/seed/case-agency-office/600/400" alt="" loading="lazy" decoding="async">
+            <span class="case-photo-tint"></span>
+            <span class="case-img-tag">旅行会社</span>
+          </div>
+          <div class="case-body">
+            <h3 class="case-title">旅行会社様</h3>
+            <p class="case-desc">団体旅行の手配がスピーディーで信頼できるパートナーとして、いつも助かっています。</p>
+          </div>
+        </li>
+        <li class="case-card card fade-up">
+          <div class="case-img case-img-mice" aria-hidden="true">
+            <img class="case-photo" src="https://picsum.photos/seed/case-mice-conference/600/400" alt="" loading="lazy" decoding="async">
+            <span class="case-photo-tint"></span>
+            <span class="case-img-tag">MICE</span>
+          </div>
+          <div class="case-body">
+            <h3 class="case-title">学会・カンファレンス</h3>
+            <p class="case-desc">大規模イベントの会場・送迎・宿泊を一括対応いただき、滞りなく進行できました。</p>
+          </div>
+        </li>
+      </ul>
+      <button class="slider-btn cases-next" data-cases-next aria-label="次へ"><svg><use href="#i-arrow-right"/></svg></button>
+    </div>
+
+    <div class="slider-dots" id="cases-dots" role="tablist" aria-label="実績スライダーのページ"></div>
+  </div>
+</section>
+
+<!-- ============ MID CTA ============ -->
+<section id="mid-cta" class="section section-sm mid-cta">
+  <div class="container">
+    <div class="mid-cta-box fade-up">
+      <div class="mid-cta-text">
+        <span class="mid-cta-icon"><svg><use href="#i-headset"/></svg></span>
+        <div>
+          <h2 class="mid-cta-title">旅のご相談・お見積りは無料です</h2>
+          <p class="mid-cta-desc">目的やご予算に合わせて、最適なプランをご提案します。</p>
+        </div>
+      </div>
+      <a class="btn-primary" href="#final-cta">
+        旅の相談をする
+        <svg class="ico arrow"><use href="#i-arrow-right"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section id="final-cta" class="final-cta">
+  <div class="final-cta-bg" aria-hidden="true">
+    <img class="final-photo" src="https://picsum.photos/seed/kagoshima-final-coast/1800/700" alt="" loading="lazy" decoding="async">
+    <svg class="final-sakura" viewBox="0 0 600 200" preserveAspectRatio="none">
+      <use href="#sakurajima"/>
+    </svg>
+    <svg class="final-wave" preserveAspectRatio="none" viewBox="0 0 1440 120">
+      <use href="#wave-decoration" style="color: rgba(255,255,255,0.10)"/>
+    </svg>
+  </div>
+  <div class="container final-cta-inner">
+    <div class="final-cta-heading fade-up">
+      <h2 class="final-cta-title">鹿児島の旅を、いっしょに。</h2>
+      <p class="final-cta-lead">まずは、お気軽にご相談ください。</p>
+    </div>
+
+    <div class="final-cta-actions fade-up">
+      <div class="contact-card">
+        <span class="contact-icon"><svg><use href="#i-phone"/></svg></span>
+        <div class="contact-meta">
+          <span class="contact-label">お電話でのご相談はこちら</span>
+          <a class="contact-tel" href="tel:099-XXX-XXXX">099-XXX-XXXX</a>
+          <span class="contact-hours">受付時間 9:00-17:00</span>
+        </div>
+      </div>
+      <a class="btn-form" href="#" aria-label="相談フォームへ進む">
+        <svg class="ico"><use href="#i-mail"/></svg>
+        相談フォームへ進む
+        <svg class="ico arrow"><use href="#i-arrow-right"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="company">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="#hero" class="logo logo-footer" aria-label="いわさきグループ ホーム">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="40" height="40">
+            <circle cx="20" cy="20" r="18" fill="#0077D1"/>
+            <path d="M8,28 Q14,18 20,22 T32,18" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            <circle cx="28" cy="14" r="2.4" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <span class="logo-jp">いわさきグループ</span>
+          <span class="logo-en">Iwasaki Group</span>
+        </span>
+      </a>
+      <p class="footer-tagline">鹿児島の暮らしと旅を、つなぎ続ける。</p>
+    </div>
+
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>目的地から探す</h4>
+        <ul>
+          <li><a href="#destinations">指宿</a></li>
+          <li><a href="#destinations">屋久島</a></li>
+          <li><a href="#destinations">種子島</a></li>
+          <li><a href="#destinations">霧島</a></li>
+          <li><a href="#destinations">鹿児島市内</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サービスから探す</h4>
+        <ul>
+          <li><a href="#services">宿泊</a></li>
+          <li><a href="#services">交通</a></li>
+          <li><a href="#services">観光・旅行</a></li>
+          <li><a href="#services">団体・法人</a></li>
+          <li><a href="#services">ゴルフ・レジャー</a></li>
+          <li><a href="#services">通販・お土産</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>会社情報</h4>
+        <ul>
+          <li><a href="#">会社概要</a></li>
+          <li><a href="#">グループ企業</a></li>
+          <li><a href="#recruit">採用情報</a></li>
+          <li><a href="#">ニュース</a></li>
+          <li><a href="#final-cta">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>いわさきグループ 総合窓口</h4>
+        <p class="footer-addr">〒890-XXXX 鹿児島県鹿児島市XXXX</p>
+        <p class="footer-tel">TEL: 099-XXX-XXXX</p>
+        <p class="footer-hours">受付時間 9:00-17:00（土日祝休み）</p>
+        <ul class="footer-social" aria-label="公式SNS">
+          <li><a href="#" aria-label="Facebook"><svg><use href="#i-facebook"/></svg></a></li>
+          <li><a href="#" aria-label="Instagram"><svg><use href="#i-instagram"/></svg></a></li>
+          <li><a href="#" aria-label="X (旧Twitter)"><svg><use href="#i-x"/></svg></a></li>
+          <li><a href="#" aria-label="YouTube"><svg><use href="#i-youtube"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; Iwasaki Group. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- ============ MOBILE DRAWER ============ -->
+<div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+  <nav class="drawer-nav" aria-label="モバイルナビゲーション">
+    <a href="#destinations">目的地から探す</a>
+    <a href="#services">サービスから探す</a>
+    <a href="#corporate">団体・法人の方へ</a>
+    <a href="#company">会社情報</a>
+    <a href="#recruit">採用情報</a>
+    <a class="drawer-cta" href="#final-cta">
+      <svg class="ico"><use href="#i-mail"/></svg>
+      旅の相談・お問い合わせ
+    </a>
+    <a class="drawer-phone" href="tel:099-XXX-XXXX">
+      <svg class="ico"><use href="#i-phone"/></svg>
+      099-XXX-XXXX
+    </a>
+  </nav>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

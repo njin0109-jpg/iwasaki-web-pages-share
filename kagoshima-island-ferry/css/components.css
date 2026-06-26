@@ -1,0 +1,356 @@
+/* ============================================================
+   components.css — Reusable Components
+   かごしまアイランドフェリー
+============================================================ */
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-jp);
+  font-size: var(--font-base);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition:
+    transform var(--trans-base) var(--ease-out),
+    box-shadow var(--trans-base) var(--ease-out),
+    background-color var(--trans-base) ease,
+    border-color var(--trans-base) ease,
+    color var(--trans-base) ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Primary — red fill */
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: var(--shadow-cta);
+}
+.btn-primary:hover {
+  background: var(--color-accent-dark);
+  box-shadow: var(--shadow-cta-hover);
+}
+
+/* Secondary — white + blue border */
+.btn-secondary {
+  background: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-border);
+}
+.btn-secondary:hover {
+  background: var(--color-sky);
+  border-color: var(--color-primary);
+}
+
+/* White (for dark backgrounds) */
+.btn-white {
+  background: var(--color-white);
+  color: var(--color-primary-dark);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.btn-white:hover {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+/* White outline (for dark backgrounds) */
+.btn-white-outline {
+  background: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.btn-white-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-white);
+}
+
+/* Mini button (for service cards) */
+.btn-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 18px;
+  border-radius: var(--radius-pill);
+  font-size: var(--font-sm);
+  font-weight: 700;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-primary);
+  transition: background var(--trans-base) ease, border-color var(--trans-base) ease;
+}
+.btn-mini:hover {
+  background: var(--color-sky);
+  border-color: var(--color-primary);
+}
+
+.btn-mini svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform var(--trans-base) ease;
+}
+.btn-mini:hover svg {
+  transform: translateX(2px);
+}
+
+/* Wide variant */
+.btn-wide {
+  min-width: 240px;
+}
+
+/* ============================================================
+   CARDS
+============================================================ */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform var(--trans-base) var(--ease-out),
+    box-shadow var(--trans-base) var(--ease-out),
+    border-color var(--trans-base) ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: #B8D7F2;
+}
+
+/* ============================================================
+   ICONS
+============================================================ */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--color-primary);
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-sm svg { width: 24px; height: 24px; }
+.icon-md svg { width: 36px; height: 36px; }
+.icon-lg svg { width: 56px; height: 56px; }
+
+/* Icon wrapper with background circle */
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  background: var(--color-sky);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-circle svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--color-primary);
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-circle-sm {
+  width: 44px;
+  height: 44px;
+}
+.icon-circle-sm svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ============================================================
+   STEP NUMBER BADGE
+============================================================ */
+.step-number {
+  font-family: var(--font-num);
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-white);
+  background: var(--color-primary);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   TAG / BADGE
+============================================================ */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  background: var(--color-sky);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+
+.tag-blue   { background: #EAF3FF; color: #0066CC; border-color: #C0D9F7; }
+.tag-green  { background: #E8F8F2; color: #21A67A; border-color: #B6E8D8; }
+.tag-orange { background: #FFF3E8; color: #F47A2A; border-color: #F7CCA6; }
+.tag-purple { background: #F0EEFF; color: #7E5BEF; border-color: #C9BEF7; }
+
+/* ============================================================
+   SERVICE LABEL
+============================================================ */
+.service-label {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.service-label-blue   { background: var(--color-primary); }
+.service-label-green  { background: var(--color-green); }
+.service-label-orange { background: var(--color-orange); }
+
+/* ============================================================
+   LINK ARROW
+============================================================ */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+  transition: gap var(--trans-base) ease;
+}
+
+.link-arrow:hover { gap: 8px; }
+
+.link-arrow svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ============================================================
+   BACK TO TOP
+============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 150;
+  width: 44px;
+  height: 44px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 51, 102, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--trans-base) ease, transform var(--trans-base) ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--color-white);
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ============================================================
+   STAT CARD
+============================================================ */
+.stat-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px 20px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-item .icon-circle {
+  flex-shrink: 0;
+}
+
+.stat-item-body strong {
+  display: block;
+  font-family: var(--font-num);
+  font-size: var(--font-lg);
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.stat-item-body span {
+  display: block;
+  font-size: var(--font-xs);
+  color: var(--color-text-muted);
+  margin-top: 4px;
+  line-height: 1.4;
+}

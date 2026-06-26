@@ -1,0 +1,337 @@
+/* ============================================================
+   responsive.css — Breakpoints
+   かごしまアイランドフェリー
+============================================================ */
+
+/* ============================================================
+   TABLET  ≤ 1024px
+============================================================ */
+@media (max-width: 1024px) {
+
+  :root {
+    --container-pad: 28px;
+    --section-pad: 64px;
+  }
+
+  /* Header */
+  .global-nav,
+  .header-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-drawer {
+    display: block;
+  }
+
+  /* Hero */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 56px var(--container-pad) 40px;
+    gap: 36px;
+  }
+
+  .hero-visual {
+    min-height: 360px;
+    order: -1;
+  }
+
+  /* Hero stats */
+  .hero-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  /* Quick menu */
+  .quick-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Pain points */
+  .pain-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Services */
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Flow */
+  .flow-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .flow-grid::before {
+    display: none;
+  }
+
+  /* Reasons */
+  .reason-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Use cases */
+  .case-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Consult CTA */
+  .consult-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 28px 28px;
+  }
+
+  .consult-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* Final CTA */
+  .final-cta-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .final-cta-actions {
+    flex-direction: row;
+    max-width: 480px;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .footer-nav-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .footer-qr {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+}
+
+/* ============================================================
+   MOBILE  ≤ 768px
+============================================================ */
+@media (max-width: 768px) {
+
+  :root {
+    --section-pad:    48px;
+    --section-pad-sm: 36px;
+    --section-pad-lg: 56px;
+    --container-pad:  20px;
+  }
+
+  /* Hero */
+  .hero-inner {
+    padding: 40px var(--container-pad) 32px;
+    gap: 28px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero-lead {
+    font-size: var(--font-base);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-visual {
+    min-height: 260px;
+  }
+
+  /* Hero stats */
+  .hero-stats-bar {
+    padding: 24px 0;
+  }
+
+  .hero-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Quick menu */
+  .quick-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Pain points */
+  .pain-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Services */
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Flow */
+  .flow-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .flow-step {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    text-align: left;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 16px 18px 20px;
+  }
+
+  .flow-step-number {
+    position: static;
+    transform: none;
+    flex-shrink: 0;
+  }
+
+  .flow-step .icon-circle {
+    margin: 0;
+  }
+
+  .flow-step h3 {
+    margin-bottom: 2px;
+  }
+
+  /* Reasons */
+  .reason-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Use cases */
+  .case-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Consult CTA */
+  .consult-box {
+    padding: 24px 20px;
+  }
+
+  .consult-copy {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .consult-actions {
+    flex-direction: column;
+  }
+
+  .consult-actions .btn {
+    width: 100%;
+  }
+
+  /* Final CTA */
+  .final-cta-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .final-cta h2 {
+    font-size: 26px;
+  }
+
+  .final-cta-actions {
+    flex-direction: column;
+  }
+
+  .final-cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-nav-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .footer-qr {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+
+  /* Body padding for mobile fixed nav */
+  body {
+    padding-bottom: 68px;
+  }
+
+  /* Back to top - above mobile nav */
+  .back-to-top {
+    bottom: 84px;
+  }
+}
+
+/* ============================================================
+   SMALL  ≤ 480px
+============================================================ */
+@media (max-width: 480px) {
+
+  :root {
+    --container-pad: 16px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .footer-nav-columns {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}

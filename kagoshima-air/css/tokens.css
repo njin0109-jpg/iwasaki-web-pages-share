@@ -1,0 +1,69 @@
+/* ============================================================
+   tokens.css — Design Tokens
+   鹿児島国際航空株式会社
+============================================================ */
+
+:root {
+  /* ---- Colors: Primary (Navy) ---- */
+  --color-primary:      #003B7A;
+  --color-primary-dark: #002B5C;
+  --color-primary-deep: #001F45;
+
+  /* ---- Colors: Accent (Orange) ---- */
+  --color-accent:       #F58A00;
+  --color-accent-dark:  #E57700;
+
+  /* ---- Colors: Sub (Sky Blue) ---- */
+  --color-sky:          #EAF6FF;
+  --color-sky-light:    #F3FAFF;
+  --color-border-blue:  #D7E8F8;
+
+  /* ---- Colors: Base ---- */
+  --color-bg:           #F7FBFF;
+  --color-white:        #FFFFFF;
+  --color-text:         #0A2A4F;
+  --color-text-muted:   #5E7187;
+  --color-border:       #DDEAF5;
+  --color-footer:       #001F45;
+
+  /* ---- Typography ---- */
+  --font-jp:   "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-num:  "Inter", sans-serif;
+
+  --font-xs:   12px;
+  --font-sm:   13px;
+  --font-base: 15px;
+  --font-md:   16px;
+  --font-lg:   18px;
+  --font-xl:   22px;
+  --font-2xl:  28px;
+  --font-3xl:  36px;
+  --font-4xl:  48px;
+
+  /* ---- Layout ---- */
+  --container-max: 1180px;
+  --container-pad: 40px;
+
+  /* ---- Section Spacing ---- */
+  --section-pad:    80px;
+  --section-pad-sm: 56px;
+  --section-pad-lg: 96px;
+
+  /* ---- Shadows ---- */
+  --shadow-card:       0 8px 24px rgba(0, 59, 122, 0.06);
+  --shadow-card-hover: 0 16px 36px rgba(0, 59, 122, 0.12);
+  --shadow-hero:       0 18px 40px rgba(0, 43, 92, 0.14);
+  --shadow-cta:        0 12px 24px rgba(245, 138, 0, 0.22);
+  --shadow-cta-hover:  0 14px 28px rgba(245, 138, 0, 0.32);
+  --shadow-stat:       0 10px 24px rgba(0, 59, 122, 0.08);
+
+  /* ---- Animation ---- */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --trans-base: 0.25s;
+  --trans-slow: 0.70s;
+
+  /* ---- Border Radius ---- */
+  --radius-sm:  4px;
+  --radius-md:  6px;
+  --radius-lg:  12px;
+}

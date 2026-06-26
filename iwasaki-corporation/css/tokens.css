@@ -1,0 +1,54 @@
+/* =========================================
+   Design tokens — colors, sizing, radii, breakpoints
+   ========================================= */
+
+:root {
+  /* Brand */
+  --color-primary: #087A3D;
+  --color-primary-dark: #04572C;
+  --color-primary-light: #EAF7F0;
+
+  --color-accent: #F6A400;
+  --color-accent-hover: #E89500;
+
+  /* Text */
+  --color-text: #17212B;
+  --color-text-muted: #5F6B76;
+
+  /* Surfaces */
+  --color-border: #DDE8E2;
+  --color-border-soft: #ECF3EE;
+  --color-bg: #FFFFFF;
+  --color-bg-soft: #F6FBF8;
+  --color-bg-mint: #EEF8F2;
+  --color-white: #FFFFFF;
+
+  /* Shadows */
+  --shadow-card: 0 12px 30px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 22px 44px rgba(0, 0, 0, 0.12);
+  --shadow-cta: 0 12px 24px rgba(246, 164, 0, 0.25);
+
+  /* Layout */
+  --container-max: 1200px;
+  --pad-pc: 64px;
+  --pad-tablet: 32px;
+  --pad-sp: 20px;
+  --section-py-pc: 96px;
+  --section-py-sp: 64px;
+
+  /* Radius */
+  --radius-card: 22px;
+  --radius-card-lg: 28px;
+  --radius-pill: 999px;
+
+  /* Header */
+  --header-h: 72px;
+
+  /* Breakpoints (reference values) */
+  --bp-lg: 1024px;
+  --bp-md: 768px;
+  --bp-sm: 480px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

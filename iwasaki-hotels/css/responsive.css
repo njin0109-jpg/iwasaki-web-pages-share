@@ -1,0 +1,200 @@
+/* ============================
+   Tablet  (≤ 1024px)
+   ============================ */
+@media (max-width: 1024px) {
+  :root {
+    --container-pad: 32px;
+    --section-pad: 80px;
+  }
+
+  /* Header */
+  .global-nav,
+  .header-actions .btn-outline { display: none; }
+
+  .hamburger { display: flex; }
+
+  /* Hotel grid → 2 columns */
+  .hotel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Pain / reason / voice → 3 columns */
+  .pain-grid,
+  .reason-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .voice-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Purpose → 3 columns */
+  .purpose-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Flow → vertical, arrows hidden */
+  .flow-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .flow-arrow { display: none; }
+
+  /* Final CTA → single column */
+  .final-cta-card {
+    grid-template-columns: 1fr;
+    padding: 48px 48px;
+  }
+  .final-cta-visual { display: none; }
+
+  /* Footer */
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* ============================
+   Mobile  (≤ 768px)
+   ============================ */
+@media (max-width: 768px) {
+  :root {
+    --container-pad: 20px;
+    --section-pad: 64px;
+    --section-pad-sm: 48px;
+  }
+
+  /* Header */
+  .site-header { height: 64px; }
+
+  /* Hero */
+  .hero { min-height: auto; }
+  .hero-inner { padding: 96px 20px 180px; }
+  .hero-content { width: 100%; max-width: 100%; }
+  .hero h1 { font-size: 34px; }
+  .hero-lead { font-size: 15px; }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-buttons .btn-large {
+    min-width: auto;
+    width: 100%;
+  }
+
+  /* Hero stats → vertical stack */
+  .hero-stats {
+    position: static;
+  }
+  .hero-stats-inner {
+    grid-template-columns: 1fr;
+    border-radius: 16px;
+    margin: 0 20px;
+    overflow: hidden;
+  }
+  .hero-stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding: 20px 24px;
+  }
+  .hero-stat-item:last-child { border-bottom: none; }
+
+  /* All grids → 1 column */
+  .pain-grid,
+  .hotel-grid,
+  .purpose-grid,
+  .reason-grid,
+  .voice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Pain grid → 2 columns on mobile */
+  .pain-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Section header */
+  .section-title { font-size: 24px; }
+  .section-header { margin-bottom: 36px; }
+
+  /* Section message */
+  .section-message { font-size: var(--font-md); }
+
+  /* Final CTA */
+  .final-cta-card {
+    margin: 0 20px;
+    padding: 36px 24px;
+  }
+  .final-cta-content h2 { font-size: 22px; }
+  .final-cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .final-cta-buttons .btn { width: 100%; }
+
+  /* Footer */
+  .footer-top { padding-bottom: 40px; }
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  /* Mobile fixed CTA */
+  .mobile-fixed-cta {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 150;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #fff;
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.10);
+  }
+  .mobile-fixed-cta a {
+    height: 58px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-navy);
+    text-decoration: none;
+    border-right: 1px solid var(--color-border);
+    transition: background var(--trans-base);
+  }
+  .mobile-fixed-cta a:last-child { border-right: none; }
+  .mobile-fixed-cta a:first-child {
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+    color: #fff;
+    border-right-color: rgba(255,255,255,0.3);
+  }
+  .mobile-fixed-cta a svg { width: 18px; height: 18px; }
+
+  body { padding-bottom: 58px; }
+}
+
+/* ============================
+   Small mobile  (≤ 480px)
+   ============================ */
+@media (max-width: 480px) {
+  :root {
+    --container-pad: 16px;
+  }
+
+  .pain-grid { grid-template-columns: 1fr; }
+
+  .hero-stats-inner {
+    margin: 0 16px;
+  }
+
+  .final-cta-card {
+    margin: 0 16px;
+    padding: 28px 20px;
+  }
+
+  .footer-columns { grid-template-columns: 1fr; }
+
+  .flow-card { padding: 24px 20px; }
+}

@@ -1,0 +1,74 @@
+/* ============================================================
+   tokens.css — Design Tokens
+   かごしまアイランドフェリー
+============================================================ */
+
+:root {
+  /* ---- Colors: Primary (Blue) ---- */
+  --color-primary:      #0066CC;
+  --color-primary-dark: #003366;
+  --color-primary-deep: #001F45;
+
+  /* ---- Colors: Accent (Red CTA) ---- */
+  --color-accent:       #EF4E4E;
+  --color-accent-dark:  #D93F3F;
+
+  /* ---- Colors: Service ---- */
+  --color-green:        #21A67A;
+  --color-green-dark:   #178C65;
+  --color-orange:       #F47A2A;
+  --color-orange-dark:  #D96420;
+  --color-purple:       #7E5BEF;
+
+  /* ---- Colors: Sub (Sky Blue) ---- */
+  --color-sky:          #EAF6FF;
+  --color-sky-light:    #F4FAFF;
+  --color-border:       #D9E8F5;
+
+  /* ---- Colors: Base ---- */
+  --color-bg:           #F4FAFF;
+  --color-white:        #FFFFFF;
+  --color-text:         #003366;
+  --color-text-muted:   #44566C;
+  --color-footer:       #003366;
+  --color-footer-deep:  #001F45;
+
+  /* ---- Typography ---- */
+  --font-jp:   "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  --font-num:  "Inter", sans-serif;
+
+  --font-xs:   12px;
+  --font-sm:   14px;
+  --font-base: 16px;
+  --font-md:   18px;
+  --font-lg:   24px;
+  --font-xl:   32px;
+  --font-hero: 48px;
+
+  /* ---- Layout ---- */
+  --container-max: 1200px;
+  --container-pad: 40px;
+
+  /* ---- Section Spacing ---- */
+  --section-pad:    72px;
+  --section-pad-sm: 48px;
+  --section-pad-lg: 96px;
+
+  /* ---- Shadows ---- */
+  --shadow-card:       0 10px 28px rgba(0, 51, 102, 0.07);
+  --shadow-card-hover: 0 18px 36px rgba(0, 51, 102, 0.12);
+  --shadow-header:     0 4px 20px rgba(0, 51, 102, 0.08);
+  --shadow-cta:        0 12px 24px rgba(239, 78, 78, 0.24);
+  --shadow-cta-hover:  0 14px 28px rgba(239, 78, 78, 0.34);
+
+  /* ---- Animation ---- */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --trans-base: 0.25s;
+  --trans-slow: 0.60s;
+
+  /* ---- Border Radius ---- */
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   18px;
+  --radius-pill: 999px;
+}

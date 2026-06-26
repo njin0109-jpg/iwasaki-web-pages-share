@@ -1,0 +1,355 @@
+/* =========================================
+   Responsive — 1024 / 768 / 480
+   ========================================= */
+
+/* ---------- Tablet & below: 1024px ---------- */
+@media (max-width: 1024px) {
+  :root {
+    --section-py-pc: 80px;
+  }
+
+  .section-inner {
+    padding-left: var(--pad-tablet);
+    padding-right: var(--pad-tablet);
+  }
+
+  .global-nav,
+  .header-tel {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-actions {
+    margin-left: auto;
+    gap: 8px;
+  }
+
+  .btn-header-cta {
+    height: 40px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+
+  .site-header .header-inner {
+    gap: 16px;
+  }
+
+  /* Hero */
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 32px;
+  }
+
+  .hero-visual {
+    min-height: 380px;
+  }
+
+  /* Services 3-col */
+  .services .service-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Reasons 3-col */
+  .reasons .reason-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Achievements 3-col */
+  .achievements .achievement-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 0;
+  }
+
+  .achievement-item:nth-child(4)::before,
+  .achievement-item:nth-child(n + 4)::before {
+    /* keep dividers on the same row only */
+  }
+
+  /* Cases 3-col */
+  .cases .case-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Problems 3-col */
+  .problems .problem-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Footer 3-col */
+  .site-footer .footer-inner {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .site-footer .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  /* Purpose: 2x2 grid on tablet */
+  .purpose-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Final CTA: 2x2 grid on tablet */
+  .final-cta .final-actions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 560px;
+  }
+}
+
+/* ---------- Mobile: 768px ---------- */
+@media (max-width: 768px) {
+  :root {
+    --section-py-pc: 64px;
+    --header-h: 64px;
+  }
+
+  .section-inner {
+    padding-left: var(--pad-sp);
+    padding-right: var(--pad-sp);
+  }
+
+  body {
+    padding-bottom: 76px; /* room for SP fixed CTA */
+  }
+
+  /* Header — keep only logo + hamburger; bottom fixed bar handles CTA */
+  .site-header .btn-header-cta {
+    display: none;
+  }
+
+  .site-header .logo-jp {
+    display: none;
+  }
+
+  .site-header .logo-text {
+    line-height: 1;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 40px 0 64px;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-copy h1 {
+    margin: 12px 0 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-visual {
+    min-height: 320px;
+    order: 2;
+  }
+
+  .hero-visual .v-main { width: 78%; }
+  .hero-visual .v-sub-1 { width: 50%; }
+  .hero-visual .v-sub-2 { width: 38%; top: 30%; right: 0; }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 0;
+    padding: 22px 16px;
+  }
+
+  .hero-stats .stat-item + .stat-item::before {
+    display: none;
+  }
+
+  .hero-stats .stat-item:nth-child(2n)::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 48px;
+    background: var(--color-border);
+  }
+
+  /* Problems 2-col */
+  .problems .problem-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Services 2-col */
+  .services .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Flow vertical */
+  .flow .flow-list {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .flow-step + .flow-step::before {
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--color-primary);
+    border-bottom: 0;
+  }
+
+  /* Reasons 2-col */
+  .reasons .reason-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Achievements 2-col */
+  .achievements .achievement-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 0;
+    padding: 24px 8px;
+  }
+
+  .achievement-item + .achievement-item::before {
+    display: none;
+  }
+
+  /* Cases 2-col */
+  .cases .case-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Final CTA */
+  .final-cta {
+    padding: 56px 0 64px;
+  }
+
+  .final-cta .final-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .final-cta .final-actions .btn {
+    width: 100%;
+  }
+
+  .final-cta .final-actions-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+
+  /* Footer */
+  .site-footer .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .site-footer .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  /* SP fixed CTA visible */
+  .sp-fixed-cta {
+    display: flex;
+  }
+
+  /* Purpose: stacked on mobile */
+  .purpose {
+    padding: 56px 0;
+  }
+
+  .purpose-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .purpose-card {
+    padding: 22px 20px;
+  }
+
+  /* Section heading */
+  .section-head {
+    margin-bottom: 32px;
+  }
+
+  /* Big decorative orbs smaller */
+  .hero::before {
+    width: 420px;
+    height: 420px;
+    top: -180px;
+    right: -120px;
+  }
+
+  .hero::after {
+    width: 320px;
+    height: 320px;
+    bottom: -120px;
+    left: -100px;
+  }
+}
+
+/* ---------- Small mobile: 480px ---------- */
+@media (max-width: 480px) {
+  .site-header .logo-mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .site-header .logo-en {
+    font-size: 12px;
+  }
+
+  .site-header .logo-jp {
+    font-size: 10px;
+  }
+
+  /* Problems 1-col */
+  .problems .problem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Services 1-col */
+  .services .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reasons 1-col */
+  .reasons .reason-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Cases 1-col */
+  .cases .case-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer 1-col */
+  .site-footer .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    min-height: 280px;
+  }
+
+  .hero-stats .stat-num {
+    font-size: 22px;
+  }
+
+  .btn-large {
+    height: 54px;
+    font-size: 14px;
+    padding: 0 20px;
+  }
+}

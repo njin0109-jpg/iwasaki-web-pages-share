@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>本格芋焼酎 白露 | 薩摩・指宿の蔵元から、日常にも贈り物にも</title>
+  <meta name="description" content="享保15年創業、鹿児島県指宿市の焼酎蔵。代表銘柄『白露』の本格芋焼酎を製造・販売。ギフト・オリジナルラベル・定期便・蔵見学・法人取引まで、オンライン／電話／FAXで承ります。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SVG Sprite — icons (i-*) and art motifs (art-*)
+============================================================ -->
+<svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <!-- ICONS (stroke) -->
+  <symbol id="i-bottle" viewBox="0 0 24 24">
+    <path d="M10 2h4v3.5c0 .8.3 1.2.9 1.8C16.2 8.5 17 9.7 17 11.5V20a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-8.5c0-1.8.8-3 2.1-4.2.6-.6.9-1 .9-1.8V2Z"/><line x1="7" y1="13" x2="17" y2="13"/>
+  </symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24">
+    <rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M12 8C12 8 11 3 8 3a2.5 2.5 0 0 0 0 5h4Z"/><path d="M12 8c0 0 1-5 4-5a2.5 2.5 0 0 1 0 5h-4Z"/>
+  </symbol>
+  <symbol id="i-label" viewBox="0 0 24 24">
+    <path d="M3 7a2 2 0 0 1 2-2h8l8 8-8 8-10-10V7Z"/><circle cx="8" cy="10" r="1.6"/>
+  </symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24">
+    <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="12" cy="16" r="1.4"/>
+  </symbol>
+  <symbol id="i-kura" viewBox="0 0 24 24">
+    <path d="M3 9 12 4l9 5"/><path d="M5 9v11h14V9"/><rect x="10.5" y="13" width="3" height="7"/><line x1="3" y1="20" x2="21" y2="20"/>
+  </symbol>
+  <symbol id="i-store" viewBox="0 0 24 24">
+    <path d="M4 4h16l1 5a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0Z"/><path d="M5 11v9h14v-9"/><rect x="9" y="14" width="6" height="6"/>
+  </symbol>
+  <symbol id="i-help" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"/><path d="M9.2 9a2.8 2.8 0 0 1 5.4 1c0 1.8-2.6 2.4-2.6 4"/><line x1="12" y1="17.5" x2="12" y2="17.6"/>
+  </symbol>
+  <symbol id="i-home" viewBox="0 0 24 24">
+    <path d="M3 11 12 3l9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>
+  </symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24">
+    <circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.2 12.4a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.2L21 7H6"/>
+  </symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24">
+    <path d="M21 12a8 8 0 0 1-11.5 7.2L4 21l1.8-5.5A8 8 0 1 1 21 12Z"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="14" x2="13" y2="14"/>
+  </symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24">
+    <rect x="5" y="4" width="14" height="18" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><line x1="8.5" y1="11" x2="15.5" y2="11"/><line x1="8.5" y1="15" x2="13.5" y2="15"/>
+  </symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24">
+    <rect x="1" y="6" width="13" height="11" rx="1"/><path d="M14 9h4l3 3v5h-7"/><circle cx="6" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/>
+  </symbol>
+  <symbol id="i-droplet" viewBox="0 0 24 24">
+    <path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/>
+  </symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24">
+    <path d="M5 19c0-9 6-14 15-14 0 9-5 15-14 15-1 0-1 0-1-1Z"/><path d="M5 19c4-5 7-7 12-9"/>
+  </symbol>
+  <symbol id="i-ribbon" viewBox="0 0 24 24">
+    <circle cx="12" cy="9" r="6"/><path d="M9 14 6 22l6-3 6 3-3-8"/>
+  </symbol>
+  <symbol id="i-headset" viewBox="0 0 24 24">
+    <path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24">
+    <rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/>
+  </symbol>
+  <symbol id="i-fax" viewBox="0 0 24 24">
+    <path d="M6 9V3h12v6"/><rect x="2" y="9" width="20" height="9" rx="2"/><rect x="6" y="16" width="12" height="5"/><line x1="18" y1="12.5" x2="18" y2="12.6"/>
+  </symbol>
+  <symbol id="i-map-pin" viewBox="0 0 24 24">
+    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24">
+    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+  </symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24">
+    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+  </symbol>
+  <symbol id="i-chevron-up" viewBox="0 0 24 24">
+    <polyline points="18 15 12 9 6 15"/>
+  </symbol>
+
+  <!-- ART MOTIFS (fill currentColor — set svg color per slot) -->
+  <symbol id="art-bottle" viewBox="0 0 80 120">
+    <rect x="30" y="6" width="20" height="14" rx="3" fill="currentColor" opacity="0.75"/>
+    <rect x="34" y="18" width="12" height="22" fill="currentColor"/>
+    <path d="M22 60c0-12 7-18 12-20V38h12v2c5 2 12 8 12 20v44a8 8 0 0 1-8 8H30a8 8 0 0 1-8-8Z" fill="currentColor"/>
+    <rect x="28" y="64" width="24" height="38" rx="2" fill="rgba(247,241,230,0.92)"/>
+    <line x1="33" y1="73" x2="47" y2="73" stroke="rgba(43,33,20,0.4)" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="33" y1="92" x2="47" y2="92" stroke="rgba(43,33,20,0.22)" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="art-glass" viewBox="0 0 80 80">
+    <path d="M22 18h36l-4 46a6 6 0 0 1-6 5H32a6 6 0 0 1-6-5Z" fill="currentColor" opacity="0.9"/>
+    <rect x="32" y="30" width="13" height="13" rx="2" fill="rgba(247,241,230,0.55)"/>
+    <rect x="40" y="40" width="12" height="12" rx="2" fill="rgba(247,241,230,0.4)"/>
+  </symbol>
+  <symbol id="art-gift" viewBox="0 0 80 80">
+    <rect x="16" y="32" width="48" height="36" rx="3" fill="currentColor" opacity="0.92"/>
+    <rect x="13" y="26" width="54" height="12" rx="3" fill="currentColor"/>
+    <rect x="35" y="26" width="10" height="42" fill="rgba(247,241,230,0.5)"/>
+    <path d="M40 26C31 12 19 16 25 24c4 5 15 2 15 2Z" fill="currentColor"/>
+    <path d="M40 26c9-14 21-10 15-2-4 5-15 2-15 2Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="art-label" viewBox="0 0 80 80">
+    <rect x="18" y="20" width="34" height="42" rx="3" fill="currentColor" opacity="0.92"/>
+    <line x1="25" y1="31" x2="45" y2="31" stroke="rgba(247,241,230,0.6)" stroke-width="3" stroke-linecap="round"/>
+    <line x1="25" y1="40" x2="45" y2="40" stroke="rgba(247,241,230,0.45)" stroke-width="3" stroke-linecap="round"/>
+    <line x1="25" y1="49" x2="38" y2="49" stroke="rgba(247,241,230,0.45)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M48 60 62 46l7 7-14 14-9 2Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="art-kura" viewBox="0 0 100 80">
+    <path d="M50 12 88 32H12Z" fill="currentColor"/>
+    <rect x="20" y="32" width="60" height="34" fill="currentColor" opacity="0.92"/>
+    <rect x="44" y="44" width="12" height="22" fill="rgba(247,241,230,0.5)"/>
+    <rect x="28" y="40" width="9" height="9" fill="rgba(247,241,230,0.35)"/>
+    <rect x="63" y="40" width="9" height="9" fill="rgba(247,241,230,0.35)"/>
+    <rect x="12" y="64" width="76" height="5" fill="currentColor"/>
+  </symbol>
+  <symbol id="art-pour" viewBox="0 0 80 80">
+    <rect x="14" y="6" width="14" height="40" rx="4" fill="currentColor" transform="rotate(38 21 26)"/>
+    <path d="M46 26q4 9 1 17" stroke="currentColor" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M38 44h24l-3 24a4 4 0 0 1-4 3H45a4 4 0 0 1-4-3Z" fill="currentColor" opacity="0.9"/>
+  </symbol>
+</svg>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="site-header" id="page-top">
+  <div class="header-inner">
+    <a href="#page-top" class="header-logo" aria-label="本格芋焼酎 白露 ホーム">
+      <span class="header-logo-mark serif" aria-hidden="true">白</span>
+      <span class="header-logo-text">
+        <span class="name-en">HONKAKU IMO-SHOCHU</span>
+        <span class="name-jp serif">白露</span>
+      </span>
+    </a>
+
+    <nav class="global-nav" aria-label="グローバルナビゲーション">
+      <a href="#reasons">白露について</a>
+      <a href="#services">商品一覧</a>
+      <a href="#services">ギフト・オリジナルラベル</a>
+      <a href="#flow">購入方法</a>
+      <a href="#cases">蔵見学</a>
+      <a href="#contact">法人向け</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="#services" class="btn btn-primary header-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cart"/></svg>購入する
+      </a>
+      <a href="#contact" class="btn btn-secondary header-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>お問い合わせ
+      </a>
+    </div>
+
+    <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+  <nav aria-label="モバイルナビゲーション">
+    <a href="#reasons">白露について</a>
+    <a href="#services">商品一覧</a>
+    <a href="#services">ギフト・オリジナルラベル</a>
+    <a href="#flow">購入方法</a>
+    <a href="#cases">蔵見学</a>
+    <a href="#contact">法人向け</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+  <div class="drawer-cta">
+    <a href="#services" class="btn btn-primary">商品を見て購入する</a>
+    <a href="#contact" class="btn btn-secondary">ギフト・オリジナルラベルを相談する</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-kicker fade-up">薩摩・指宿の蔵元から</span>
+        <h1 class="fade-up">薩摩・指宿の自然が育てた、<br>本格芋焼酎<span class="hero-brand">「白露」</span>。</h1>
+        <p class="hero-lead fade-up">享保15年創業。鹿児島の水、さつまいも、熟成の技で、日常の一杯から大切な贈り物までお届けします。</p>
+
+        <div class="hero-actions fade-up">
+          <a href="#services" class="btn btn-primary btn-wide">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cart"/></svg>商品を見て購入する
+          </a>
+          <a href="#contact" class="btn btn-secondary btn-wide">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-gift"/></svg>ギフト・オリジナルラベルを相談する
+          </a>
+        </div>
+
+        <ul class="hero-badges fade-up">
+          <li class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-kura"/></svg>享保15年創業</li>
+          <li class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-map-pin"/></svg>鹿児島県指宿市の焼酎蔵</li>
+          <li class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-headset"/></svg>オンライン・電話・FAX注文対応</li>
+          <li class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"/></svg>約1年熟成</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual fade-up">
+        <div class="media-slot hero-slot">
+          <img class="media-slot__img" alt="">
+          <!-- 和モダンなブランドビジュアル（SVG作画。images/ に写真を入れ media-slot__img に src を付ければ差し替え可能） -->
+          <svg class="media-slot__art hero-art" viewBox="0 0 560 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="指宿の山並みを背景にした白露のボトル・グラス・ギフト">
+            <defs>
+              <linearGradient id="hero-sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#F4ECDC"/><stop offset="1" stop-color="#E7DAC2"/>
+              </linearGradient>
+              <radialGradient id="hero-sun" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0" stop-color="#E9C982" stop-opacity="0.9"/><stop offset="1" stop-color="#E9C982" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="hero-mtn" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2E5A3E"/><stop offset="1" stop-color="#1F3D2B"/>
+              </linearGradient>
+              <linearGradient id="hero-wood" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#5A4129"/><stop offset="1" stop-color="#3A2A18"/>
+              </linearGradient>
+              <linearGradient id="hero-glass-body" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1A2A1E"/><stop offset="1" stop-color="#0C160F"/>
+              </linearGradient>
+              <linearGradient id="hero-cap" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#CBA862"/><stop offset="1" stop-color="#927029"/>
+              </linearGradient>
+              <linearGradient id="hero-liquid" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#D9A24A"/><stop offset="1" stop-color="#B97E2E"/>
+              </linearGradient>
+            </defs>
+
+            <!-- sky + sun -->
+            <rect x="0" y="0" width="560" height="470" fill="url(#hero-sky)"/>
+            <circle cx="430" cy="130" r="96" fill="url(#hero-sun)"/>
+            <!-- distant hills -->
+            <path d="M0 412c120-30 200-26 300-2 90 22 180 16 260-6v66H0Z" fill="#3A6B4A" opacity="0.5"/>
+            <!-- 開聞岳 (Satsuma-Fuji) -->
+            <path d="M300 168 498 432H102Z" fill="url(#hero-mtn)"/>
+            <path d="M300 168l36 48c-22 10-50 10-72 0Z" fill="#EDE3CE" opacity="0.5"/>
+            <!-- field rows -->
+            <rect x="0" y="430" width="560" height="62" fill="#4C7A55"/>
+            <g stroke="#3C6444" stroke-width="3" opacity="0.7">
+              <line x1="0" y1="446" x2="560" y2="446"/><line x1="0" y1="462" x2="560" y2="462"/><line x1="0" y1="478" x2="560" y2="478"/>
+            </g>
+            <!-- wood table -->
+            <rect x="0" y="490" width="560" height="150" fill="url(#hero-wood)"/>
+            <g stroke="#2C2012" stroke-width="2" opacity="0.45">
+              <line x1="0" y1="524" x2="560" y2="524"/><line x1="0" y1="566" x2="560" y2="566"/><line x1="0" y1="608" x2="560" y2="608"/>
+            </g>
+            <!-- washi disc behind bottle -->
+            <circle cx="300" cy="356" r="172" fill="#F7F1E6" opacity="0.42"/>
+            <!-- gold ripple -->
+            <g fill="none" stroke="#B58A3A" stroke-width="1.5" opacity="0.5">
+              <circle cx="120" cy="540" r="26"/><circle cx="120" cy="540" r="40"/><circle cx="120" cy="540" r="54"/>
+            </g>
+
+            <!-- GLASS (left) -->
+            <g transform="translate(96 452)">
+              <path d="M8 6h78l-9 86a10 10 0 0 1-10 9H27a10 10 0 0 1-10-9Z" fill="#0C160F" opacity="0.22"/>
+              <path d="M8 6h78l-9 86a10 10 0 0 1-10 9H27a10 10 0 0 1-10-9Z" fill="url(#hero-liquid)" opacity="0.78"/>
+              <path d="M8 6h78l-3 28H11Z" fill="#EDE3CE" opacity="0.35"/>
+              <rect x="26" y="40" width="22" height="22" rx="3" fill="#F7F1E6" opacity="0.5"/>
+              <rect x="44" y="54" width="20" height="20" rx="3" fill="#F7F1E6" opacity="0.4"/>
+            </g>
+
+            <!-- GIFT (right) -->
+            <g transform="translate(372 470)">
+              <rect x="6" y="30" width="96" height="74" rx="5" fill="#9E2A24"/>
+              <rect x="0" y="18" width="108" height="22" rx="5" fill="#B32024"/>
+              <rect x="46" y="18" width="16" height="86" fill="#CBA862"/>
+              <path d="M54 18C36-2 12 6 26 22c9 9 28-4 28-4Z" fill="#CBA862"/>
+              <path d="M54 18C72-2 96 6 82 22c-9 9-28-4-28-4Z" fill="#CBA862"/>
+            </g>
+
+            <!-- BOTTLE (center) -->
+            <g>
+              <rect x="285" y="158" width="30" height="22" rx="4" fill="url(#hero-cap)"/>
+              <rect x="290" y="176" width="20" height="80" fill="url(#hero-glass-body)"/>
+              <path d="M268 318c0-44 17-66 22-72v-2h20v2c5 6 22 28 22 72v224a14 14 0 0 1-14 14h-36a14 14 0 0 1-14-14Z" fill="url(#hero-glass-body)"/>
+              <rect x="276" y="356" width="48" height="158" rx="4" fill="#FBF6EC" stroke="#B58A3A" stroke-width="1.5"/>
+              <text x="300" y="380" text-anchor="middle" font-family="'Noto Serif JP',serif" font-size="11" fill="#B32024" letter-spacing="1">本格芋焼酎</text>
+              <line x1="286" y1="388" x2="314" y2="388" stroke="#B58A3A" stroke-width="1"/>
+              <text x="300" y="430" text-anchor="middle" font-family="'Noto Serif JP',serif" font-weight="700" font-size="38" fill="#1A1814">白</text>
+              <text x="300" y="476" text-anchor="middle" font-family="'Noto Serif JP',serif" font-weight="700" font-size="38" fill="#1A1814">露</text>
+              <text x="300" y="502" text-anchor="middle" font-family="'Noto Serif JP',serif" font-size="9" fill="#6B6357" letter-spacing="1">黒麹仕込</text>
+            </g>
+
+            <!-- sweet potatoes (front) -->
+            <g transform="translate(150 588)">
+              <ellipse cx="0" cy="0" rx="34" ry="17" fill="#6E4A6B"/>
+              <ellipse cx="-8" cy="-4" rx="12" ry="5" fill="#8A6488" opacity="0.6"/>
+              <ellipse cx="44" cy="6" rx="28" ry="14" fill="#5C3D59"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROBLEMS — 課題提起
+  ============================================================ -->
+  <section class="problems bg-base section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Your Worries</span>
+        <h2 class="section-title">こんな焼酎選びで迷っていませんか？</h2>
+      </div>
+
+      <div class="problem-grid">
+        <div class="problem-card card fade-up">
+          <span class="icon icon-md"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-help"/></svg></span>
+          <p>どの焼酎を<br>選べばいいか<br>分からない</p>
+        </div>
+        <div class="problem-card card fade-up">
+          <span class="icon icon-md"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-gift"/></svg></span>
+          <p>鹿児島らしい<br>贈り物を<br>探している</p>
+        </div>
+        <div class="problem-card card fade-up">
+          <span class="icon icon-md"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-label"/></svg></span>
+          <p>特別感のある<br>記念品を<br>作りたい</p>
+        </div>
+        <div class="problem-card card fade-up">
+          <span class="icon icon-md"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-home"/></svg></span>
+          <p>信頼できる<br>蔵元から<br>購入したい</p>
+        </div>
+      </div>
+
+      <p class="problem-solution fade-up">
+        白露なら、<strong>日常用・贈答用・法人用</strong>まで用途に合わせて選べます。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES — サービス紹介
+  ============================================================ -->
+  <section class="services bg-white section" id="services">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Services</span>
+        <h2 class="section-title">用途に応じて選べるサービス</h2>
+        <p class="section-lead">日々の晩酌から、ギフト、法人取引まで。白露の蔵元が幅広い用途にお応えします。</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card fade-up">
+          <div class="media-slot service-media slot-bottle">
+            <img class="media-slot__img" alt="">
+            <svg class="media-slot__art motif" viewBox="0 0 80 120" aria-hidden="true"><use href="#art-bottle"/></svg>
+          </div>
+          <div class="service-body">
+            <h3>商品購入</h3>
+            <p>定番から限定品まで、豊富なラインナップからお選びいただけます。</p>
+            <a href="#" class="btn-mini">詳しく見る<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+
+        <article class="service-card fade-up">
+          <div class="media-slot service-media slot-gift">
+            <img class="media-slot__img" alt="">
+            <svg class="media-slot__art motif" viewBox="0 0 80 80" aria-hidden="true"><use href="#art-gift"/></svg>
+          </div>
+          <div class="service-body">
+            <h3>ギフト対応</h3>
+            <p>熨斗・包装・メッセージカードに対応。贈り先に合わせてご用意します。</p>
+            <a href="#" class="btn-mini">詳しく見る<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+
+        <article class="service-card fade-up">
+          <div class="media-slot service-media slot-label">
+            <img class="media-slot__img" alt="">
+            <svg class="media-slot__art motif" viewBox="0 0 80 80" aria-hidden="true"><use href="#art-label"/></svg>
+          </div>
+          <div class="service-body">
+            <h3>オリジナルラベル制作</h3>
+            <p>名入れ・記念日・ロゴなど、世界に一つの贈り物をお作りします。</p>
+            <a href="#" class="btn-mini">詳しく見る<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+
+        <article class="service-card fade-up">
+          <div class="media-slot service-media slot-sub">
+            <img class="media-slot__img" alt="">
+            <svg class="media-slot__art motif" viewBox="0 0 80 80" aria-hidden="true"><use href="#art-bottle"/></svg>
+          </div>
+          <div class="service-body">
+            <h3>定期便</h3>
+            <p>定期的にお届け。買い忘れなく、お得に白露をお楽しみいただけます。</p>
+            <a href="#" class="btn-mini">詳しく見る<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+
+        <article class="service-card fade-up">
+          <div class="media-slot service-media slot-kura">
+            <img class="media-slot__img" alt="">
+            <svg class="media-slot__art motif" viewBox="0 0 100 80" aria-hidden="true"><use href="#art-kura"/></svg>
+          </div>
+          <div class="service-body">
+            <h3>蔵見学</h3>
+            <p>蔵の歴史や製造工程をご案内。指宿の蔵元で焼酎づくりに触れられます。</p>
+            <a href="#" class="btn-mini">詳しく見る<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+
+        <article class="service-card fade-up">
+          <div class="media-slot service-media slot-store">
+            <img class="media-slot__img" alt="">
+            <svg class="media-slot__art motif" viewBox="0 0 80 80" aria-hidden="true"><use href="#art-pour"/></svg>
+          </div>
+          <div class="service-body">
+            <h3>法人・飲食店向け取引</h3>
+            <p>業務用・卸売のご相談、小ロットにも対応。担当者がご案内します。</p>
+            <a href="#" class="btn-mini">詳しく見る<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FLOW — ご注文・ご相談の流れ
+  ============================================================ -->
+  <section class="flow bg-base section" id="flow">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Flow</span>
+        <h2 class="section-title">ご注文・ご相談の流れ</h2>
+      </div>
+
+      <div class="flow-grid">
+        <div class="flow-step fade-up">
+          <span class="step-number">1</span>
+          <span class="icon-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cart"/></svg></span>
+          <h3>商品を選ぶ</h3>
+          <p>商品一覧からお選びください</p>
+        </div>
+        <div class="flow-step fade-up">
+          <span class="step-number">2</span>
+          <span class="icon-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chat"/></svg></span>
+          <h3>注文・相談する</h3>
+          <p>オンライン・電話・FAXでご注文・ご相談</p>
+        </div>
+        <div class="flow-step fade-up">
+          <span class="step-number">3</span>
+          <span class="icon-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
+          <h3>内容を確認</h3>
+          <p>内容・お見積りをご確認いただきます</p>
+        </div>
+        <div class="flow-step fade-up">
+          <span class="step-number">4</span>
+          <span class="icon-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-truck"/></svg></span>
+          <h3>お届け / ご来蔵</h3>
+          <p>ご指定の場所へお届け、または蔵へご来訪</p>
+        </div>
+      </div>
+
+      <p class="flow-note fade-up">オリジナルラベルのご相談も同じ流れで承ります。</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       REASONS — 選ばれる理由
+  ============================================================ -->
+  <section class="reasons bg-white section" id="reasons">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Why Hakuro</span>
+        <h2 class="section-title">白露が選ばれる理由</h2>
+      </div>
+
+      <div class="reason-grid">
+        <div class="reason-card fade-up">
+          <span class="icon-circle icon-circle-gold"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-kura"/></svg></span>
+          <h3>享保15年創業の信頼</h3>
+          <p>江戸期から続く歴史と培われた技術。</p>
+        </div>
+        <div class="reason-card fade-up">
+          <span class="icon-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-droplet"/></svg></span>
+          <h3>指宿の自然と天然水</h3>
+          <p>温暖な気候と良質な天然水が美味しさの源。</p>
+        </div>
+        <div class="reason-card fade-up">
+          <span class="icon-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-leaf"/></svg></span>
+          <h3>こだわりの原料と熟成</h3>
+          <p>厳選したさつまいもと約1年の熟成。</p>
+        </div>
+        <div class="reason-card fade-up">
+          <span class="icon-circle icon-circle-gold"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ribbon"/></svg></span>
+          <h3>贈答にも選ばれる上質感</h3>
+          <p>上品な味わいと洗練されたデザイン。</p>
+        </div>
+        <div class="reason-card fade-up">
+          <span class="icon-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-headset"/></svg></span>
+          <h3>オンライン・電話・FAX対応</h3>
+          <p>丁寧な対応で安心してご利用いただけます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CASES — 利用シーン・事例
+  ============================================================ -->
+  <section class="cases bg-base section" id="cases">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="eyebrow">Use Scenes</span>
+        <h2 class="section-title">利用シーン・事例</h2>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-card fade-up">
+          <div class="media-slot case-media slot-fathersday">
+            <img class="media-slot__img" alt="">
+            <svg class="media-slot__art motif" viewBox="0 0 80 80" aria-hidden="true"><use href="#art-gift"/></svg>
+            <span class="label-strip">GIFT</span>
+          </div>
+          <div class="case-body">
+            <h3>父の日ギフト</h3>
+            <p>感謝を伝える、特別な一杯を贈る。</p>
+          </div>
+        </article>
+
+        <article class="case-card fade-up">
+          <div class="media-slot case-media slot-anniversary">
+            <img class="media-slot__img" alt="">
+            <svg class="media-slot__art motif" viewBox="0 0 80 120" aria-hidden="true"><use href="#art-bottle"/></svg>
+            <span class="label-strip">CORPORATE</span>
+          </div>
+          <div class="case-body">
+            <h3>法人の周年記念</h3>
+            <p>記念品や贈答品としてご好評。</p>
+          </div>
+        </article>
+
+        <article class="case-card fade-up">
+          <div class="media-slot case-media slot-restaurant">
+            <img class="media-slot__img" alt="">
+            <svg class="media-slot__art motif" viewBox="0 0 80 80" aria-hidden="true"><use href="#art-pour"/></svg>
+            <span class="label-strip">RESTAURANT</span>
+          </div>
+          <div class="case-body">
+            <h3>飲食店での提供</h3>
+            <p>料理を引き立てる本格芋焼酎。</p>
+          </div>
+        </article>
+
+        <article class="case-card fade-up">
+          <div class="media-slot case-media slot-original">
+            <img class="media-slot__img" alt="">
+            <svg class="media-slot__art motif" viewBox="0 0 80 80" aria-hidden="true"><use href="#art-label"/></svg>
+            <span class="label-strip">ORIGINAL</span>
+          </div>
+          <div class="case-body">
+            <h3>オリジナルラベル事例</h3>
+            <p>世界に一つのオリジナルギフトに。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MID CTA — 深緑バナー
+  ============================================================ -->
+  <section class="cta-banner">
+    <div class="cta-banner-bg" aria-hidden="true"></div>
+    <div class="container cta-banner-inner">
+      <h2 class="fade-up">用途に合う白露を、<br>まずは見つけてみませんか？</h2>
+      <div class="cta-banner-actions fade-up">
+        <a href="#services" class="btn btn-white">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bottle"/></svg>商品一覧を見る
+        </a>
+        <a href="#contact" class="btn btn-white-outline">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-gift"/></svg>ギフト・法人利用を相談する
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL CTA — 墨黒
+  ============================================================ -->
+  <section class="final-cta" id="contact">
+    <div class="final-cta-bg" aria-hidden="true"></div>
+    <div class="container final-cta-inner">
+      <div class="final-cta-copy">
+        <span class="eyebrow">Contact</span>
+        <h2 class="fade-up">白露の商品購入・ギフト・<br>蔵見学のご相談はこちら</h2>
+        <p class="fade-up">オンライン・電話・FAXで承ります。法人・飲食店のお取引もお気軽にご相談ください。</p>
+      </div>
+
+      <div class="final-cta-actions fade-up">
+        <a href="#services" class="btn btn-primary btn-block">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cart"/></svg>オンラインで購入する
+        </a>
+        <a href="#" class="btn btn-white-outline btn-block">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>お問い合わせする
+        </a>
+        <a href="tel:0993220000" class="btn btn-gold btn-block btn-stacked">
+          <span class="btn-sub">電話で相談する（受付 9:00–17:00 平日）</span>
+          <span class="btn-num">TEL 0993-22-0000</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <span class="footer-logo-mark serif" aria-hidden="true">白</span>
+        <span class="footer-logo-text serif">白露</span>
+      </div>
+      <p class="footer-company">本格芋焼酎 白露<br>白露酒造株式会社</p>
+      <address class="footer-address">
+        〒891-0404 鹿児島県指宿市東方12126番地<br>
+        TEL 0993-22-0000　FAX 0993-22-0001
+      </address>
+    </div>
+
+    <div class="footer-nav-columns">
+      <div class="footer-nav-col">
+        <h4>白露について</h4>
+        <ul>
+          <li><a href="#reasons">蔵元の歴史</a></li>
+          <li><a href="#reasons">製法・こだわり</a></li>
+          <li><a href="#cases">蔵見学</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-col">
+        <h4>商品・ギフト</h4>
+        <ul>
+          <li><a href="#services">商品一覧</a></li>
+          <li><a href="#services">ギフト・オリジナルラベル</a></li>
+          <li><a href="#services">定期便</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-col">
+        <h4>ご注文</h4>
+        <ul>
+          <li><a href="#flow">購入方法</a></li>
+          <li><a href="#contact">よくあるご質問</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-col">
+        <h4>法人のお客様</h4>
+        <ul>
+          <li><a href="#contact">法人向け取引</a></li>
+          <li><a href="#contact">飲食店・卸売</a></li>
+          <li><a href="#contact">記念品・周年</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-group">
+      <h4>3社の力で、白露をお届けします</h4>
+      <ul class="footer-group-list">
+        <li><span>製造</span>白露酒造株式会社</li>
+        <li><span>販売</span>白露商事株式会社</li>
+        <li><span>物流・サポート</span>白露サービス株式会社</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <nav class="footer-legal" aria-label="ポリシー">
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">特定商取引法に基づく表記</a>
+        <a href="#">サイトマップ</a>
+      </nav>
+      <small>&copy; 2024 Shiratsuyu Shuzo Co., Ltd.</small>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     MOBILE FIXED NAV — 購入 / 電話 / 問い合わせ
+============================================================ -->
+<nav class="mobile-fixed-nav" aria-label="固定ナビゲーション">
+  <a href="#services" class="accent">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cart"/></svg>購入する
+  </a>
+  <a href="tel:0993220000">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>電話する
+  </a>
+  <a href="#contact">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>問い合わせ
+  </a>
+</nav>
+
+<!-- Back to top -->
+<button class="back-to-top" aria-label="ページ上部へ戻る">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chevron-up"/></svg>
+</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>

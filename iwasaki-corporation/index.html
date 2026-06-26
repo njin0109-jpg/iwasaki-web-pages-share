@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="description" content="鹿児島の移動と旅を、もっと便利に。バス・フェリー・観光・ICカードまで、鹿児島の暮らしと観光を支える交通サービスを展開するいわさきコーポレーションの公式サイトです。" />
+<title>いわさきコーポレーション｜鹿児島の移動と旅を、もっと便利に。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<!-- NOTE: 数値（年数・路線数・航路数・利用者数）は仮置きです。公開前に必ず事実確認の上、差し替えてください。 -->
+</head>
+<body>
+
+<!-- ============ SVG SPRITE ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.34 1.9.64 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.3 1.85.52 2.81.64A2 2 0 0 1 22 16.92z"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/>
+    </symbol>
+    <symbol id="i-bus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 16V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/>
+      <path d="M4 16h16v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-1H8v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3z"/>
+      <circle cx="8" cy="16" r="1.4" fill="currentColor"/>
+      <circle cx="16" cy="16" r="1.4" fill="currentColor"/>
+      <line x1="4" y1="11" x2="20" y2="11"/>
+    </symbol>
+    <symbol id="i-ferry" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 17c1.5 1 3 1.5 4.5 1.5S10.5 18 12 17s3-1.5 4.5-1.5 3 .5 4.5 1.5"/>
+      <path d="M3 21c1.5 1 3 1.5 4.5 1.5S10.5 22 12 21s3-1.5 4.5-1.5 3 .5 4.5 1.5"/>
+      <path d="M5 14l1-6h12l1 6"/>
+      <path d="M12 3v5"/>
+      <path d="M9 5h6"/>
+    </symbol>
+    <symbol id="i-suitcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="7" width="18" height="13" rx="2"/>
+      <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/>
+      <line x1="3" y1="13" x2="21" y2="13"/>
+    </symbol>
+    <symbol id="i-school" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="8" r="3"/>
+      <circle cx="15" cy="8" r="3"/>
+      <path d="M2 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+      <path d="M12 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2"/>
+    </symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+      <circle cx="12" cy="13" r="4"/>
+    </symbol>
+    <symbol id="i-ic-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="5" width="20" height="14" rx="3"/>
+      <path d="M6 13c.8 0 1.5-.5 1.5-1.5S6.8 10 6 10"/>
+      <path d="M8.5 14c1.2 0 2.5-.8 2.5-2.5S9.7 9 8.5 9"/>
+      <path d="M11 15c1.6 0 3.5-1.1 3.5-3.5S12.6 8 11 8"/>
+    </symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="8" r="4"/>
+      <path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/>
+    </symbol>
+    <symbol id="i-island" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 18c2 1.5 4 2 6 2s4-.5 6-2 4-2 6-2"/>
+      <path d="M12 17V8"/>
+      <path d="M9 11l3-3 3 3"/>
+      <path d="M7 13c1.5-1 3-1.5 5-1.5s3.5.5 5 1.5"/>
+    </symbol>
+    <symbol id="i-mappin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="7"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="8" y1="13" x2="16" y2="13"/>
+      <line x1="8" y1="17" x2="14" y2="17"/>
+    </symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+      <path d="M21 19a2 2 0 0 1-2 2h-1v-6h3z"/>
+      <path d="M3 19a2 2 0 0 0 2 2h1v-6H3z"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="2" y1="12" x2="22" y2="12"/>
+      <path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/>
+    </symbol>
+    <symbol id="i-network" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 4l-7 4v8l7 4 7-4V8z"/>
+      <path d="M12 4v16"/>
+      <path d="M5 8l14 8"/>
+      <path d="M19 8L5 16"/>
+    </symbol>
+    <symbol id="i-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="6" y="2" width="12" height="20" rx="2"/>
+      <line x1="10" y1="18" x2="14" y2="18"/>
+    </symbol>
+    <symbol id="i-heart-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 13c0-1 1-2 2-2h3l2 2h6c1 0 2 1 2 2v2c0 1-1 2-2 2H8c-1 0-3-1-3-3z"/>
+      <path d="M12 9c0-2 2-3 3-3s3 1 3 3-3 4-3 4-3-2-3-4z"/>
+    </symbol>
+    <symbol id="i-question" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+      <line x1="12" y1="17" x2="12.01" y2="17"/>
+    </symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="7" width="20" height="14" rx="2"/>
+      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+    </symbol>
+    <symbol id="i-airport" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 16v-2l-9-5V4a1.5 1.5 0 0 0-3 0v5l-9 5v2l9-3v4l-2 1.5V20l3.5-1L14 20v-1.5L12 17v-4z"/>
+    </symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 20c0-8 6-14 16-15 0 10-6 16-15 16-1 0-1-1-1-1z"/>
+      <line x1="5" y1="20" x2="14" y2="11"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/>
+      <polyline points="12 7 12 12 15.5 14"/>
+    </symbol>
+    <!-- Decorative skyline silhouette -->
+    <symbol id="g-skyline" viewBox="0 0 600 120" preserveAspectRatio="none">
+      <path d="M0,120 L0,80 L40,75 L80,60 L130,50 L180,30 L220,55 L260,40 L300,20 L340,45 L380,55 L430,40 L480,60 L530,50 L600,70 L600,120 Z" fill="currentColor"/>
+    </symbol>
+    <!-- Decorative wave -->
+    <symbol id="g-wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C240,100 480,40 720,60 C960,80 1200,120 1440,80 L1440,120 L0,120 Z" fill="currentColor" opacity="0.7"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="section-inner header-inner">
+    <a href="#top" class="logo" aria-label="いわさきコーポレーション ホーム">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 16V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/>
+          <path d="M4 16h16v2H4z"/>
+          <circle cx="8" cy="17" r="1.2" fill="currentColor"/>
+          <circle cx="16" cy="17" r="1.2" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="logo-text">
+        <span class="logo-en">Iwasaki Corporation</span>
+        <span class="logo-jp">いわさきコーポレーション株式会社</span>
+      </span>
+    </a>
+
+    <nav class="global-nav" aria-label="グローバルナビゲーション">
+      <a href="#purpose">目的から探す</a>
+      <a href="#services">サービス</a>
+      <a href="#tourism">観光情報</a>
+      <a href="#recruit">採用情報</a>
+      <a href="#footer">会社案内</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-tel" href="tel:0992592888">
+        <svg class="ico"><use href="#i-phone"/></svg>
+        <span class="tel-text">
+          <span class="num">099-259-2888</span>
+          <span class="hours">受付時間 9:00-18:00</span>
+        </span>
+      </a>
+      <a class="btn btn-accent btn-medium btn-header-cta" href="#final-cta">
+        <svg class="ico"><use href="#i-mail"/></svg>
+        お問い合わせ
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-controls="mobile-drawer" aria-expanded="false">
+        <svg class="ico ico-menu"><use href="#i-menu"/></svg>
+        <svg class="ico ico-close"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="section-inner hero-inner">
+    <div class="hero-copy" data-animate="fade-up">
+      <span class="eyebrow">Iwasaki Corporation</span>
+      <h1>
+        鹿児島の<br>
+        移動と旅を、<br>
+        <span class="accent">もっと便利に。</span>
+      </h1>
+      <p class="hero-lead">
+        バス・フェリー・観光・ICカードまで、<br>
+        鹿児島の暮らしと観光を支える<br>
+        交通サービスを展開しています。
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-accent btn-large" href="#final-cta">
+          <svg class="ico"><use href="#i-headset"/></svg>
+          貸切バス・団体移動を相談する
+          <svg class="ico"><use href="#i-arrow-right"/></svg>
+        </a>
+        <a class="btn btn-outline btn-large" href="#services">
+          バス・フェリー情報を見る
+          <svg class="ico"><use href="#i-arrow-right"/></svg>
+        </a>
+      </div>
+
+      <div class="trust-labels">
+        <span class="trust-label">地域に根ざした交通網</span>
+        <span class="trust-label">バス路線多数</span>
+        <span class="trust-label">フェリー・高速船対応</span>
+      </div>
+    </div>
+
+    <div class="hero-visual" data-animate="fade-up" aria-hidden="true">
+      <div class="visual-card v-main">
+        <div class="photo-frame photo-sakurajima">
+          <span class="photo-skyline">
+            <svg viewBox="0 0 600 120" preserveAspectRatio="none" style="width:100%;height:100%"><use href="#g-skyline"/></svg>
+          </span>
+          <span class="photo-motif"><svg viewBox="0 0 24 24"><use href="#i-bus"/></svg></span>
+        </div>
+      </div>
+      <div class="visual-card v-sub-1">
+        <div class="photo-frame photo-ferry">
+          <span class="photo-motif"><svg viewBox="0 0 24 24"><use href="#i-ferry"/></svg></span>
+        </div>
+      </div>
+      <div class="visual-card v-sub-2">
+        <div class="photo-frame photo-tourism">
+          <span class="photo-motif"><svg viewBox="0 0 24 24"><use href="#i-camera"/></svg></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-inner">
+    <div class="hero-stats" data-animate="fade-up">
+      <div class="stat-item">
+        <span class="stat-label">
+          <svg class="ico"><use href="#i-mappin"/></svg>
+          地域とともに
+        </span>
+        <span><span class="stat-num">100</span><span class="stat-unit">年以上</span></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">
+          <svg class="ico"><use href="#i-bus"/></svg>
+          バス路線数
+        </span>
+        <span><span class="stat-num">200</span><span class="stat-unit">路線以上</span></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">
+          <svg class="ico"><use href="#i-ferry"/></svg>
+          フェリー航路
+        </span>
+        <span><span class="stat-num">7</span><span class="stat-unit">航路</span></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">
+          <svg class="ico"><use href="#i-user"/></svg>
+          年間ご利用者数
+        </span>
+        <span><span class="stat-num">数百万</span><span class="stat-unit">人以上</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PURPOSE CTA (user-goal entry points) ============ -->
+<section class="purpose" id="purpose">
+  <div class="section-inner">
+    <div class="section-head" data-animate="fade-up">
+      <h2>目的に合わせて探す</h2>
+      <span class="heading-icon" aria-hidden="true"></span>
+      <p class="purpose-lead">時刻表・観光アクセス・団体移動・採用情報まで、知りたい情報へすぐにアクセスできます。</p>
+    </div>
+
+    <div class="purpose-grid">
+      <article class="purpose-card" data-animate="fade-up">
+        <span class="purpose-icon" aria-hidden="true"><svg><use href="#i-clock"/></svg></span>
+        <span class="purpose-audience">一般のお客様</span>
+        <h3>時刻表・運賃を見る</h3>
+        <p>路線バスの時刻表、運賃、路線図、のりば情報を確認できます。</p>
+        <a class="btn btn-primary purpose-btn" href="#schedule">
+          時刻表・運賃を見る
+          <svg class="ico"><use href="#i-arrow-right"/></svg>
+        </a>
+      </article>
+
+      <article class="purpose-card" data-animate="fade-up">
+        <span class="purpose-icon" aria-hidden="true"><svg><use href="#i-camera"/></svg></span>
+        <span class="purpose-audience">観光でお越しの方</span>
+        <h3>観光アクセスを見る</h3>
+        <p>鹿児島空港、市内、桜島、指宿、霧島、屋久島、種子島などへの移動情報を確認できます。</p>
+        <a class="btn btn-primary purpose-btn" href="#tourism">
+          観光アクセスを見る
+          <svg class="ico"><use href="#i-arrow-right"/></svg>
+        </a>
+      </article>
+
+      <article class="purpose-card purpose-card--feature" data-animate="fade-up">
+        <span class="purpose-icon" aria-hidden="true"><svg><use href="#i-headset"/></svg></span>
+        <span class="purpose-audience">団体・法人のお客様</span>
+        <h3>貸切バスを相談する</h3>
+        <p>学校行事、企業研修、団体旅行、観光ツアーなどの移動手配を相談できます。</p>
+        <a class="btn btn-accent purpose-btn" href="#charter">
+          貸切バスを相談する
+          <svg class="ico"><use href="#i-arrow-right"/></svg>
+        </a>
+      </article>
+
+      <article class="purpose-card" data-animate="fade-up">
+        <span class="purpose-icon" aria-hidden="true"><svg><use href="#i-briefcase"/></svg></span>
+        <span class="purpose-audience">採用に関心のある方</span>
+        <h3>採用情報を見る</h3>
+        <p>地域の交通と観光を支える仕事、募集職種、働き方を確認できます。</p>
+        <a class="btn btn-primary purpose-btn" href="#recruit">
+          採用情報を見る
+          <svg class="ico"><use href="#i-arrow-right"/></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEMS ============ -->
+<section class="section problems section-soft">
+  <div class="section-inner">
+    <div class="section-head" data-animate="fade-up">
+      <h2>こんなお悩みはありませんか？</h2>
+      <span class="heading-icon" aria-hidden="true"></span>
+    </div>
+
+    <ul class="problem-grid">
+      <li class="problem-card" data-animate="fade-up">
+        <span class="icon"><svg><use href="#i-bus"/></svg></span>
+        <h3>通勤・通学で使う<br>バス情報をすぐ<br>確認したい</h3>
+      </li>
+      <li class="problem-card" data-animate="fade-up">
+        <span class="icon"><svg><use href="#i-suitcase"/></svg></span>
+        <h3>空港や観光地への<br>移動手段を<br>まとめて知りたい</h3>
+      </li>
+      <li class="problem-card" data-animate="fade-up">
+        <span class="icon"><svg><use href="#i-school"/></svg></span>
+        <h3>学校行事や団体旅行で<br>まとまった移動手段を<br>手配したい</h3>
+      </li>
+      <li class="problem-card" data-animate="fade-up">
+        <span class="icon"><svg><use href="#i-ferry"/></svg></span>
+        <h3>屋久島・種子島への<br>船やフェリー情報を<br>確認したい</h3>
+      </li>
+      <li class="problem-card" data-animate="fade-up">
+        <span class="icon"><svg><use href="#i-user"/></svg></span>
+        <h3>地域に貢献できる<br>仕事を探している</h3>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services" id="services">
+  <div class="section-inner">
+    <div class="section-head" data-animate="fade-up">
+      <h2>いわさきコーポレーションのサービス</h2>
+      <span class="heading-icon" aria-hidden="true"></span>
+    </div>
+
+    <ul class="service-grid">
+      <li class="service-card card" data-animate="fade-up">
+        <div class="service-photo">
+          <div class="photo-frame photo-bus">
+            <span class="photo-skyline"><svg viewBox="0 0 600 120" preserveAspectRatio="none" style="width:100%;height:100%"><use href="#g-skyline"/></svg></span>
+            <span class="photo-motif"><svg viewBox="0 0 24 24"><use href="#i-bus"/></svg></span>
+          </div>
+          <span class="service-icon"><svg><use href="#i-bus"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>バスサービス</h3>
+          <p class="service-desc">路線バス・高速バス・空港バスなど、便利で快適な移動をサポート。</p>
+          <div class="service-cta">
+            <a class="btn btn-outline btn-medium" href="#schedule">
+              時刻表・運賃を見る
+              <svg class="ico"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+        </div>
+      </li>
+
+      <li class="service-card card" data-animate="fade-up">
+        <div class="service-photo">
+          <div class="photo-frame photo-charter">
+            <span class="photo-skyline"><svg viewBox="0 0 600 120" preserveAspectRatio="none" style="width:100%;height:100%"><use href="#g-skyline"/></svg></span>
+            <span class="photo-motif"><svg viewBox="0 0 24 24"><use href="#i-school"/></svg></span>
+          </div>
+          <span class="service-icon"><svg><use href="#i-school"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>貸切バス・観光バス</h3>
+          <p class="service-desc">学校行事・企業研修・団体旅行など、目的に合わせた移動プランをご提案。</p>
+          <div class="service-cta">
+            <a class="btn btn-accent btn-medium" href="#charter">
+              貸切バスを相談する
+              <svg class="ico"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+        </div>
+      </li>
+
+      <li class="service-card card" data-animate="fade-up">
+        <div class="service-photo">
+          <div class="photo-frame photo-ferry">
+            <span class="photo-motif"><svg viewBox="0 0 24 24"><use href="#i-ferry"/></svg></span>
+          </div>
+          <span class="service-icon"><svg><use href="#i-ferry"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>フェリー・高速船</h3>
+          <p class="service-desc">屋久島・種子島方面など、鹿児島の海の移動を支えています。</p>
+          <div class="service-cta">
+            <a class="btn btn-outline btn-medium" href="#ferry">
+              運航情報・運賃を見る
+              <svg class="ico"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+        </div>
+      </li>
+
+      <li class="service-card card" data-animate="fade-up">
+        <div class="service-photo">
+          <div class="photo-frame photo-ic">
+            <span class="photo-motif"><svg viewBox="0 0 24 24"><use href="#i-ic-card"/></svg></span>
+          </div>
+          <span class="service-icon"><svg><use href="#i-ic-card"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>いわさきICカード</h3>
+          <p class="service-desc">スムーズで便利なキャッシュレス移動をサポート。</p>
+          <div class="service-cta">
+            <a class="btn btn-outline btn-medium" href="#ic-card">
+              ICカードを詳しく見る
+              <svg class="ico"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+        </div>
+      </li>
+
+      <li class="service-card card" data-animate="fade-up">
+        <div class="service-photo">
+          <div class="photo-frame photo-tourism">
+            <span class="photo-motif"><svg viewBox="0 0 24 24"><use href="#i-camera"/></svg></span>
+          </div>
+          <span class="service-icon"><svg><use href="#i-camera"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>観光情報</h3>
+          <p class="service-desc">おすすめのスポットやモデルコースなど、鹿児島の旅をもっと楽しく。</p>
+          <div class="service-cta">
+            <a class="btn btn-outline btn-medium" href="#tourism">
+              観光アクセスを見る
+              <svg class="ico"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ FLOW ============ -->
+<section class="section flow section-soft" id="flow">
+  <div class="section-inner">
+    <div class="section-head" data-animate="fade-up">
+      <h2>ご利用・お問い合わせの流れ</h2>
+      <span class="heading-icon" aria-hidden="true"></span>
+    </div>
+
+    <ol class="flow-list">
+      <li class="flow-step" data-animate="fade-up">
+        <span class="step-icon"><svg><use href="#i-search"/></svg></span>
+        <span class="step-label">STEP 1</span>
+        <h3>目的を選ぶ</h3>
+        <p>バス、船、貸切バス、観光、採用などお客様の目的に合ったサービスを選択します。</p>
+      </li>
+      <li class="flow-step" data-animate="fade-up">
+        <span class="step-icon"><svg><use href="#i-doc"/></svg></span>
+        <span class="step-label">STEP 2</span>
+        <h3>情報を確認する</h3>
+        <p>運行情報・料金・利用方法などをご確認いただけます。</p>
+      </li>
+      <li class="flow-step" data-animate="fade-up">
+        <span class="step-icon"><svg><use href="#i-mail"/></svg></span>
+        <span class="step-label">STEP 3</span>
+        <h3>お問い合わせする</h3>
+        <p>団体利用やその他ご相談は、フォームやお電話でご連絡ください。</p>
+      </li>
+      <li class="flow-step" data-animate="fade-up">
+        <span class="step-icon"><svg><use href="#i-user"/></svg></span>
+        <span class="step-label">STEP 4</span>
+        <h3>担当者よりご案内</h3>
+        <p>内容に応じて担当部署よりご連絡し、丁寧にご案内いたします。</p>
+      </li>
+    </ol>
+
+    <div class="section-cta" data-animate="fade-up">
+      <a class="btn btn-outline btn-large" href="#purpose">
+        目的から探す
+        <svg class="ico"><use href="#i-arrow-right"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REASONS ============ -->
+<section class="section reasons">
+  <div class="section-inner">
+    <div class="section-head" data-animate="fade-up">
+      <h2>いわさきコーポレーションが選ばれる理由</h2>
+      <span class="heading-icon" aria-hidden="true"></span>
+    </div>
+
+    <ul class="reason-grid">
+      <li class="reason-card" data-animate="fade-up">
+        <span class="reason-icon"><svg><use href="#i-heart-hand"/></svg></span>
+        <h3>地域に根ざした<br>交通ネットワーク</h3>
+        <p>鹿児島の暮らしと観光を支える長年の実績と信頼。</p>
+      </li>
+      <li class="reason-card" data-animate="fade-up">
+        <span class="reason-icon"><svg><use href="#i-network"/></svg></span>
+        <h3>バスも船も、<br>まとめてサポート</h3>
+        <p>陸と海の移動をワンストップでご提供します。</p>
+      </li>
+      <li class="reason-card" data-animate="fade-up">
+        <span class="reason-icon"><svg><use href="#i-school"/></svg></span>
+        <h3>団体・法人利用も<br>柔軟に対応</h3>
+        <p>学校・企業・団体旅行など、多様なニーズに対応可能。</p>
+      </li>
+      <li class="reason-card" data-animate="fade-up">
+        <span class="reason-icon"><svg><use href="#i-mobile"/></svg></span>
+        <h3>便利で使いやすい<br>サービス</h3>
+        <p>ICカードやデジタル情報で、快適な移動体験を提供。</p>
+      </li>
+      <li class="reason-card" data-animate="fade-up">
+        <span class="reason-icon"><svg><use href="#i-globe"/></svg></span>
+        <h3>観光・多言語対応</h3>
+        <p>国内外の観光客にも安心の情報提供体制。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ ACHIEVEMENTS ============ -->
+<section class="section achievements section-mint">
+  <div class="section-inner">
+    <div class="section-head" data-animate="fade-up">
+      <h2>鹿児島の移動と観光を支える実績</h2>
+      <span class="heading-icon" aria-hidden="true"></span>
+    </div>
+
+    <div class="achievement-grid" data-animate="fade-up">
+      <div class="achievement-item">
+        <span class="ach-icon"><svg><use href="#i-bus"/></svg></span>
+        <span class="ach-label">バス路線数</span>
+        <span><span class="ach-number">200</span><span class="ach-unit">路線以上</span></span>
+      </div>
+      <div class="achievement-item">
+        <span class="ach-icon"><svg><use href="#i-ferry"/></svg></span>
+        <span class="ach-label">フェリー船舶数</span>
+        <span><span class="ach-number">7</span><span class="ach-unit">航路</span></span>
+      </div>
+      <div class="achievement-item">
+        <span class="ach-icon"><svg><use href="#i-user"/></svg></span>
+        <span class="ach-label">年間ご利用者数</span>
+        <span><span class="ach-number">数百万</span><span class="ach-unit">人以上</span></span>
+      </div>
+      <div class="achievement-item">
+        <span class="ach-icon"><svg><use href="#i-school"/></svg></span>
+        <span class="ach-label">貸切バス実績</span>
+        <span><span class="ach-number">多数</span></span>
+      </div>
+      <div class="achievement-item">
+        <span class="ach-icon"><svg><use href="#i-mappin"/></svg></span>
+        <span class="ach-label">事業エリア</span>
+        <span><span class="ach-number">鹿児島県内全域</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASES ============ -->
+<section class="section cases" id="cases">
+  <div class="section-inner">
+    <div class="section-head" data-animate="fade-up">
+      <h2>ご利用事例</h2>
+      <span class="heading-icon" aria-hidden="true"></span>
+    </div>
+
+    <ul class="case-grid">
+      <li class="case-card" data-animate="fade-up">
+        <div class="case-photo">
+          <div class="photo-frame photo-commute">
+            <span class="photo-skyline"><svg viewBox="0 0 600 120" preserveAspectRatio="none" style="width:100%;height:100%"><use href="#g-skyline"/></svg></span>
+            <span class="photo-motif"><svg viewBox="0 0 24 24"><use href="#i-bus"/></svg></span>
+          </div>
+        </div>
+        <div class="case-body">
+          <span class="case-tag">通勤・通学</span>
+          <h3>毎日の移動を支える<br>地域の路線バス</h3>
+        </div>
+      </li>
+      <li class="case-card" data-animate="fade-up">
+        <div class="case-photo">
+          <div class="photo-frame photo-tourism">
+            <span class="photo-skyline"><svg viewBox="0 0 600 120" preserveAspectRatio="none" style="width:100%;height:100%"><use href="#g-skyline"/></svg></span>
+            <span class="photo-motif"><svg viewBox="0 0 24 24"><use href="#i-leaf"/></svg></span>
+          </div>
+        </div>
+        <div class="case-body">
+          <span class="case-tag">観光</span>
+          <h3>桜島・指宿・霧島など<br>観光地へのアクセス</h3>
+        </div>
+      </li>
+      <li class="case-card" data-animate="fade-up">
+        <div class="case-photo">
+          <div class="photo-frame photo-school">
+            <span class="photo-skyline"><svg viewBox="0 0 600 120" preserveAspectRatio="none" style="width:100%;height:100%"><use href="#g-skyline"/></svg></span>
+            <span class="photo-motif"><svg viewBox="0 0 24 24"><use href="#i-school"/></svg></span>
+          </div>
+        </div>
+        <div class="case-body">
+          <span class="case-tag">団体旅行</span>
+          <h3>修学旅行・企業研修の<br>団体移動に</h3>
+        </div>
+      </li>
+      <li class="case-card" data-animate="fade-up">
+        <div class="case-photo">
+          <div class="photo-frame photo-island">
+            <span class="photo-skyline"><svg viewBox="0 0 600 120" preserveAspectRatio="none" style="width:100%;height:100%"><use href="#g-skyline"/></svg></span>
+            <span class="photo-motif"><svg viewBox="0 0 24 24"><use href="#i-island"/></svg></span>
+          </div>
+        </div>
+        <div class="case-body">
+          <span class="case-tag">離島移動</span>
+          <h3>屋久島・種子島への<br>快適な船旅</h3>
+        </div>
+      </li>
+      <li class="case-card" data-animate="fade-up">
+        <div class="case-photo">
+          <div class="photo-frame photo-airport">
+            <span class="photo-skyline"><svg viewBox="0 0 600 120" preserveAspectRatio="none" style="width:100%;height:100%"><use href="#g-skyline"/></svg></span>
+            <span class="photo-motif"><svg viewBox="0 0 24 24"><use href="#i-airport"/></svg></span>
+          </div>
+        </div>
+        <div class="case-body">
+          <span class="case-tag">空港アクセス</span>
+          <h3>鹿児島空港への<br>スムーズなアクセス</h3>
+        </div>
+      </li>
+    </ul>
+
+    <div class="section-cta" data-animate="fade-up">
+      <a class="btn btn-outline btn-large" href="#">
+        事例をもっと見る
+        <svg class="ico"><use href="#i-arrow-right"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta" id="final-cta">
+  <div class="final-silhouette" aria-hidden="true">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+      <use href="#g-skyline"/>
+    </svg>
+  </div>
+  <div class="section-inner final-inner">
+    <h2 data-animate="fade-up">目的に合わせて、次の情報へお進みください</h2>
+    <p class="final-lead" data-animate="fade-up">
+      日常の移動、観光アクセス、団体移動、採用情報まで、必要な情報をすぐに確認できます。
+    </p>
+    <div class="final-actions final-actions-grid" data-animate="fade-up">
+      <a class="btn btn-white btn-large" href="#schedule">
+        <svg class="ico"><use href="#i-clock"/></svg>
+        時刻表・運賃を見る
+      </a>
+      <a class="btn btn-white btn-large" href="#tourism">
+        <svg class="ico"><use href="#i-camera"/></svg>
+        観光アクセスを見る
+      </a>
+      <a class="btn btn-accent btn-large" href="#charter">
+        <svg class="ico"><use href="#i-headset"/></svg>
+        貸切バスを相談する
+      </a>
+      <a class="btn btn-ghost-light btn-large" href="#recruit">
+        <svg class="ico"><use href="#i-briefcase"/></svg>
+        採用情報を見る
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="footer">
+  <div class="section-inner footer-inner">
+    <div class="footer-brand">
+      <a href="#top" class="logo" aria-label="いわさきコーポレーション ホーム">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 16V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10"/>
+            <path d="M4 16h16v2H4z"/>
+            <circle cx="8" cy="17" r="1.2" fill="currentColor"/>
+            <circle cx="16" cy="17" r="1.2" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <span class="logo-en">Iwasaki Corporation</span>
+          <span class="logo-jp">いわさきコーポレーション株式会社</span>
+        </span>
+      </a>
+      <p class="footer-addr">〒890-0064<br>鹿児島県鹿児島市鴨池新町12-12</p>
+      <p class="footer-tel">TEL. 099-259-2888（代表）</p>
+      <p class="footer-hours">受付時間 9:00-18:00</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>サービス</h4>
+      <ul>
+        <li><a href="#services">バスサービス</a></li>
+        <li><a href="#services">貸切バス・観光バス</a></li>
+        <li><a href="#services">フェリー・高速船</a></li>
+        <li><a href="#services">いわさきICカード</a></li>
+        <li><a href="#services">SA・PA</a></li>
+        <li><a href="#services">観光情報</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>目的から探す</h4>
+      <ul>
+        <li><a href="#cases">通勤・通学</a></li>
+        <li><a href="#cases">空港アクセス</a></li>
+        <li><a href="#cases">観光・旅行</a></li>
+        <li><a href="#cases">団体・法人の方へ</a></li>
+        <li><a href="#cases">離島への移動</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>採用情報</h4>
+      <ul>
+        <li><a href="#">採用メッセージ</a></li>
+        <li><a href="#">募集要項</a></li>
+        <li><a href="#">先輩の声</a></li>
+        <li><a href="#">よくある質問</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>会社案内</h4>
+      <ul>
+        <li><a href="#">会社概要</a></li>
+        <li><a href="#">事業内容</a></li>
+        <li><a href="#">沿革</a></li>
+        <li><a href="#">アクセス</a></li>
+        <li><a href="#final-cta">お問い合わせ</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+        <li><a href="#">サイトマップ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span data-year>2026</span> Iwasaki Corporation. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- ============ MOBILE DRAWER ============ -->
+<div class="drawer-overlay" id="drawer-overlay" aria-hidden="true"></div>
+<aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true" aria-label="モバイルナビゲーション">
+  <a href="#purpose">目的から探す</a>
+  <a href="#services">サービス</a>
+  <a href="#tourism">観光情報</a>
+  <a href="#recruit">採用情報</a>
+  <a href="#footer">会社案内</a>
+  <a class="drawer-cta" href="#charter">
+    <svg class="ico"><use href="#i-headset"/></svg>
+    貸切バスを相談する
+  </a>
+  <a class="drawer-tel" href="tel:0992592888">
+    <svg class="ico"><use href="#i-phone"/></svg>
+    099-259-2888
+  </a>
+</aside>
+
+<!-- ============ SP FIXED BOTTOM CTA ============ -->
+<div class="sp-fixed-cta" aria-label="目的別ショートカット">
+  <a class="btn btn-outline" href="#schedule">
+    <svg class="ico"><use href="#i-clock"/></svg>
+    時刻表
+  </a>
+  <a class="btn btn-accent" href="#charter">
+    <svg class="ico"><use href="#i-headset"/></svg>
+    貸切相談
+  </a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

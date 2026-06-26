@@ -1,0 +1,399 @@
+/* ============================================================
+   components.css — Reusable Components
+   本格芋焼酎 白露
+============================================================ */
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 54px;
+  padding: 0 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-jp);
+  font-size: var(--font-base);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  transition:
+    transform var(--trans-base) var(--ease-out),
+    box-shadow var(--trans-base) var(--ease-out),
+    background-color var(--trans-base) ease,
+    border-color var(--trans-base) ease,
+    color var(--trans-base) ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Primary — 酒蔵の赤 */
+.btn-primary {
+  background: var(--color-red);
+  color: var(--color-white);
+  box-shadow: var(--shadow-cta);
+}
+.btn-primary:hover {
+  background: var(--color-red-dark);
+  box-shadow: var(--shadow-cta-hover);
+}
+
+/* Secondary — 生成り地 + 金枠 */
+.btn-secondary {
+  background: var(--color-white);
+  color: var(--color-ink);
+  border-color: var(--color-gold);
+}
+.btn-secondary:hover {
+  background: var(--color-base);
+  border-color: var(--color-gold-deep);
+}
+
+/* Gold fill */
+.btn-gold {
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold));
+  color: var(--color-white);
+  box-shadow: 0 12px 24px rgba(181, 138, 58, 0.26);
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-deep));
+  box-shadow: 0 14px 28px rgba(181, 138, 58, 0.36);
+}
+
+/* White (for dark backgrounds) */
+.btn-white {
+  background: var(--color-white);
+  color: var(--color-ink);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.btn-white:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* White outline (for dark backgrounds) */
+.btn-white-outline {
+  background: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.btn-white-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-white);
+}
+
+/* Mini button (for service cards) */
+.btn-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 0;
+  padding: 0;
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-green);
+  background: none;
+  border: none;
+  transition: gap var(--trans-base) ease;
+}
+.btn-mini:hover { gap: 10px; }
+.btn-mini svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Wide / block variants */
+.btn-wide  { min-width: 248px; }
+.btn-block { width: 100%; }
+
+/* Button with sub-line (e.g. phone CTA) */
+.btn-stacked {
+  flex-direction: column;
+  gap: 2px;
+  min-height: 64px;
+  line-height: 1.3;
+}
+.btn-stacked .btn-sub {
+  font-family: var(--font-num);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  opacity: 0.85;
+}
+.btn-stacked .btn-num {
+  font-family: var(--font-num);
+  font-size: var(--font-md);
+  font-weight: 700;
+}
+
+/* ============================================================
+   CARDS
+============================================================ */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform var(--trans-base) var(--ease-out),
+    box-shadow var(--trans-base) var(--ease-out),
+    border-color var(--trans-base) ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-gold-light);
+}
+
+/* ============================================================
+   ICONS
+============================================================ */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--color-green);
+  stroke-width: 1.7;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-sm svg { width: 24px; height: 24px; }
+.icon-md svg { width: 36px; height: 36px; }
+
+/* Icon wrapper with background circle */
+.icon-circle {
+  width: 66px;
+  height: 66px;
+  background: rgba(31, 61, 43, 0.07);
+  border: 1px solid rgba(31, 61, 43, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-circle svg {
+  width: 30px;
+  height: 30px;
+  stroke: var(--color-green);
+  stroke-width: 1.7;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-circle-gold {
+  background: rgba(181, 138, 58, 0.1);
+  border-color: rgba(181, 138, 58, 0.22);
+}
+.icon-circle-gold svg { stroke: var(--color-gold-deep); }
+
+.icon-circle-sm { width: 48px; height: 48px; }
+.icon-circle-sm svg { width: 24px; height: 24px; }
+
+/* ============================================================
+   BADGE (信頼ラベル / trust chips)
+============================================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  background: var(--color-white);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.badge svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-gold-deep);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+/* Pill tag (small label strip) */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 13px;
+  border-radius: var(--radius-pill);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  background: var(--color-base);
+  color: var(--color-gold-deep);
+  border: 1px solid var(--color-border);
+}
+
+.tag-green { background: rgba(31, 61, 43, 0.08); color: var(--color-green); border-color: rgba(31, 61, 43, 0.18); }
+.tag-red   { background: rgba(179, 32, 36, 0.08); color: var(--color-red); border-color: rgba(179, 32, 36, 0.2); }
+.tag-gold  { background: rgba(181, 138, 58, 0.1); color: var(--color-gold-deep); border-color: rgba(181, 138, 58, 0.24); }
+
+/* Label strip (on case/service media) */
+.label-strip {
+  display: inline-block;
+  padding: 5px 13px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-white);
+  background: rgba(11, 11, 11, 0.62);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* ============================================================
+   LINK ARROW
+============================================================ */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-green);
+  transition: gap var(--trans-base) ease;
+}
+
+.link-arrow:hover { gap: 9px; }
+
+.link-arrow svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ============================================================
+   MEDIA SLOT — SVG art now, photo-droppable later
+   <div class="media-slot ...">
+     <img class="media-slot__img" alt="">   (add src to override)
+     <svg class="media-slot__art">…</svg>
+   </div>
+============================================================ */
+.media-slot {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-base) 0%, var(--color-base-deep) 100%);
+}
+
+.media-slot__art,
+.media-slot__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.media-slot__art { object-fit: cover; }
+
+.media-slot__img {
+  object-fit: cover;
+  z-index: 2;
+}
+
+/* When no real photo is supplied, hide the <img> and show the SVG art */
+.media-slot__img:not([src]),
+.media-slot__img[src=""] {
+  display: none;
+}
+
+/* ============================================================
+   STEP NUMBER
+============================================================ */
+.step-number {
+  font-family: var(--font-num);
+  font-size: var(--font-md);
+  font-weight: 700;
+  color: var(--color-white);
+  background: var(--color-green);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid var(--color-white);
+  box-shadow: 0 4px 12px rgba(31, 61, 43, 0.25);
+}
+
+/* ============================================================
+   BACK TO TOP
+============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 150;
+  width: 46px;
+  height: 46px;
+  background: var(--color-ink);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(11, 11, 11, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--trans-base) ease, transform var(--trans-base) ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:hover { transform: translateY(-3px); }
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

@@ -1,0 +1,70 @@
+:root {
+  /* Color: Primary (Navy) */
+  --color-navy: #063A63;
+  --color-deep-navy: #002F55;
+  --color-blue: #0F5E9C;
+  --color-light-blue: #EAF5FC;
+  --color-sky: #F4FAFE;
+
+  /* Color: Accent (Gold) */
+  --color-gold: #C99A38;
+  --color-gold-light: #E7C26A;
+  --color-gold-dark: #A87B22;
+
+  /* Color: Base */
+  --color-white: #FFFFFF;
+  --color-text: #12324A;
+  --color-muted: #5E7182;
+  --color-border: #DDE8EF;
+  --color-border-soft: #EBF2F8;
+
+  /* Color: Footer */
+  --color-footer: #003A63;
+
+  /* Color: Hotel card gradients */
+  --grad-ibusuki:     linear-gradient(135deg, #2BA9C8 0%, #0E5B7D 100%);
+  --grad-yakushima:   linear-gradient(135deg, #2a8c4e 0%, #0d3d1f 100%);
+  --grad-tanegashima: linear-gradient(135deg, #1B6FA8 0%, #0d3f63 100%);
+  --grad-golf:        linear-gradient(135deg, #4a7c3f 0%, #1e3f18 100%);
+
+  /* Font */
+  --font-jp:  "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --font-num: "Inter", "Noto Sans JP", sans-serif;
+
+  /* Font sizes */
+  --font-xs:  12px;
+  --font-sm:  14px;
+  --font-md:  16px;
+  --font-lg:  18px;
+  --font-xl:  24px;
+  --font-2xl: 32px;
+  --font-3xl: 48px;
+  --font-4xl: 64px;
+
+  /* Radius */
+  --radius-sm:   10px;
+  --radius-md:   16px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-pill: 999px;
+
+  /* Shadow */
+  --shadow-card:      0 12px 30px rgba(7, 55, 90, 0.08);
+  --shadow-card-hover:0 22px 46px rgba(7, 55, 90, 0.14);
+  --shadow-hero:      0 24px 60px rgba(2, 30, 56, 0.22);
+  --shadow-cta:       0 14px 30px rgba(164, 117, 31, 0.28);
+  --shadow-cta-hover: 0 18px 38px rgba(164, 117, 31, 0.38);
+  --shadow-stat:      0 20px 50px rgba(0, 47, 85, 0.26);
+
+  /* Layout */
+  --container-max: 1240px;
+  --container-pad: 40px;
+  --section-pad:    96px;
+  --section-pad-sm: 64px;
+  --section-pad-lg: 120px;
+
+  /* Transitions */
+  --ease-out:   cubic-bezier(0.22, 0.61, 0.36, 1);
+  --trans-base: 0.25s var(--ease-out);
+  --trans-slow: 0.7s  var(--ease-out);
+}

@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>いわさきホテルズ | 鹿児島・指宿・屋久島・種子島のリゾートホテル</title>
+  <meta name="description" content="鹿児島の指宿・屋久島・種子島に展開するいわさきホテルズ。温泉・自然・ゴルフを楽しむリゾートステイ。目的に合わせた宿泊プランをご提案します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ========================================================
+     SVG Sprite
+     ======================================================== -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <defs>
+    <!-- arrow-right -->
+    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </symbol>
+    <!-- arrow-left -->
+    <symbol id="i-arrow-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </symbol>
+    <!-- menu (hamburger) -->
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M3 12h18M3 6h18M3 18h18"/>
+    </symbol>
+    <!-- close (X) -->
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M18 6 6 18M6 6l12 12"/>
+    </symbol>
+    <!-- map-pin -->
+    <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 10c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 16 0Z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <!-- building (hotel) -->
+    <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="1"/>
+      <path d="M9 3v18M15 3v18M3 9h18M3 15h18"/>
+    </symbol>
+    <!-- onsen / waves -->
+    <symbol id="i-onsen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 19c0-1.7 1.5-3 3.5-3s3.5 1.3 3.5 3 1.5 3 3.5 3 3.5-1.3 3.5-3 1.5-3 3.5-3 3.5 1.3 3.5 3"/>
+      <path d="M8 13c0-1.7 1.3-3 3-3h2c1.7 0 3 1.3 3 3"/>
+      <path d="M12 4v2M8 5.5l1 1.5M16 5.5l-1 1.5"/>
+    </symbol>
+    <!-- users (family/group) -->
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+    </symbol>
+    <!-- mountain -->
+    <symbol id="i-mountain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
+      <path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19"/>
+    </symbol>
+    <!-- golf -->
+    <symbol id="i-golf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="18" r="2"/>
+      <path d="M12 2v14"/>
+      <path d="M12 7l6 3-6 3"/>
+    </symbol>
+    <!-- mail -->
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+    </symbol>
+    <!-- phone -->
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.49 12 19.79 19.79 0 0 1 1.45 3.29 2 2 0 0 1 3.42 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.35a16 16 0 0 0 5.58 5.58l.77-.77a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16l.92.92Z"/>
+    </symbol>
+    <!-- calendar -->
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2"/>
+      <path d="M16 2v4M8 2v4M3 10h18"/>
+    </symbol>
+    <!-- check-circle -->
+    <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="m9 12 2 2 4-4"/>
+    </symbol>
+    <!-- search -->
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/>
+      <path d="m21 21-4.35-4.35"/>
+    </symbol>
+    <!-- message-circle -->
+    <symbol id="i-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </symbol>
+    <!-- star -->
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+    </symbol>
+    <!-- shield -->
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </symbol>
+    <!-- gift (plan) -->
+    <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="8" width="18" height="4" rx="1"/>
+      <path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/>
+      <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/>
+    </symbol>
+    <!-- facebook -->
+    <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    </symbol>
+    <!-- instagram -->
+    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    </symbol>
+    <!-- youtube -->
+    <symbol id="i-youtube" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+      <polygon fill="#fff" points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02"/>
+    </symbol>
+    <!-- landscape silhouette (used in hotel cards) -->
+    <symbol id="deco-wave" viewBox="0 0 300 80" preserveAspectRatio="none">
+      <path d="M0 60 Q75 20 150 50 Q225 80 300 40 L300 80 L0 80 Z" fill="currentColor"/>
+    </symbol>
+    <!-- beach / palm silhouette -->
+    <symbol id="deco-beach" viewBox="0 0 300 100">
+      <path d="M0 80 Q50 55 100 70 Q150 85 200 60 Q250 35 300 70 L300 100 L0 100 Z" fill="currentColor"/>
+      <line x1="200" y1="40" x2="200" y2="80" stroke="currentColor" stroke-width="3"/>
+      <path d="M185 45 Q200 30 220 38 Q205 50 185 45Z" fill="currentColor"/>
+      <path d="M175 55 Q200 35 215 50 Q200 60 175 55Z" fill="currentColor"/>
+    </symbol>
+    <!-- mountain silhouette for yakushima -->
+    <symbol id="deco-mountain" viewBox="0 0 300 100">
+      <path d="M0 100 L80 30 L120 60 L160 20 L200 55 L240 35 L300 80 L300 100 Z" fill="currentColor"/>
+    </symbol>
+    <!-- island silhouette -->
+    <symbol id="deco-island" viewBox="0 0 300 100">
+      <ellipse cx="150" cy="85" rx="140" ry="18" fill="currentColor"/>
+      <path d="M100 85 Q120 40 150 30 Q180 40 200 85 Z" fill="currentColor"/>
+    </symbol>
+    <!-- golf course -->
+    <symbol id="deco-golf" viewBox="0 0 300 100">
+      <path d="M0 70 Q60 50 120 65 Q180 80 240 55 Q270 45 300 60 L300 100 L0 100 Z" fill="currentColor"/>
+      <line x1="180" y1="30" x2="180" y2="65" stroke="currentColor" stroke-width="2.5"/>
+      <path d="M180 30 L200 38 L180 46 Z" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ========================================================
+     Mobile Drawer
+     ======================================================== -->
+<div id="mobile-drawer" class="mobile-drawer" aria-hidden="true" role="dialog" aria-label="ナビゲーション">
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <div class="drawer-panel">
+    <div class="drawer-header">
+      <div class="site-logo">
+        <div class="logo-mark">IH</div>
+        <div class="logo-text">
+          <span class="logo-text-jp">いわさきホテルズ</span>
+          <span class="logo-text-en">IWASAKI HOTELS</span>
+        </div>
+      </div>
+      <button class="drawer-close" id="drawer-close-btn" aria-label="メニューを閉じる">
+        <svg class="ico"><use href="#i-close"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav" aria-label="モバイルナビゲーション">
+      <a href="#hotels">ホテル一覧</a>
+      <a href="#plans">宿泊プラン</a>
+      <a href="#purpose">目的から探す</a>
+      <a href="#reasons">おすすめの過ごし方</a>
+      <a href="#access">アクセス</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+    <div class="drawer-cta">
+      <a class="btn btn-primary" href="#contact">
+        <svg class="ico ico-sm"><use href="#i-mail"/></svg>
+        お問い合わせ
+      </a>
+      <a class="btn btn-outline" href="#plans">
+        <svg class="ico ico-sm"><use href="#i-calendar"/></svg>
+        空室・プラン確認
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================
+     Header
+     ======================================================== -->
+<header id="site-header" class="site-header" role="banner">
+  <div class="header-inner">
+    <a class="site-logo" href="#" aria-label="いわさきホテルズ トップページ">
+      <div class="logo-mark" aria-hidden="true">IH</div>
+      <div class="logo-text">
+        <span class="logo-text-jp">いわさきホテルズ</span>
+        <span class="logo-text-en">IWASAKI HOTELS</span>
+      </div>
+    </a>
+
+    <nav class="global-nav" aria-label="グローバルナビゲーション">
+      <a href="#hotels">ホテル一覧</a>
+      <a href="#plans">宿泊プラン</a>
+      <a href="#purpose">目的から探す</a>
+      <a href="#reasons">おすすめの過ごし方</a>
+      <a href="#access">アクセス</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-outline btn-header" href="#contact">
+        <svg class="ico ico-sm"><use href="#i-phone"/></svg>
+        お問い合わせ
+      </a>
+      <a class="btn btn-primary btn-header" href="#plans">
+        <svg class="ico ico-sm"><use href="#i-calendar"/></svg>
+        空室・プラン確認
+        <svg class="ico ico-sm arrow"><use href="#i-arrow-right"/></svg>
+      </a>
+    </div>
+
+    <button
+      id="hamburger"
+      class="hamburger"
+      aria-expanded="false"
+      aria-controls="mobile-drawer"
+      aria-label="メニューを開く"
+    >
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ========================================================
+     Main
+     ======================================================== -->
+<main>
+
+  <!-- =====================================================
+       Hero / First View
+       ===================================================== -->
+  <section class="hero" aria-label="メインビジュアル">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-orb-2" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="hero-label">IWASAKI HOTELS / KAGOSHIMA RESORT STAY</p>
+
+        <h1>
+          鹿児島の自然と<br>
+          くつろぎを、旅の目的に合わせて。
+        </h1>
+
+        <p class="hero-lead">
+          指宿・屋久島・種子島のリゾートホテルで、<br>
+          特別な時間をお過ごしください。
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary btn-large" href="#plans">
+            <svg class="ico"><use href="#i-calendar"/></svg>
+            空室・宿泊プランを見る
+            <svg class="ico arrow"><use href="#i-arrow-right"/></svg>
+          </a>
+          <a class="btn btn-glass btn-large" href="#purpose">
+            <svg class="ico"><use href="#i-search"/></svg>
+            目的から探す
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="hero-stats" aria-label="サービス概要">
+      <div class="hero-stats-inner">
+        <div class="hero-stat-item">
+          <div class="hero-stat-icon" aria-hidden="true">
+            <svg class="ico"><use href="#i-building"/></svg>
+          </div>
+          <div class="hero-stat-text">
+            <strong>3</strong>
+            <span>エリアに展開<br>指宿・屋久島・種子島</span>
+          </div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-icon" aria-hidden="true">
+            <svg class="ico"><use href="#i-onsen"/></svg>
+          </div>
+          <div class="hero-stat-text">
+            <strong>温泉・自然・ゴルフ</strong>
+            <span>多彩な体験をご用意</span>
+          </div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-icon" aria-hidden="true">
+            <svg class="ico"><use href="#i-users"/></svg>
+          </div>
+          <div class="hero-stat-text">
+            <strong>団体・会議・宴会</strong>
+            <span>幅広く対応</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero bottom wave -->
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C240,100 480,20 720,60 C960,100 1200,20 1440,60 L1440,90 L0,90 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       Pain Section — こんなお悩みはありませんか？
+       ===================================================== -->
+  <section id="problems" class="section pain-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">FOR YOUR NEEDS</p>
+        <h2 class="section-title">こんなお悩みはありませんか？</h2>
+      </div>
+
+      <div class="pain-grid">
+        <div class="pain-card fade-up">
+          <div class="icon-circle">
+            <svg class="ico-lg"><use href="#i-map-pin"/></svg>
+          </div>
+          <p>鹿児島旅行でどこに泊まればいいか迷っている</p>
+        </div>
+        <div class="pain-card fade-up">
+          <div class="icon-circle">
+            <svg class="ico-lg"><use href="#i-onsen"/></svg>
+          </div>
+          <p>温泉や自然を楽しめるホテルを探している</p>
+        </div>
+        <div class="pain-card fade-up">
+          <div class="icon-circle">
+            <svg class="ico-lg"><use href="#i-users"/></svg>
+          </div>
+          <p>家族旅行でも安心して過ごせるホテルを選びたい</p>
+        </div>
+        <div class="pain-card fade-up">
+          <div class="icon-circle">
+            <svg class="ico-lg"><use href="#i-golf"/></svg>
+          </div>
+          <p>ゴルフやアクティビティもまとめて楽しみたい</p>
+        </div>
+        <div class="pain-card fade-up">
+          <div class="icon-circle">
+            <svg class="ico-lg"><use href="#i-building"/></svg>
+          </div>
+          <p>団体・宴会・会議で利用できるか相談したい</p>
+        </div>
+      </div>
+
+      <p class="section-message fade-up">
+        いわさきホテルズなら、旅の目的に合わせて<em>最適なホテル・プランをご提案</em>します。
+      </p>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       Hotel Section — いわさきホテルズのご紹介
+       ===================================================== -->
+  <section id="hotels" class="section section-blue hotel-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">OUR HOTELS</p>
+        <h2 class="section-title">いわさきホテルズのご紹介</h2>
+        <p class="section-lead">鹿児島の自然に囲まれた4つのリゾートホテルをご用意しています。</p>
+      </div>
+
+      <div class="hotel-grid">
+        <!-- 指宿 -->
+        <article class="hotel-card fade-up">
+          <div class="hotel-image hotel-ibusuki">
+            <div class="hotel-tag">指宿</div>
+            <svg class="hotel-image-deco" aria-hidden="true" style="color:#fff">
+              <use href="#deco-beach"/>
+            </svg>
+          </div>
+          <div class="hotel-body">
+            <h3>指宿いわさきホテル</h3>
+            <p>温泉と海を楽しむ南国リゾートステイ。砂蒸し温泉で有名な指宿で特別な体験を。</p>
+            <a class="card-link" href="#plans">
+              宿泊プランを見る
+              <svg class="ico ico-sm"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 屋久島 -->
+        <article class="hotel-card fade-up">
+          <div class="hotel-image hotel-yakushima">
+            <div class="hotel-tag">屋久島</div>
+            <svg class="hotel-image-deco" aria-hidden="true" style="color:#fff">
+              <use href="#deco-mountain"/>
+            </svg>
+          </div>
+          <div class="hotel-body">
+            <h3>屋久島いわさきホテル</h3>
+            <p>世界自然遺産の島で自然に包まれる滞在を。縄文杉・白谷雲水峡への拠点に。</p>
+            <a class="card-link" href="#plans">
+              宿泊プランを見る
+              <svg class="ico ico-sm"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 種子島 -->
+        <article class="hotel-card fade-up">
+          <div class="hotel-image hotel-tanegashima">
+            <div class="hotel-tag">種子島</div>
+            <svg class="hotel-image-deco" aria-hidden="true" style="color:#fff">
+              <use href="#deco-island"/>
+            </svg>
+          </div>
+          <div class="hotel-body">
+            <h3>種子島いわさきホテル</h3>
+            <p>青い海と島時間を楽しむリゾート。日本一美しいと言われる宇宙海岸に近接。</p>
+            <a class="card-link" href="#plans">
+              宿泊プランを見る
+              <svg class="ico ico-sm"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- ゴルフリゾート -->
+        <article class="hotel-card fade-up">
+          <div class="hotel-image hotel-golf">
+            <div class="hotel-tag">種子島</div>
+            <svg class="hotel-image-deco" aria-hidden="true" style="color:#fff">
+              <use href="#deco-golf"/>
+            </svg>
+          </div>
+          <div class="hotel-body">
+            <h3>種子島ゴルフリゾート</h3>
+            <p>宿泊とゴルフをまとめて楽しむ旅へ。リゾートコースで最高のプレーを。</p>
+            <a class="card-link" href="#plans">
+              ゴルフプランを見る
+              <svg class="ico ico-sm"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       Purpose Section — 目的からホテル・プランを探す
+       ===================================================== -->
+  <section id="purpose" class="section purpose-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">FIND YOUR STAY</p>
+        <h2 class="section-title">目的からホテル・プランを探す</h2>
+        <p class="section-lead">どんな旅がしたいですか？目的に合わせてお選びください。</p>
+      </div>
+
+      <div class="purpose-grid">
+        <a class="purpose-card fade-up" href="#plans">
+          <div class="icon-circle icon-circle-gold">
+            <svg class="ico-lg"><use href="#i-onsen"/></svg>
+          </div>
+          <h3>温泉で<br>ゆっくりしたい</h3>
+          <div class="arrow-badge" aria-hidden="true">
+            <svg class="ico-sm"><use href="#i-arrow-right"/></svg>
+          </div>
+        </a>
+
+        <a class="purpose-card fade-up" href="#plans">
+          <div class="icon-circle icon-circle-gold">
+            <svg class="ico-lg"><use href="#i-mountain"/></svg>
+          </div>
+          <h3>自然の中で<br>リフレッシュしたい</h3>
+          <div class="arrow-badge" aria-hidden="true">
+            <svg class="ico-sm"><use href="#i-arrow-right"/></svg>
+          </div>
+        </a>
+
+        <a class="purpose-card fade-up" href="#plans">
+          <div class="icon-circle icon-circle-gold">
+            <svg class="ico-lg"><use href="#i-users"/></svg>
+          </div>
+          <h3>家族旅行で<br>楽しみたい</h3>
+          <div class="arrow-badge" aria-hidden="true">
+            <svg class="ico-sm"><use href="#i-arrow-right"/></svg>
+          </div>
+        </a>
+
+        <a class="purpose-card fade-up" href="#plans">
+          <div class="icon-circle icon-circle-gold">
+            <svg class="ico-lg"><use href="#i-golf"/></svg>
+          </div>
+          <h3>ゴルフを<br>楽しみたい</h3>
+          <div class="arrow-badge" aria-hidden="true">
+            <svg class="ico-sm"><use href="#i-arrow-right"/></svg>
+          </div>
+        </a>
+
+        <a class="purpose-card fade-up" href="#contact">
+          <div class="icon-circle icon-circle-gold">
+            <svg class="ico-lg"><use href="#i-building"/></svg>
+          </div>
+          <h3>団体・宴会・会議で<br>利用したい</h3>
+          <div class="arrow-badge" aria-hidden="true">
+            <svg class="ico-sm"><use href="#i-arrow-right"/></svg>
+          </div>
+        </a>
+
+        <a class="purpose-card fade-up" href="#contact">
+          <div class="icon-circle icon-circle-gold">
+            <svg class="ico-lg"><use href="#i-message-circle"/></svg>
+          </div>
+          <h3>どこが合うか<br>相談したい</h3>
+          <div class="arrow-badge" aria-hidden="true">
+            <svg class="ico-sm"><use href="#i-arrow-right"/></svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       Flow Section — ご予約・お問い合わせの流れ
+       ===================================================== -->
+  <section id="flow" class="section section-blue flow-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">HOW TO BOOK</p>
+        <h2 class="section-title">ご予約・お問い合わせの流れ</h2>
+      </div>
+
+      <div class="flow-list">
+        <div class="flow-card fade-up">
+          <div class="step-icon" aria-hidden="true">
+            <svg class="ico"><use href="#i-search"/></svg>
+          </div>
+          <span class="step-label">STEP 01</span>
+          <h3>目的を選ぶ</h3>
+          <p>旅の目的に合わせてテーマを選びます。温泉・自然・ゴルフなどから。</p>
+        </div>
+
+        <div class="flow-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+
+        <div class="flow-card fade-up">
+          <div class="step-icon" aria-hidden="true">
+            <svg class="ico"><use href="#i-building"/></svg>
+          </div>
+          <span class="step-label">STEP 02</span>
+          <h3>プランを確認する</h3>
+          <p>ホテルや宿泊プランの詳細・料金を確認いただけます。</p>
+        </div>
+
+        <div class="flow-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+
+        <div class="flow-card fade-up">
+          <div class="step-icon" aria-hidden="true">
+            <svg class="ico"><use href="#i-calendar"/></svg>
+          </div>
+          <span class="step-label">STEP 03</span>
+          <h3>空室確認・予約する</h3>
+          <p>ご希望の日程で空室・料金を確認し、予約を完了します。</p>
+        </div>
+
+        <div class="flow-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+
+        <div class="flow-card fade-up">
+          <div class="step-icon" aria-hidden="true">
+            <svg class="ico"><use href="#i-mail"/></svg>
+          </div>
+          <span class="step-label">STEP 04</span>
+          <h3>お問い合わせ</h3>
+          <p>不明点や団体利用はお気軽にご相談ください。スタッフが丁寧にご対応します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       Reason Section — 選ばれる理由
+       ===================================================== -->
+  <section id="reasons" class="section reason-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">WHY CHOOSE US</p>
+        <h2 class="section-title">いわさきホテルズが選ばれる理由</h2>
+      </div>
+
+      <div class="reason-grid">
+        <div class="reason-card fade-up">
+          <div class="icon-circle">
+            <svg class="ico-lg"><use href="#i-map-pin"/></svg>
+          </div>
+          <h3>鹿児島の人気エリアに展開</h3>
+          <p>指宿・屋久島・種子島の観光拠点として大変便利な立地です。</p>
+        </div>
+
+        <div class="reason-card fade-up">
+          <div class="icon-circle">
+            <svg class="ico-lg"><use href="#i-onsen"/></svg>
+          </div>
+          <h3>温泉・自然・ゴルフも満喫</h3>
+          <p>多彩な体験で旅を豊かに。各ホテルならではの魅力をご堪能ください。</p>
+        </div>
+
+        <div class="reason-card fade-up">
+          <div class="icon-circle">
+            <svg class="ico-lg"><use href="#i-users"/></svg>
+          </div>
+          <h3>家族から団体まで対応</h3>
+          <p>個人旅行から団体・会議・宴会まで幅広くサポートいたします。</p>
+        </div>
+
+        <div class="reason-card fade-up">
+          <div class="icon-circle">
+            <svg class="ico-lg"><use href="#i-shield"/></svg>
+          </div>
+          <h3>地域に根ざしたホテルブランド</h3>
+          <p>長年の実績と信頼感のあるおもてなしで安心してご滞在いただけます。</p>
+        </div>
+
+        <div class="reason-card fade-up">
+          <div class="icon-circle">
+            <svg class="ico-lg"><use href="#i-gift"/></svg>
+          </div>
+          <h3>多彩な宿泊プラン</h3>
+          <p>目的に合わせた最適なプランをご用意。特別なひとときをお届けします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       Voice Section — お客様の声
+       ===================================================== -->
+  <section id="voices" class="section section-blue voice-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">GUEST REVIEWS</p>
+        <h2 class="section-title">ご利用のお客様の声</h2>
+      </div>
+
+      <div class="voice-grid">
+        <!-- Voice 1 -->
+        <article class="voice-card fade-up">
+          <div class="voice-header">
+            <div class="voice-avatar" style="background:linear-gradient(135deg,#93c5fd,#3b82f6)" aria-hidden="true"></div>
+            <div class="voice-meta">
+              <span class="voice-type">家族旅行</span>
+              <div class="stars" aria-label="評価5つ星">★★★★★</div>
+            </div>
+          </div>
+          <p class="voice-text">子ども連れでも安心して過ごせました。温泉もお食事も大満足です。</p>
+          <p class="voice-attr">30代・家族</p>
+        </article>
+
+        <!-- Voice 2 -->
+        <article class="voice-card fade-up">
+          <div class="voice-header">
+            <div class="voice-avatar" style="background:linear-gradient(135deg,#6ee7b7,#10b981)" aria-hidden="true"></div>
+            <div class="voice-meta">
+              <span class="voice-type">夫婦旅行</span>
+              <div class="stars" aria-label="評価5つ星">★★★★★</div>
+            </div>
+          </div>
+          <p class="voice-text">海を眺めながらゆっくりと過ごせる時間が最高でした。また来ます。</p>
+          <p class="voice-attr">40代・夫婦</p>
+        </article>
+
+        <!-- Voice 3 -->
+        <article class="voice-card fade-up">
+          <div class="voice-header">
+            <div class="voice-avatar" style="background:linear-gradient(135deg,#fcd34d,#f59e0b)" aria-hidden="true"></div>
+            <div class="voice-meta">
+              <span class="voice-type">鹿児島観光</span>
+              <div class="stars" aria-label="評価5つ星">★★★★★</div>
+            </div>
+          </div>
+          <p class="voice-text">自然に囲まれたロケーションに癒されました。観光の拠点にぴったりです。</p>
+          <p class="voice-attr">30代・友人</p>
+        </article>
+
+        <!-- Voice 4 -->
+        <article class="voice-card fade-up">
+          <div class="voice-header">
+            <div class="voice-avatar" style="background:linear-gradient(135deg,#a78bfa,#7c3aed)" aria-hidden="true"></div>
+            <div class="voice-meta">
+              <span class="voice-type">ゴルフ旅行</span>
+              <div class="stars" aria-label="評価5つ星">★★★★★</div>
+            </div>
+          </div>
+          <p class="voice-text">ゴルフと宿泊がセットで便利でした。コースもとても良かったです。</p>
+          <p class="voice-attr">50代・グループ</p>
+        </article>
+
+        <!-- Voice 5 -->
+        <article class="voice-card fade-up">
+          <div class="voice-header">
+            <div class="voice-avatar" style="background:linear-gradient(135deg,#fda4af,#e11d48)" aria-hidden="true"></div>
+            <div class="voice-meta">
+              <span class="voice-type">団体利用</span>
+              <div class="stars" aria-label="評価5つ星">★★★★★</div>
+            </div>
+          </div>
+          <p class="voice-text">会議と宴会で利用しました。スタッフの対応がとても丁寧で助かりました。</p>
+          <p class="voice-attr">40代・会社</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       Final CTA
+       ===================================================== -->
+  <section id="contact" class="final-cta">
+    <div class="final-cta-card">
+      <div class="final-cta-content">
+        <p class="section-eyebrow" style="text-align:left;margin-bottom:12px">PLAN YOUR TRIP</p>
+        <h2>あなたにぴったりの旅を<br>見つけませんか？</h2>
+        <p>目的に合わせたおすすめプランをご提案します。<br>お気軽にご相談ください。</p>
+        <div class="final-cta-buttons">
+          <a class="btn btn-primary btn-large" href="#plans">
+            <svg class="ico"><use href="#i-calendar"/></svg>
+            空室・宿泊プランを見る
+            <svg class="ico arrow"><use href="#i-arrow-right"/></svg>
+          </a>
+          <a class="btn btn-outline btn-large" href="mailto:info@iwasaki-hotels.co.jp">
+            <svg class="ico"><use href="#i-mail"/></svg>
+            相談・お問い合わせする
+          </a>
+        </div>
+      </div>
+
+      <div class="final-cta-visual" aria-hidden="true">
+        <div class="cta-visual-box">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 150 Q50 100 100 130 Q150 160 200 120 L200 200 L0 200 Z" fill="#0F5E9C" opacity="0.5"/>
+            <path d="M0 170 Q50 130 100 155 Q150 180 200 150 L200 200 L0 200 Z" fill="#063A63" opacity="0.7"/>
+            <circle cx="100" cy="80" r="35" fill="none" stroke="#C99A38" stroke-width="2" opacity="0.5"/>
+            <circle cx="100" cy="80" r="20" fill="#C99A38" opacity="0.2"/>
+            <path d="M85 80 L100 65 L115 80 L100 95 Z" fill="#C99A38" opacity="0.4"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main><!-- /main -->
+
+
+<!-- ========================================================
+     Footer
+     ======================================================== -->
+<footer id="access" class="site-footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-mark">IH</div>
+        <div class="logo-text footer-logo-text">
+          <span class="logo-text-jp">いわさきホテルズ</span>
+          <span class="logo-text-en">IWASAKI HOTELS</span>
+        </div>
+      </div>
+      <p class="footer-tagline">
+        鹿児島の自然とおもてなしで、<br>特別な時間をお届けします。
+      </p>
+      <address class="footer-address" style="font-style:normal">
+        〒891-0403 鹿児島県指宿市十二町3755<br>
+        TEL: 0993-22-2131（代表）
+      </address>
+      <div class="footer-social" aria-label="ソーシャルメディア">
+        <a href="#" aria-label="Facebook">
+          <svg class="ico ico-sm"><use href="#i-facebook"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg class="ico ico-sm"><use href="#i-instagram"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg class="ico ico-sm"><use href="#i-youtube"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>ホテル一覧</h4>
+        <a href="#hotels">指宿いわさきホテル</a>
+        <a href="#hotels">屋久島いわさきホテル</a>
+        <a href="#hotels">種子島いわさきホテル</a>
+        <a href="#hotels">種子島ゴルフリゾート</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 id="plans">宿泊プラン</h4>
+        <a href="#plans">おすすめプラン</a>
+        <a href="#purpose">温泉・リラクゼーション</a>
+        <a href="#purpose">グルメ・食事</a>
+        <a href="#purpose">アクティビティ</a>
+        <a href="#purpose">ゴルフプラン</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>サポート</h4>
+        <a id="faq" href="#faq">よくある質問</a>
+        <a href="#access">アクセス</a>
+        <a href="#contact">お問い合わせ</a>
+        <a href="#">ご利用規約</a>
+        <a href="#">プライバシーポリシー</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© Iwasaki Hotels. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+<!-- ========================================================
+     Mobile Fixed CTA
+     ======================================================== -->
+<nav class="mobile-fixed-cta" aria-label="クイックアクション">
+  <a href="#plans">
+    <svg class="ico" aria-hidden="true"><use href="#i-calendar"/></svg>
+    空室確認
+  </a>
+  <a href="#purpose">
+    <svg class="ico" aria-hidden="true"><use href="#i-search"/></svg>
+    目的から探す
+  </a>
+  <a href="#contact">
+    <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg>
+    問い合わせ
+  </a>
+</nav>
+
+<script src="js/main.js"></script>
+</body>
+</html>

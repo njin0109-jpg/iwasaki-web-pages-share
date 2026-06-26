@@ -1,0 +1,262 @@
+/* ============================================================
+   components.css — Reusable Components
+   鹿児島国際航空株式会社
+============================================================ */
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-jp);
+  font-size: var(--font-base);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    transform var(--trans-base) var(--ease-out),
+    box-shadow var(--trans-base) var(--ease-out),
+    background-color var(--trans-base) ease,
+    border-color var(--trans-base) ease,
+    color var(--trans-base) ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Primary — orange fill */
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: var(--shadow-cta);
+}
+.btn-primary:hover {
+  background: var(--color-accent-dark);
+  box-shadow: var(--shadow-cta-hover);
+}
+
+/* Secondary — white + navy border */
+.btn-secondary {
+  background: var(--color-white);
+  color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+.btn-secondary:hover {
+  background: var(--color-sky);
+}
+
+/* Outline orange */
+.btn-outline-orange {
+  background: var(--color-white);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.btn-outline-orange:hover {
+  background: #FFF8EE;
+  box-shadow: 0 8px 20px rgba(245, 138, 0, 0.14);
+}
+
+/* Navy fill */
+.btn-navy {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+}
+.btn-navy:hover {
+  background: var(--color-primary-deep);
+  box-shadow: 0 10px 24px rgba(0, 43, 92, 0.22);
+}
+
+/* White outline (for dark backgrounds) */
+.btn-white-outline {
+  background: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.btn-white-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-white);
+}
+
+/* Wide variant */
+.btn-wide {
+  min-width: 240px;
+}
+
+/* ============================================================
+   CARDS
+============================================================ */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition:
+    transform var(--trans-base) var(--ease-out),
+    box-shadow var(--trans-base) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ============================================================
+   ICONS
+============================================================ */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: var(--color-primary);
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-sm svg {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-lg svg {
+  width: 64px;
+  height: 64px;
+}
+
+/* Icon wrapper with background circle */
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  background: var(--color-sky);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-circle svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--color-primary);
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ============================================================
+   FLOATING CARD (hero)
+============================================================ */
+.floating-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--color-border-blue);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hero);
+  backdrop-filter: blur(8px);
+  padding: 16px 20px;
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.floating-card {
+  animation: floatSoft 5s ease-in-out infinite;
+}
+
+/* ============================================================
+   STAT CARD
+============================================================ */
+.stat-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border-blue);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  box-shadow: var(--shadow-stat);
+  text-align: center;
+}
+
+.stat-card strong {
+  display: block;
+  font-family: var(--font-num);
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+}
+
+.stat-card span {
+  display: block;
+  font-size: var(--font-xs);
+  color: var(--color-text-muted);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   STEP NUMBER BADGE
+============================================================ */
+.step-number {
+  font-family: var(--font-num);
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-white);
+  background: var(--color-primary);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin: 0 auto 12px;
+}
+
+/* ============================================================
+   LINK WITH ARROW
+============================================================ */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+  transition: gap var(--trans-base) ease;
+}
+
+.link-arrow:hover {
+  gap: 8px;
+}
+
+.link-arrow svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
